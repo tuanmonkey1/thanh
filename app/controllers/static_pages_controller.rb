@@ -10,4 +10,10 @@ class StaticPagesController < ApplicationController
 
   def order
   end
+
+  def technology  	
+  end
+
+  def review
+  end
 end
