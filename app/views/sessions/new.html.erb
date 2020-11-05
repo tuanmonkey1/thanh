@@ -1,0 +1,33 @@
+<% provide(:title, "Login") %>
+
+<%= render 'layouts/header' %>
+
+<div class="login-singup-wrapper">
+    <div class="login-content">
+        <p>* If you are getting an error when attempting to login or reset your password, you will need to create a
+                new
+                account due to 64 Audio transitioning to a new system on 1/11/2020. Your email address will
+                automatically
+                link to your previous account.</p>
+        <h1>Login</h1>
+        <div class="login-form">
+            <%= form_for(:session, url: login_path) do |f| %>
+
+                <%= f.label :email %>
+                <%= f.email_field :email, id: "email" %>
+
+                <%= f.label :password %>
+                <%= f.password_field :password, id: "pwd" %>
+                
+                <%= f.label :remember_me, class: "checkbox inline" do %>
+                    <%= f.check_box :remember_me %>
+                    <span>Remember me on this computer</span>
+                <% end %>
+                <%= f.submit "Log in", class: "submit" %>
+            <% end %>
+            <p>New user? <%= link_to "Sign up now!", signup_path , id: "a-signup" %></p>
+        </div>
+    </div>
+</div>
+
+<%= render 'layouts/footer' %>
