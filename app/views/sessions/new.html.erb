@@ -1,0 +1,31 @@
+<% provide(:title, "Login") %>
+
+<%= render 'layouts/header' %>
+
+<div class="login-singup-wrapper">
+    <div class="login-content">
+        <p>* If you are getting an error when attempting to login or reset your password, you will need to create a
+                new
+                account due to 64 Audio transitioning to a new system on 1/11/2020. Your email address will
+                automatically
+                link to your previous account.</p>
+        <h1>Login</h1>
+        <div class="login-form">
+            <form>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email">
+
+                <label for="pwd">Password</label>
+                <input type="password" id="pwd" name="pwd">
+
+                <a>Forgot your password?</a>
+
+                <input type="submit" class="submit" value="SIGN IN">
+
+                <a href="http://localhost:3000/signup">Create account</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%= render 'layouts/footer' %>
