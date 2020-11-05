@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  show_post: MyString
+  delete_post: MyString
+  create_hashtag: MyString
+  search_post: MyString
+
+two:
+  show_post: MyString
+  delete_post: MyString
+  create_hashtag: MyString
+  search_post: MyString
