@@ -11,19 +11,21 @@
                 link to your previous account.</p>
         <h1>Login</h1>
         <div class="login-form">
-            <form>
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email">
+            <%= form_for(:session, url: login_path) do |f| %>
 
-                <label for="pwd">Password</label>
-                <input type="password" id="pwd" name="pwd">
+                <%= f.label :email %>
+                <%= f.email_field :email, id: "email" %>
 
-                <a>Forgot your password?</a>
-
-                <input type="submit" class="submit" value="SIGN IN">
-
-                <a href="http://localhost:3000/signup">Create account</a>
-            </form>
+                <%= f.label :password %>
+                <%= f.password_field :password, id: "pwd" %>
+                
+                <%= f.label :remember_me, class: "checkbox inline" do %>
+                    <%= f.check_box :remember_me %>
+                    <span>Remember me on this computer</span>
+                <% end %>
+                <%= f.submit "Log in", class: "submit" %>
+            <% end %>
+            <p>New user? <%= link_to "Sign up now!", signup_path , id: "a-signup" %></p>
         </div>
     </div>
 </div>
