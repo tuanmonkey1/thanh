@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   get 'sessions/new'
   get 'users/new'
   root 'static_pages#home'
+
   get 'pages/home', to: 'static_pages#home'
   get 'pages/help', to: 'static_pages#help'
   get 'pages/iems', to: 'static_pages#iems'
@@ -15,4 +16,5 @@ Rails.application.routes.draw do
   resources :users	
   resources :hashtags
   resources :reviews, only: [:create, :destroy, :show, :new]
+  resources :products
 end

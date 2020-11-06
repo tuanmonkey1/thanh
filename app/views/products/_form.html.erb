@@ -1,0 +1,18 @@
+<%= form_for(@products) do |f| %>
+
+	<%= f.label :name %>
+	<%= f.text_field :name, class: 'form-control' , id: "name" %>
+
+    <%= f.label :title %>
+    <%= f.text_field :title, class: 'form-control' , id: "title" %>
+
+	<%= f.label :price %>
+	<%= f.number_field :price, class: 'form-control' , id: "price" %>
+
+	<span class="image">
+		<%= f.file_field :image, accept: "image/jpeg,image/gif,image/png" %>
+	</span>
+
+	<%= f.submit yield(:button_text), class: "submit" %>
+
+<% end %>

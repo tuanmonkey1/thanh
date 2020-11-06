@@ -1,3 +1,4 @@
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
 #
@@ -40,3 +41,9 @@ Review.create!(title: "TIPS & TRICKS FOR YOUR IEMS",
 Review.create!(title: "THE BENEFITS OF SWITCHING TO A SILENT STAGE",
 	content: "One of the topics we hear come up time and time again is the idea of a “silent stage.”  This idea isn’t new by any means but has shown to be more prevalen...",
 	user_id: 1)
+# Create a main sample user.
+User.create!(name: "Example User",
+email: "example@railstutorial.org",
+password: "foobar",
+password_confirmation: "foobar")
+>>>>>>> new product
