@@ -1,2 +1,0 @@
-class Rlationship < ApplicationRecord
-end

@@ -4,14 +4,18 @@
         <a href="http://localhost:3000"><img src="https://cdn.shopify.com/s/files/1/0411/4717/0966/files/Horizontial-Logo-White-100px_300x300.png?v=1598566575"></a>
     </div>
     <ul class="menubar">
-        <li><a href="http://localhost:3000/pages/iems">IN-EAR MONITORS</a></li>
-        <li><a href="http://localhost:3000/pages/technology">TECHNOLOGY</a></li>
-        <li><a href="http://localhost:3000/pages/review">REVIEW</a></li>
-        <li><a href="http://localhost:3000/pages/help">SUPPORT</a></li>
-        <li><a href="http://localhost:3000/pages/how-to-order">HOW TO ORDER</a></li>
+        <li><%= link_to "IN-EAR MONITORS", pages_iems_path %></li>
+        <li><%= link_to "TECHNOLOGY", pages_technology_path %></li>
+        <li><%= link_to "REVIEW", pages_review_path %></li>
+        <li><%= link_to "SUPPORT", pages_help_path %></li>
+        <li><%= link_to "HOW TO ORDER", pages_how_to_order_path %></li>
     </ul>
     <ul class="userbar">
-        <li><a href="http://localhost:3000/login"><i class="far fa-user"></i></a></li>
+        <% if logged_in? %>
+            <li><a href="http://localhost:3000/users"><i class="far fa-user"></i></a></li>
+        <% else %>
+            <li><a href="http://localhost:3000/login"><i class="far fa-user"></i></a></li>
+        <% end %> 
         <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
         <li><a href="#"><i class="fas fa-bars"></i></a></li>
     </ul>

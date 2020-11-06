@@ -1,0 +1,1 @@
+class Relationship < ApplicationRecord

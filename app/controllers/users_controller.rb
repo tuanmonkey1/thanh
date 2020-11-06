@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 	before_action :correct_user, only: [:edit, :update]
 	def show
 		@user = User.find(params[:id])
+		@reviews = @user.reviews.paginate(page: params[:page]).per_page(10)
 	end
 
 	def new
@@ -10,7 +11,7 @@ class UsersController < ApplicationController
 	end
 
 	def index
-		@users = User.paginate(page: params[:page])
+		@users = User.paginate(page: params[:page]).per_page(10)
 	end
 
 	def create
