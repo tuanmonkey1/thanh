@@ -111,12 +111,14 @@ header .userbar li a{
     color: #fff;
     font-size: 30px;
     padding: 0 15px;
+    text-decoration: none;
 }
 header .userbar li i{
     color: #fff;
     font-size: 30px;
     padding: 0 15px;
     cursor: pointer;
+    text-decoration: none;
 }
 
 
@@ -780,13 +782,9 @@ footer .small-footer span a{
 
 
 /* Users index */
-.users {
-list-style: none;
-margin: 0;
-li {
-overflow: auto;
-padding: 10px 0;
-border-bottom: 1px solid $gray-lighter; }
+
+
+
 
 /* Review Form */
 
