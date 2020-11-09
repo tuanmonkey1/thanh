@@ -1,0 +1,8 @@
+<li>
+  <%= gravatar_for hashtag, size: 50 %>
+  <%= link_to hashtag.name, hashtag %>
+  <% if current_hashtag.admin? && !current_hashtag?(hashtag) %>
+  | <%= link_to "delete", hashtag, method: :delete,
+data: { confirm: "You sure?" } %>
+<% end %>
+</li>

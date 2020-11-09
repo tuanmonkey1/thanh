@@ -1,0 +1,4 @@
+<%= form_for(@hashtag) do |f| %>
+<%= render 'shared/error_messages', object: @hashtag %>
+<%= f.label :name %>
+<%= f.text_field :name, class: 'form-control' %>

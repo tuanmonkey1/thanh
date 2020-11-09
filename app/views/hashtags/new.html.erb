@@ -1,1 +1,20 @@
-sAKDlisadfsadf
+<% provide(:title, 'Create new hashtag') %>
+	<div class="hashtag-wrapper">
+		<div class="hashtag-content-text">
+        	<h1>Create Hashtag</h1>
+        </div>
+        <div class="hashtag-login-content">
+	        <div class="login-form">
+	           <%= form_for(@hashtag) do |f| %>
+
+				<%= render 'shared/error_messages', object: @hashtag %>
+
+				<%= f.label :name %>
+				<%= f.text_field :name, class: 'form-control' , id: "name" %>
+
+				<%= f.submit "Create", class: "submit" %>
+
+			<% end %> 
+	        </div>
+    	</div>
+    </div>
