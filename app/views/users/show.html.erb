@@ -1,4 +1,6 @@
 <% provide(:title, @user.name) %>
+
+<div class="user-show-wrapper">
   <div class="row">
   <aside class="col-md-4">
     <section class="user_info">
@@ -6,8 +8,6 @@
      <%= @user.name %>
      </h1>
     </section>
-    <ol class="hashtag">
-      <%= render @hashtag %>
-    </ol>
   </aside>
   </div>
+</div>

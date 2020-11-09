@@ -1,11 +1,16 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;900&display=swap');
-
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
 *{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 body{
     padding: 0;
@@ -46,6 +51,8 @@ body{
     align-items: center;
 }
 
+
+/* Header */
 
 header{
     position: fixed;
@@ -104,7 +111,20 @@ header .userbar li a{
     color: #fff;
     font-size: 30px;
     padding: 0 15px;
+    text-decoration: none;
 }
+header .userbar li i{
+    color: #fff;
+    font-size: 30px;
+    padding: 0 15px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+
+/* Home Page */
+
+
 .contentBx{
     width: 60%;
     max-width: 60%;
@@ -170,6 +190,58 @@ header .userbar li a{
     font-size: 22px;
     margin-left: 16px;
 }
+
+
+
+/* Home Hidden Menu */
+
+
+.hidden-menu{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 450px;
+    background: #fff;
+    padding: 20px 50px;
+    margin-right: -450px;
+    transition: 0.3s;
+
+    .close-buttom{
+        position: relative;
+        margin-bottom: 80px;
+        cursor: pointer;
+
+        i{
+            font-size: 50px;
+        }
+    }
+    ul{
+        position: relative;
+
+        li{
+            list-style: none;
+            margin-bottom: 30px;
+
+            a{
+                color: #000;
+                font-size: 20px;
+                transition: 0.3s;
+                font-weight: bold;
+
+                &:hover{
+                    padding-left: 10px;
+                    color: #868686;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+
+/* Footer */
+
 footer{
     width: 100%;
     padding: 15px 200px;
@@ -385,22 +457,6 @@ footer .small-footer span a{
 
 
 
-/* Order Page */
-
-.order-heading{
-    width: 100%;
-    height: 350px;
-    background: url('https://i.shgcdn.com/626341d0-720c-4c75-9707-415fb0a3c83c/-/format/auto/-/preview/3000x3000/-/quality/lighter/');
-    background-repeat: no-repeat;
-    background-size: 480px;
-    background-position: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-
 
 /* login/singup page */
 
@@ -542,6 +598,7 @@ footer .small-footer span a{
     }
     a{
         color: #000;
+        text-decoration: underline;
     }
     p{
       font-family: Roboto,"PierSans","HelveticaNeue","Helvetica Neue",Helvetica,Arial,sans-serif;
@@ -655,10 +712,11 @@ footer .small-footer span a{
         display: flex;
         justify-content: center;
         margin-bottom: 30px;
+
         .slide-review-content{
             width: 1200px;
             height: 550px;
-            background: #7FFFD4;
+            border: 1px solid #868686;
         }
     }
 
@@ -680,10 +738,13 @@ footer .small-footer span a{
                     margin-bottom: 20px;
                     width: 100%;
                     height: 250px;
-                    img{
-                        width: 100%;
-                        height: 100%;
-                    }
+                    transition: 0.3s;
+                    background: url('https://i0.wp.com/blog.64audio.com/wp-content/uploads/2019/05/A12t_narrow.jpg?resize=360%2C240&ssl=1');
+                    background-position: center;
+                    background-display: cover;
+                    &:hover{
+                        filter: brightness(50%);
+                    }                    
                 }
                 a{
                     text-decoration: none;
@@ -712,14 +773,85 @@ footer .small-footer span a{
             }
         }
     }
+    .paginate{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
 }
 
+
 /* Users index */
-.users {
-list-style: none;
-margin: 0;
-li {
-overflow: auto;
-padding: 10px 0;
-border-bottom: 1px solid $gray-lighter; }
+
+
+
+
+/* Review Form */
+
+.review-form-wrapper{
+    margin-top: 150px;
+    padding-bottom: 100px;
+    width: 100%;
+    h1{
+        color: #3a3a3a;
+        font-family: Montserrat, sans-serif;
+        font-size: 30px;
+        font-weight: bold;
+        letter-spacing: 2px;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .review-form-content{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        form{
+            width: 750px;
+            .submit{
+                width: 90px;
+                background: #3a3a3a;
+                color: #fff;
+                height: 44px;
+                font-size: 15px;
+                margin: 20px 330px;
+            }
+            .field{
+                width: 100%;
+                span{
+                    font-family: Roboto,sans-serif;
+                    font-size: 24px;
+                    color: #3a3a3a;
+                    font-weight: 100;
+                    line-height: 2em;
+                }
+                #title, #content{
+                    font-family: arial;
+                    height: 40px;
+                    outline: none;
+                    border: 0.5px solid #3a3a3a;
+                    margin-bottom: 20px;
+                    width: 750px;
+                    line-height: 40px;
+                    font-size: 18px;
+                    padding-left: 15px;
+                    padding-right: 15px;
+                }
+                .img-buttom{
+                    font-size: 16px;
+                    padding-left: 20px;
+                }
+            }
+        }
+    }
+}
+
+/* User Show */
+
+.user-show-wrapper{
+    margin-top: 100px;
+    padding-left: 200px;
+    padding-bottom: 100px;
+}
+.gravatar{
+    border-radius: 50%;
 }
