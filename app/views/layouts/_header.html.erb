@@ -12,12 +12,18 @@
     </ul>
     <ul class="userbar">
         <% if logged_in? %>
-            <li><a href="http://localhost:3000/users"><i class="far fa-user"></i></a></li>
+            <li><%= link_to gravatar_for(current_user, size: 50), current_user %></li>
         <% else %>
             <li><a href="http://localhost:3000/login"><i class="far fa-user"></i></a></li>
         <% end %> 
         <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
-        <li><a href="#"><i class="fas fa-bars"></i></a></li>
-    </ul>
-   
+        <li><i class="fas fa-bars" onclick="openHiddenMenu()"></i></li>
+    </ul>   
 </header>
+
+<script type="text/javascript">
+    function openHiddenMenu(){
+        var hiddenMenu = document.querySelector('.hidden-menu');
+        hiddenMenu.style.marginRight = "0";
+    }
+</script>

@@ -6,7 +6,7 @@ class ReviewsController < ApplicationController
 	def new
 	    if logged_in?
 	      @review = current_user.reviews.build
-	      @feed_items = current_user.feed.paginate(page: params[:page])
+	      @feed_items = current_user.feed.paginate(page: params[:page]).per_page(10)
 	    end
 	end
 
@@ -17,7 +17,7 @@ class ReviewsController < ApplicationController
         flash[:success] = "Review created!"
         redirect_to pages_review_url
       else
-      	@feed_items = current_user.feed.paginate(page: params[:page])
+      	@feed_items = current_user.feed.paginate(page: params[:page]).per_page(10)
         render 'static_pages/review'
       end
 	end

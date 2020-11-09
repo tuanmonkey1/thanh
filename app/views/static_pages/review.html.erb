@@ -13,5 +13,11 @@
 				<%= render 'shared/feed' %>
 			</div>
 		</div>
+		<div class="paginate">
+			<%= will_paginate @feed_items, params: { controller: :static_pages, action: :review }, id: "pages-review-paginate" %>
+		</div>
+	</div>
+<% else %>
+	<div class="none-review-wrapper" style="min-height: 60vh">
 	</div>
 <% end %>

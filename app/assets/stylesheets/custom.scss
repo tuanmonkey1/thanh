@@ -52,6 +52,8 @@ body{
 }
 
 
+/* Header */
+
 header{
     position: fixed;
     top: 0;
@@ -110,6 +112,17 @@ header .userbar li a{
     font-size: 30px;
     padding: 0 15px;
 }
+header .userbar li i{
+    color: #fff;
+    font-size: 30px;
+    padding: 0 15px;
+    cursor: pointer;
+}
+
+
+/* Home Page */
+
+
 .contentBx{
     width: 60%;
     max-width: 60%;
@@ -175,6 +188,58 @@ header .userbar li a{
     font-size: 22px;
     margin-left: 16px;
 }
+
+
+
+/* Home Hidden Menu */
+
+
+.hidden-menu{
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 450px;
+    background: #fff;
+    padding: 20px 50px;
+    margin-right: -450px;
+    transition: 0.3s;
+
+    .close-buttom{
+        position: relative;
+        margin-bottom: 80px;
+        cursor: pointer;
+
+        i{
+            font-size: 50px;
+        }
+    }
+    ul{
+        position: relative;
+
+        li{
+            list-style: none;
+            margin-bottom: 30px;
+
+            a{
+                color: #000;
+                font-size: 20px;
+                transition: 0.3s;
+                font-weight: bold;
+
+                &:hover{
+                    padding-left: 10px;
+                    color: #868686;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
+
+
+/* Footer */
+
 footer{
     width: 100%;
     padding: 15px 200px;
@@ -645,10 +710,11 @@ footer .small-footer span a{
         display: flex;
         justify-content: center;
         margin-bottom: 30px;
+
         .slide-review-content{
             width: 1200px;
             height: 550px;
-            background: #7FFFD4;
+            border: 1px solid #868686;
         }
     }
 
@@ -670,13 +736,13 @@ footer .small-footer span a{
                     margin-bottom: 20px;
                     width: 100%;
                     height: 250px;
-                    img{
-                        width: 100%;
-                        height: 100%;
-                        &:hover{
-                            filter: brightness(50%);
-                        }
-                    }
+                    transition: 0.3s;
+                    background: url('https://i0.wp.com/blog.64audio.com/wp-content/uploads/2019/05/A12t_narrow.jpg?resize=360%2C240&ssl=1');
+                    background-position: center;
+                    background-display: cover;
+                    &:hover{
+                        filter: brightness(50%);
+                    }                    
                 }
                 a{
                     text-decoration: none;
@@ -704,6 +770,11 @@ footer .small-footer span a{
                 }
             }
         }
+    }
+    .paginate{
+        width: 100%;
+        display: flex;
+        justify-content: center;
     }
 }
 
@@ -774,4 +845,15 @@ border-bottom: 1px solid $gray-lighter; }
             }
         }
     }
+}
+
+/* User Show */
+
+.user-show-wrapper{
+    margin-top: 100px;
+    padding-left: 200px;
+    padding-bottom: 100px;
+}
+.gravatar{
+    border-radius: 50%;
 }
