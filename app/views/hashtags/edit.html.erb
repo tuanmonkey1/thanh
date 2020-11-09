@@ -1,0 +1,17 @@
+<% provide(:title, "Edit hashtag") %>
+<div class="hashtag-wrapper">
+	<div class="hashtag-content-text">
+		<h1>Update Hashtag</h1>
+	</div>
+	<div class="hashtag-content">
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3" style="margin-left: 200px;">
+				<%= form_for(@hashtag) do |f| %>
+					<%= f.label :New_hashtag %>
+					<%= f.text_field :name, class: 'form-control' %>
+					<%= f.submit "Save changes", class: "btn btn-primary" %>
+				<% end %>
+			</div>
+		</div>
+	</div>
+</div>

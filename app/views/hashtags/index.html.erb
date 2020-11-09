@@ -1,0 +1,22 @@
+<% provide(:title, 'All hashtags') %>
+
+<div class="hashtag-wrapper">
+	<div class="hashtag-content-text">
+		<h1>All hashtags</h1>
+	</div>
+	<div class="hashtag-content">
+		<ul class="users">
+			<% @hashtags.each do |hashtag| %>
+			<li>
+			<%= hashtag.name %>
+			| <%= link_to 'Edit', edit_hashtag_path(hashtag) %>
+			| <%= link_to 'Destroy', hashtag, method: :delete, data: { confirm: 'Are you sure?' } %>
+			</li>
+			<% end %>
+		</ul>
+		<%= will_paginate %>
+		
+		<%= link_to 'New Hashtag', new_hashtag_path %>
+	</div>
+</div>
+   

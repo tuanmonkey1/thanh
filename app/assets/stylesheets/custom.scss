@@ -1,9 +1,19 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;900&display=swap');
 
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+body{
+    padding: 0;
+    width: 100%;
+}
+.container{
+    width: 100%;
+    padding: 0;
 }
 
 /* home background */
@@ -35,6 +45,8 @@
     justify-content: flex-start;
     align-items: center;
 }
+
+
 header{
     position: fixed;
     top: 0;
@@ -700,4 +712,14 @@ footer .small-footer span a{
             }
         }
     }
+}
+
+/* Users index */
+.users {
+list-style: none;
+margin: 0;
+li {
+overflow: auto;
+padding: 10px 0;
+border-bottom: 1px solid $gray-lighter; }
 }

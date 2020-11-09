@@ -21,10 +21,7 @@ ActiveRecord::Schema.define(version: 2020_11_05_072915) do
   end
 
   create_table "hashtags", force: :cascade do |t|
-    t.string "show_post"
-    t.string "delete_post"
-    t.string "create_hashtag"
-    t.string "search_post"
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
