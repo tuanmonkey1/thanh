@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get 'pages/how-to-order', to: 'static_pages#order'
   get 'pages/technology', to: 'static_pages#technology'
   get 'pages/review', to: 'static_pages#review'
+  get 'pages/products', to: 'static_pages#products'
   get '/login', to: 'sessions#new'
   get '/signup', to: 'users#new'
   post '/login', to: 'sessions#create'

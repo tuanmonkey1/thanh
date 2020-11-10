@@ -4,18 +4,23 @@ class ProductsController < ApplicationController
 		@products = Product.all
 	end
 	def show
-		@products = Product.find(params[:id])
+		@product = Product.find(params[:id])
 	end
 
 	def new
-		@products = Product.new
+		@product = Product.new
 	end
 	def create
-		@products= Product.new(products_params)
+		@product= Product.new(products_params)
+		if @product.save
+			redirect_to pages_iems_url
+		else
+			render 'new'
+		end
 	end
 	def update
-		@products = Product.find(params[:id])
-		if @products.update(products_params)
+		@product = Product.find(params[:id])
+		if @product.update(products_params)
 			flash[:success] = "Product updated"
 			redirect_to @products
 		else
@@ -23,12 +28,12 @@ class ProductsController < ApplicationController
 		end
 	end
 	def destroy
-		@products = Product.find(params[:id])
-		@products.destroy
+		@product = Product.find(params[:id])
+		@product.destroy
 		redirect_to @products
 	end
 	private
 	def products_params
-		params.require(:products).permit(:name, :price)
+		params.require(:product).permit(:title, :description, :image_url, :price, :distribute)
 	end
 end
