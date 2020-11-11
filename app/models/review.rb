@@ -16,4 +16,8 @@ class Review < ApplicationRecord
 	  image.variant(resize_to_limit: [500, 500])
   end
   
+  def self.search_by(search_term)
+    where("LOWER(title) LIKE :search_term", search_term: "%#{search_term.downcase}%")
+  end
+
 end

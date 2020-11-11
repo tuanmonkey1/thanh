@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
+  root 'static_pages#home'
   get 'sessions/new'
   get 'users/new'
-  root 'static_pages#home'
-
   get 'pages/home', to: 'static_pages#home'
   get 'pages/help', to: 'static_pages#help'
   get 'pages/iems', to: 'static_pages#iems'
@@ -19,9 +18,13 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
   resources :users	
   resources :hashtags
-  resources :reviews, only: [:create, :destroy, :show, :new] do
+  resources :reviews, only: [:create, :destroy, :show, :new, :index] do
+    collection { get :search, to: 'reviews#index' }
     resources :comments, only: [:index, :create]
+    resources :rate, only: [:index, :create]
   end
-  resources :products
+  resources :products do
+    resources :requests
+  end
   resources :comments
 end

@@ -32,3 +32,10 @@
 	<div class="none-review-wrapper" style="min-height: 60vh">
 	</div>
 <% end %>
+
+<script type="text/javascript">
+	window.addEventListener('scroll', function(){
+        var userInfo = document.querySelector('.userInfo');
+        userInfo.classList.toggle('sticky', window.scrollY > 76);
+    })
+</script>

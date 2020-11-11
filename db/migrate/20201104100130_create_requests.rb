@@ -3,7 +3,9 @@ class CreateRequests < ActiveRecord::Migration[6.0]
     create_table :requests do |t|
       t.integer :user_id
       t.integer :product_id
-      t.integer :product_price
+      t.integer :quantity
+      t.string  :phone
+      t.string  :address
 
       t.timestamps
     end
