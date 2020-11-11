@@ -11,7 +11,6 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema.define(version: 2020_11_09_085333) do
-<<<<<<< 70e47440952f4c313756cdbe3f7844c1cd30aaf8
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -33,8 +32,6 @@ ActiveRecord::Schema.define(version: 2020_11_09_085333) do
     t.datetime "created_at", null: false
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
-=======
->>>>>>> product
 
   create_table "comments", force: :cascade do |t|
     t.string "content"
@@ -45,10 +42,7 @@ ActiveRecord::Schema.define(version: 2020_11_09_085333) do
   end
 
   create_table "hashtags", force: :cascade do |t|
-    t.string "show_post"
-    t.string "delete_post"
-    t.string "create_hashtag"
-    t.string "search_post"
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -63,11 +57,10 @@ ActiveRecord::Schema.define(version: 2020_11_09_085333) do
   create_table "products", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.string "image_url"
     t.decimal "price", precision: 8, scale: 2
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "distribute"
+    t.integer "distribute"
   end
 
   create_table "rates", force: :cascade do |t|

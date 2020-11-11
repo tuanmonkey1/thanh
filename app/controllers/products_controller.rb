@@ -9,10 +9,13 @@ class ProductsController < ApplicationController
 
 	def new
 		@product = Product.new
+		@product_items = Product.where("distribute = ?", params[:distribute]).paginate(page: params[:page]).per_page(10)
 	end
 	def create
-		@product= Product.new(products_params)
+		@product = Product.new(products_params)
+		@product.image.attach(params[:product][:image])
 		if @product.save
+			 flash[:success] = "Product created!"
 			redirect_to pages_iems_url
 		else
 			render 'new'
@@ -32,8 +35,9 @@ class ProductsController < ApplicationController
 		@product.destroy
 		redirect_to @products
 	end
+
 	private
 	def products_params
-		params.require(:product).permit(:title, :description, :image_url, :price, :distribute)
+		params.require(:product).permit(:title, :description, :price, :distribute, :image)
 	end
 end

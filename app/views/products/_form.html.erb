@@ -1,24 +1,7 @@
-<%= form_for(@products) do |f| %>
-
-	<%= f.label :name %>
-	<%= f.text_field :name, class: 'form-control' , id: "name" %>
-
-    <%= f.label :title %>
-    <%= f.text_field :title, class: 'form-control' , id: "title" %>
-
-	<%= f.label :price %>
-	<%= f.number_field :price, class: 'form-control' , id: "price" %>
-
-	<span class="image">
-		<%= f.file_field :image, accept: "image/jpeg,image/gif,image/png" %>
-	</span>
-
-	<%= f.submit yield(:button_text), class: "submit" %>
 <%= form_for(@product) do |f| %>
     <% if @product.errors.any? %>
         <div id="error_explanation">
             <h2><%= pluralize(@product.errors.count, "error") %> prohibited this products from being saved:</h2>
- 
             <ul>
             <% @product.errors.full_messages.each do |message| %>
                 <li><%= message %></li>
@@ -26,7 +9,6 @@
             </ul>
         </div>
     <% end %>
- 
     <div class="field">
         <%= f.label :title %><br>
         <%= f.text_field :title %>
@@ -35,17 +17,19 @@
         <%= f.label :description %><br>
         <%= f.text_area :description, :rows => 6 %>
     </div>
-    <div class="field">
-        <%= f.label :image_url %><br>
-        <%= f.text_field :image_url %>
-    </div>
+
+    <span class="image">
+        <%= f.file_field :image %>
+    </span>
+    
     <div class="field">
         <%= f.label :price %><br>
         <%= f.number_field :price %>
     </div>
         <div class="field">
         <%= f.label :distribute %><br>
-        <%= f.number_field :distribute %>
+        <%= f.select :distribute, options_for_select(Product.distributes.map { |k, v| [k, v] }) %>
+
     </div>
     <div class="actions">
         <%= f.submit %>
