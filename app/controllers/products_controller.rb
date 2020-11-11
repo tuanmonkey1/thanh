@@ -33,7 +33,7 @@ class ProductsController < ApplicationController
 	def destroy
 		@product = Product.find(params[:id])
 		@product.destroy
-		redirect_to @products
+		redirect_to pages_iems_url
 	end
 
 	private
