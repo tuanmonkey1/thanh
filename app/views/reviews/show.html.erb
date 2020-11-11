@@ -1,0 +1,103 @@
+<div class="review-show-wrapper">
+	<div class="review-show-container">
+		<div class="review-show-content">
+			<div class="head-image">
+				<img src="https://i1.wp.com/blog.64audio.com/wp-content/uploads/2017/10/Chicago-Red.jpg?resize=759%2C500&ssl=1">
+			</div>
+			<h1><%= @review.title %></h1>
+			<span><%= time_ago_in_words(@review.created_at) %></span>
+			<div class="review-content">
+				<p class="hidden-text"><%= @review.content.html_safe %></p>
+			</div>
+		</div>
+		<ul class="review-show-sci">
+			<li><a href="#"><i id="sci1" class="fab fa-facebook-f"></i></a></li>
+			<li><a href="#"><i id="sci2" class="fab fa-twitter"></i></a></li>
+			<li><a href="#"><i id="sci3" class="far fa-envelope"></i></a></li>
+		</ul>
+		<div class="relative-review">
+			<h2>RELATED REVIEWS</h2>
+			<div class="relative-review-content">
+				
+			</div>
+		</div>
+		<div class="comment-container"></div>
+	</div>
+	<div class="review-show-right">
+		<div class="search-field">
+			<input type="text" placeholder="Search">
+			<i class="fas fa-search"></i>
+		</div>
+		<div class="popular-review">
+			<div class="review-show-right-content popular-review">
+				<h2>POPULAR REVIEWS</h2>
+				<div class="popular-review-contentBx">
+					<div class="popular-review-contentBx-img">
+						<img src="https://i0.wp.com/blog.64audio.com/wp-content/uploads/2013/11/blog-1-500x250.jpg?resize=100%2C65&ssl=1">
+					</div>
+					<div class="popular-review-contentBx-text">
+						<h3>3 GUIDELINES FOR MIXING IN-EAR MONITORS</h3>
+						<span>40 COMMENTS</span>
+					</div>
+				</div>
+				<div class="popular-review-contentBx">
+					<div class="popular-review-contentBx-img">
+						<img src="https://i2.wp.com/blog.64audio.com/wp-content/uploads/2016/08/64_Blog_Banner21.jpg?resize=100%2C65&ssl=1">
+					</div>
+					<div class="popular-review-contentBx-text">
+						<h3>REGARDING THE END OF 64 AUDIO’S PARTNERSHIP WITH ADEL</h3>
+						<span>5 COMMENTS</span>
+					</div>
+				</div>
+				<div class="popular-review-contentBx">
+					<div class="popular-review-contentBx-img">
+						<img src="https://i0.wp.com/blog.64audio.com/wp-content/uploads/2016/06/Dangers_Of_One_IEM.jpg?resize=100%2C65&ssl=1">
+					</div>
+					<div class="popular-review-contentBx-text">
+						<h3>THE DANGER OF WEARING ONLY ONE IEM</h3>
+						<span>10 COMMENTS</span>
+					</div>
+				</div>
+				<div class="popular-review-contentBx">
+					<div class="popular-review-contentBx-img">
+						<img src="https://i0.wp.com/blog.64audio.com/wp-content/uploads/2016/05/MichaelBrauer_Header.jpg?resize=100%2C65&ssl=1">
+					</div>
+					<div class="popular-review-contentBx-text">
+						<h3>MICHAEL BRAUER USES 64 AUDIO A12’S FOR CRITICAL LISTENING (VIDEO)</h3>
+						<span>24 COMMENTS</span>
+					</div>
+				</div>
+				<div class="popular-review-contentBx">
+					<div class="popular-review-contentBx-img">
+						<img src="https://i0.wp.com/blog.64audio.com/wp-content/uploads/2017/02/apex_Banner-copy.jpg?resize=100%2C65&ssl=1">
+					</div>
+					<div class="popular-review-contentBx-text">
+						<h3>CORRECTING THE RECORD</h3>
+						<span>86 COMMENTS</span>
+					</div>
+				</div>
+			</div>
+			<div class="review-show-right-content follow">
+				<h2>FOLLOW US</h2>
+				<ul class="popular-review-sci">
+					<li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+			        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+			        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+			        <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+				</ul>
+			</div>
+			<div class="review-show-right-content subscribe">
+				<h2>SUBSCRIBE</h2>
+				<div class="subscribe-form">
+					<h4>Email Address</h4>
+					<input type="email" name="email">
+					<h4>Name</h4>
+					<input type="text" name="name"><br>
+					<input type="submit" id="sub-submit">
+					<p>Please provide a valid email address.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>

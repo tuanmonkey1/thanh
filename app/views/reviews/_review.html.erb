@@ -4,7 +4,7 @@
 	</div>
 	<a href="#"><h2><%= review.title %></h2></a>
 	<span><%= time_ago_in_words(review.created_at) %></span>
-	<p><%= review.content %></p>
+	<p><%= review.descritpion %></p>
 	<% if current_user?(review.user) %>
 		<%= link_to "delete", review , method: :delete, data: { confirm: "You sure?" } %>
 	<% end %>
