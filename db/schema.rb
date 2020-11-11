@@ -42,10 +42,7 @@ ActiveRecord::Schema.define(version: 2020_11_09_023336) do
   end
 
   create_table "hashtags", force: :cascade do |t|
-    t.string "show_post"
-    t.string "delete_post"
-    t.string "create_hashtag"
-    t.string "search_post"
+    t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -58,9 +55,10 @@ ActiveRecord::Schema.define(version: 2020_11_09_023336) do
   end
 
   create_table "products", force: :cascade do |t|
-    t.string "name"
-    t.string "brand"
-    t.string "price"
+    t.string "title"
+    t.text "description"
+    t.integer "distribute"
+    t.decimal "price", precision: 8, scale: 2
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
