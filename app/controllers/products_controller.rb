@@ -1,7 +1,7 @@
 class ProductsController < ApplicationController
 
 	def index
-		@products = Product.all
+		@products = Product.where("distribute = ?", params[:distribute])
 	end
 	def show
 		@product = Product.find(params[:id])
