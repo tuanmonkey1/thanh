@@ -1,0 +1,98 @@
+<% provide(:title, @product.title) %>
+
+<div class="product-show-wrapper">
+	<div class="second-header">
+		<ul class="second-header-menu">
+			<li><a href="#overview">OVERVIEW</a></li>
+			<li><a href="#technology">TECHNOLOGY</a></li>
+			<li><a href="#specifications">SPECIFICATIONS</a></li>
+			<li><a href="#in-the-box">IN THE BOX</a></li>
+		</ul>
+	</div>
+	<div class="product-show-container">
+		<section class="product-show-overview" id="overview">
+			<div class="product-show-contentBx">
+				<h2><%= @product.title %></h2>
+				<h3><i class="fas fa-dollar-sign"></i> <%= @product.price %></h3>
+				<p><%= @product.content.html_safe %></p><br>
+				<p id="estimaed-time"><i class="far fa-clock"></i> Estimated build time: 4 Weeks</p>
+				<a href="#">ORDER</a>
+			</div>
+			<img src="https://i.shgcdn.com/19c2a752-26c4-4a18-9b04-751cf1d2d66b/-/format/auto/-/preview/3000x3000/-/quality/lighter/">
+		</section>
+		<section class="product-show-technology" id="technology">
+			<h2>TECHNOLOGY</h2>
+			<p><a href="#">Exclusive technologies that challenge traditional in-ear monitor designs to give you the absolute best listening experience<br>learn more about all of our technologies ></a></p>
+			<h3>A2e features the following unique technology:</h3>
+			<div class="tech-row">
+				<div class="tech-rowBx">
+					<div class="tech-content"><img src="https://i.shgcdn.com/c334217a-17b3-473c-bda9-4617914cebad/-/format/auto/-/preview/3000x3000/-/quality/lighter/">
+					<p>Only from 64 Audio, apex alleviates listener fatigue by releasing air pressure sealed in the ear canal. This venting enables musicians and music enthusiasts to listen more comfortably for longer.</p></div>
+					<a href="#"><i class="fas fa-plus-circle"></i> <span>LEARN MORE</span></a>
+				</div>
+				<div class="tech-rowBx">
+					<div class="tech-content"><img src="https://i.shgcdn.com/73240211-7ad4-4cb8-bd60-680f603d8520/-/format/auto/-/preview/3000x3000/-/quality/lighter/">
+					<p>Preserves the detail of your ear impressions using a new process of digital rendering and 3D printing for the most comfortable custom in-ear monitors available.</p></div>
+					<a href="#"><i class="fas fa-plus-circle"></i> <span>LEARN MORE</span></a>
+				</div>
+				<div class="tech-rowBx">
+					<div class="tech-content"><img src="https://i.shgcdn.com/d8811337-115e-4c00-8bac-3dfad99ba21a/-/format/auto/-/preview/3000x3000/-/quality/lighter/">
+					<p>Enables a consistent, reliable sound regardless of audio source.</p></div>
+					<a href="#"><i class="fas fa-plus-circle"></i> <span>LEARN MORE</span></a>
+				</div>
+			</div>
+		</section>
+		<section class="product-show-specifications" id="specifications">
+			<div class="specifications-content">
+				<div class="specifications-contentBx">
+					<h2>SPECIFICATIONS</h2>
+					<div class="specifications-contentTx">
+						<div class="specifications-contentTxW">Driver Type/Count</div>
+						<div class="specifications-contentTxL">Two precision balanced armature drivers</div>
+					</div>
+					<div class="specifications-contentTx">
+						<div class="specifications-contentTxW">Driver Configuration</div>
+						<div class="specifications-contentTxL">1 high, 1 mid/low</div>
+					</div>
+					<div class="specifications-contentTx">
+						<div class="specifications-contentTxW">Frequency Response</div>
+						<div class="specifications-contentTxL">20Hz – 18kHz</div>
+					</div>
+					<div class="specifications-contentTx">
+						<div class="specifications-contentTxW">Sensitivity</div>
+						<div class="specifications-contentTxL">114 dB/mW</div>
+					</div>
+					<div class="specifications-contentTx">
+						<div class="specifications-contentTxW">Impedance</div>
+						<div class="specifications-contentTxL">30Ω @ 1kHz</div>
+					</div>
+					<div class="specifications-contentTx">
+						<div class="specifications-contentTxW">Crossover</div>
+						<div class="specifications-contentTxL">Integrated 2-way passive Crossover</div>
+					</div>
+					<div class="specifications-contentTx">
+						<div class="specifications-contentTxW">Isolation</div>
+						<div class="specifications-contentTxL">-20dB with m20 apex module</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="product-show-in-the-box" id="in-the-box">
+			<img src="https://i.shgcdn.com/2bb2e15d-d1d6-4473-8936-98967c9f026e/-/format/auto/-/preview/3000x3000/-/quality/lighter/">
+			<div class="in-the-box-contentBx">
+				<h2>IN THE BOX</h2>
+				<div class="in-the-box-text">
+					<p>A2e Custom In-Ear Monitors</p>
+					<p>64 Audio Personalized Protective Case</p>
+					<p>Dehumidifier</p>
+					<p>Cleaning Tool</p>
+					<p>Shirt Clip</p>
+					<p>48" or 64" Detachable Professional Cable</p>
+					<p>m20 apex Modules</p>
+					<p>Round Sticker</p>
+					<p>Product Manual</p>
+				</div>
+			</div>
+		</section>
+	</div>
+</div>

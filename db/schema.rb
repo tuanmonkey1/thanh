@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 2020_11_09_023336) do
   create_table "products", force: :cascade do |t|
     t.string "title"
     t.text "description"
+    t.text "content"
     t.integer "distribute"
     t.decimal "price", precision: 8, scale: 2
     t.datetime "created_at", precision: 6, null: false
@@ -82,6 +83,7 @@ ActiveRecord::Schema.define(version: 2020_11_09_023336) do
   create_table "reviews", force: :cascade do |t|
     t.text "title"
     t.text "content"
+    t.text "descritpion"
     t.integer "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
