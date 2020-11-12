@@ -12,7 +12,7 @@
     </ul>
     <ul class="userbar">
         <% if logged_in? %>
-            <li><%= link_to gravatar_for(current_user, size: 40), current_user %></li>
+            <li style="margin-top: -5px;"><%= link_to gravatar_for(current_user, size: 35), current_user %></li>
         <% else %>
             <li><a href="http://localhost:3000/login"><i class="far fa-user"></i></a></li>
         <% end %> 

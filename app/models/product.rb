@@ -1,8 +1,9 @@
 class Product < ApplicationRecord
 	has_one_attached :image
 	validates :title, presence: true, length: { maximum: 50 }
-	validates :description, presence: true, length: { maximum: 50 }
+	validates :description, presence: true, length: { maximum: 100 }
 	validates :price, presence: true, length: { maximum: 50 }
+	validates :content, presence: true
 	validates :distribute, presence: true
 	validates :image, content_type: { in: %w[image/jpeg image/gif image/png],
 									message: "must be a valid image format" },
