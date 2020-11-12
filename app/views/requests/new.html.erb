@@ -1,30 +1,32 @@
-<% provide(:title, 'request') %>
+s<% provide(:title, 'request') %>
 
 	
 	<div class="request-wrapper">
 	  <div class="request-order-content">
 
-	  	
-	  	<div class="img"><%= link_to image_tag("audio1.jpg", width:"90px" ) %>
-	  	  <span><%= @product.name %>><span>	
-	  	  <p><%= @product.price %></p>	  	
+	  	<div class="request-head">
+	  		<div class="img"><%= link_to image_tag("audio1.jpg", width:"90px" ) %></div>
+	  	    <div class="product-title"><%= @product.title %></div>	
+	  	    <div class="product-price"><%= @product.price %></div>
 	  	</div>
 	    <div class="order-form">
-	    <%= form_for [@product, @request] do |f| %>
-	    <%= render 'shared/error_messages', object: @request %>
-		<%= f.label :name %>
-		<%= f.text_field :name, class: 'form-control' , id: "name" %>
+		    <%= form_for [@product, @request] do |f| %>
+		    <%= render 'shared/error_messages', object: @request %>
+			<%= f.label :name %>
+			<%= f.text_field :name, class: 'form-control' , id: "name" %><br>
 
-		<%= f.label :address %>
-		<%= f.text_field :address, class: 'form-control' , id: "address" %>
+			<%= f.label :address %>
+			<%= f.text_field :address, class: 'form-control' , id: "address" %><br>
 
-		<%= f.label :phone %>
-		<%= f.text_field :phone, class: 'form-control' , id: "phone" %>
+			<%= f.label :phone %>
+			<%= f.text_field :phone, class: 'form-control' , id: "phone" %><br>
+			
+			<div class="quantity-text">
+			  <%= f.label :quantity %>
+			  <%= f.number_field :quantity, class: 'form-control' , id: "quantity" %>
+			</div>
+
 		
-		<div class="quantity-text">
-		  <%= f.label :quantity %>
-		  <%= f.number_field :quantity, class: 'form-control' , id: "quantity" %>
-		</div>
 
 		<div class="total">
 			<b>Total Money :</b>
@@ -35,13 +37,10 @@
         	<a href="http://localhost:3000/pages/iems"> Back</a>       	
         </div>
         <div><%= f.submit "Order", id: "order" %></div>
-
+        <% end %>
         </div>
       </div>
     </div>
-
-
-	<%end%>
 
 
 	
