@@ -147,3 +147,83 @@ Review.create!(title: 'THE BENEFITS OF SWITCHING TO A SILENT STAGE',
 			<p>Let us know in the comments if you use a silent stage.</p>',
 	descritpion: 'One of the topics we hear come up time and time again is the idea of a “silent stage.”  This idea isn’t new by any means but has shown to be more prevalen...',
 	user_id: 1)
+
+
+Product.create!(
+	title: "A2e",
+	technology: "2-Driver Earphone",
+	description: "All the accuracy, balance, and comfort you expect from a professional IEM at an affordable price.",
+	content: '<p>The most advanced two-driver custom in-ear monitor on the market. The A2e is ideal for emerging artists, bands, and anyone seeking a professional in-ear monitor at an affordable price. Its dual-drivers offer a balanced sound signature with clear highs, and capable mids and lows.</p>
+	<p>New and improved for 2018, the A2e now features LID™ for consistent sound across sources.</p>',
+	distribute: 1,
+	price: "499"
+)
+Product.create!(
+	title: "A3e",
+	technology: "3-Driver Earphone",
+	description: "Great for single-instrument artists, a balanced sound signature with clear highs, capable mids and a deeper bass.",
+	content: '<p>Our versatile, three-driver custom in-ear monitor provides impressive clarity and warmth for any instrument or genre. The A3e is ideal for vocalists, drummers, or any single-instrumentalists looking for a professional IEM to use onstage. This is a great option for artists seeking a detailed soundstage, neutral tuning, and a transparent and musical sound.</p>',
+	distribute: 1,
+	price: "699"
+)
+Product.create!(
+	title: "A4t",
+	technology: "4-Driver Earphone",
+	description: "Perfect for moderate mixes, enjoy distinct mids, extended highs, and full bass.",
+	content: "<p>The perfect in-ear monitor for anyone looking for a balanced, full-spectrum sound. The A4t delivers an immersive listening experience with a dynamic mid-range and powerful bass. It's a great option for single-instrumentalists and moderate mixes.</p>
+	<p>The A4t is the entry point for our exclusive tia™ technology, which provides an amazingly lifelike clarity and musicality to the sound signature.</p>",
+	distribute: 1,
+	price: "999"
+)
+Product.create!(
+	title: "A6t",
+	technology: "2-Driver Earphone",
+	description: "A favorite for multi-instrumentalists, engineers and audiophiles for extended highs, smooth mids, defined lower-mids, and powerful lows.",
+	content: '<p>The in-ear monitor of choice for many touring musicians and discerning music lovers. The A6t offers detailed highs, smooth mids, defined lower-mids, and deep lows. Multi-instrumentalists, engineers and audiophiles can expect great extension and more headroom from this model.</p>',
+	distribute: 1,
+	price: "1299"
+)
+Product.create!(
+	title: "N8",
+	technology: "9-Driver Earphone",
+	description: "Created in collaboration with legendary bassist, Nathan East. A dynamic IEM with impressive bass response, detailed highs and ultra-smooth mids.",
+	content: "<p>The N8, or 'Nate,' is an industry-first signature in-ear monitor developed in collaboration with legendary bassist and producer, Nathan East. This hybrid in-ear monitor offers unique textures and rich, soulful sound. It's powerful lows and deep, airy sub-bass define the sound signature, making it a favorite among multi-instrumentalists, audiophiles, engineers, and, of course, bassists.</p>",
+	distribute: 2,
+	price: "1699"
+)
+Product.create!(
+	title: "A12t",
+	technology: "12-Driver Earphone",
+	description: "This custom IEM does it all - a great option for engineers, audiophiles, monitors and multi-instrumentalists.",
+	content: "<p>The ultimate in-ear monitor for professionals onstage or in the studio. The A12t does it all, delivering detailed highs, distinguished upper and lower mid-range detail, a clean bass response, and strong sub-bass. Offering reference-level detail, this IEM is among the best for multi-instrumentalists, engineers, sound monitors, and audiophiles.</p><br>
+	<p>This model is also available as a Universal IEM, the U12t.</p>",
+	distribute: 2,
+	price: "1999"
+)
+Product.create!(
+	title: "A18t",
+	technology: "18-Driver Earphone",
+	description: "This custom IEM does it all - a great option for engineers, audiophiles, monitors and multi-instrumentalists.",
+	content: "<p>Packed with an unbelievable 18 balanced armature drivers per ear, the A18t is our top-of-the-line reference in-ear monitor. This industry-first design pushes the limits of what a reference monitor can be with incredible detail, extension, and unmatched clarity across all frequencies with a powerful low-end and extended sub-bass. The A18t is preferred by critical listeners in engineering, monitoring and mixing, and audiophiles.</p><br>
+	<p>This model is also available as a Universal IEM, the U18t.</p>",
+	distribute: 2,
+	price: "2999"
+)
+Product.create!(
+	title: "Nio",
+	technology: "9-Driver Earphone",
+	description: "Universal-fit earphone for the music lover seeking detailed highs, separated and clear mids, with naturally musical low frequencies.",
+	content: "<p>Our first high driver-count hybrid, Nio is a universal-fit earphone featuring a 9mm dynamic driver and 8 balanced armature drivers. With a sound signature characterized by extended lows and a rich 3-dimensional soundstage, Nio’s smooth treble and natural warmth will provide hours of enjoyable listening for all genres of music.</p><br>
+	<p>Each ergonomic shell is machined out of a solid piece of aluminum and finished with a striking blue abalone faceplate.</p>",
+	distribute: 3,
+	price: "1699"
+)
+Product.create!(
+	title: "tia Trio",
+	technology: "3-Driver Earphone",
+	description: "Perfect for audiophiles seeking a clear, laid back, 3-dimensional sound for hours of easy listening.",
+	content: "<p>The perfect in-ear monitor for listeners looking for the sweet spot between reference-level clarity and a smooth sound signature for extended listening. The tia Trió is a great earphone for audiophiles seeking a clear, laid back, 3D sound in any genre.</p><br>
+	<p>Tia Trió features our complete, three-part tia™ system housed in an ergonomic shell, machined from a solid piece of aluminum and finished with elegant, brushed aluminum faceplates.</p>",
+	distribute: 3,
+	price: "2299"
+)

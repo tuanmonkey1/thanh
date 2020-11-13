@@ -64,6 +64,7 @@ header{
     justify-content: space-between;
     align-items: center;
     padding: 10px 200px;
+    transition: 0.5s;
 }
 .header-layout{
     position: fixed;
@@ -203,6 +204,7 @@ header.sticky{
 
 .hidden-menu{
     position: fixed;
+    z-index: 100;
     top: 0;
     right: 0;
     height: 100vh;
@@ -467,27 +469,37 @@ footer .small-footer span a{
     margin-left: -3px;
 }
 .iems-wrapper .clip.clip1{
-    background: url('https://i.shgcdn.com/e5f14d0f-fdb7-4ada-bf5f-f635a504f7c1/-/format/auto/-/preview/3000x3000/-/quality/lighter/');
+    background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url('https://i.shgcdn.com/e5f14d0f-fdb7-4ada-bf5f-f635a504f7c1/-/format/auto/-/preview/3000x3000/-/quality/lighter/');
     background-position: center;
     background-size: cover;
 }
 .iems-wrapper .clip.clip1:hover{
     min-width: 850px;
+    background: linear-gradient( rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0) ), url('https://i.shgcdn.com/e5f14d0f-fdb7-4ada-bf5f-f635a504f7c1/-/format/auto/-/preview/3000x3000/-/quality/lighter/');
+    background-position: center;
+    background-size: cover;
 }
 .iems-wrapper .clip.clip2{
-    background: url('https://i.shgcdn.com/d620dff9-95bb-4a5c-964c-3b6d07794a05/-/format/auto/-/preview/3000x3000/-/quality/lighter/');
+    background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url('https://i.shgcdn.com/d620dff9-95bb-4a5c-964c-3b6d07794a05/-/format/auto/-/preview/3000x3000/-/quality/lighter/');
     background-position: center;
     background-size: cover;
 }
 .iems-wrapper .clip.clip2:hover{
     min-width: 850px;
-}
-.iems-wrapper .clip.clip3{
-    background: url('https://i.shgcdn.com/575cf84b-ad18-4e3e-bf8a-e170c0b05e1d/-/format/auto/-/preview/3000x3000/-/quality/lighter/');
+    background: linear-gradient( rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0) ), url('https://i.shgcdn.com/d620dff9-95bb-4a5c-964c-3b6d07794a05/-/format/auto/-/preview/3000x3000/-/quality/lighter/');
     background-position: center;
     background-size: cover;
 }
-
+.iems-wrapper .clip.clip3{
+    background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url('https://i.shgcdn.com/575cf84b-ad18-4e3e-bf8a-e170c0b05e1d/-/format/auto/-/preview/3000x3000/-/quality/lighter/');
+    background-position: center;
+    background-size: cover;
+}
+.iems-wrapper .clip.clip3:hover{
+    background: linear-gradient( rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0) ), url('https://i.shgcdn.com/575cf84b-ad18-4e3e-bf8a-e170c0b05e1d/-/format/auto/-/preview/3000x3000/-/quality/lighter/');
+    background-position: center;
+    background-size: cover;
+}
 
 
 
@@ -547,11 +559,32 @@ footer .small-footer span a{
     font-weight: 100;
     margin-bottom: 10px;
 }
+.login-form form #title,
 .login-form form #price,
 .login-form form #name,
 .login-form form #email,
 .login-form form #pwd{
     height: 40px;
+    outline: none;
+    border: 0.5px solid #3a3a3a;
+    margin-bottom: 20px;
+    width: 750px;
+    font-size: 18px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.login-form form .areaS{
+    height: 100px;
+    outline: none;
+    border: 0.5px solid #3a3a3a;
+    margin-bottom: 20px;
+    width: 750px;
+    font-size: 18px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.login-form form .areaL{
+    height: 200px;
     outline: none;
     border: 0.5px solid #3a3a3a;
     margin-bottom: 20px;
@@ -853,6 +886,7 @@ footer .small-footer span a{
                 margin: 10px;
                 border-bottom: 1px solid #868686;
                 padding-bottom: 30px;
+                padding-right: 10px;
                 .image{
                     margin-bottom: 20px;
                     width: 100%;
@@ -1289,13 +1323,118 @@ footer .small-footer span a{
         height: 100%;
         background: red;
         position: absolute;
-        z-index: -100;
+        z-index: 0;
+        display: flex;
+        
+        .template{
+            position: relative;
+            width: 100px;
+            height: 100%;
+            .templateTx{
+                position: relative;
+                transform: rotate(-90deg);
+                margin-top: 250px;
+                a{
+                    position: relative;
+                    z-index: 20;
+                    color: #fff;
+                    font-family: Roboto,sans-serif;
+                    font-size: 35px;
+                    font-weight: 600;
+                    &:hover{
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+        
+        .templateBx{
+            position: relative;
+            width: 100%;
+            margin-top: 160px;
+            padding: 0 40px;
+            h2{
+                position: relative;
+                margin-bottom: 30px;
+                a{
+                    position: relative;
+                    color: #fff;
+                    font-family: Roboto,sans-serif;
+                    font-size: 50px;
+                    font-weight: 600;
+                    &:hover{
+                        text-decoration: none;
+                    }
+                }
+            }
+            p{  
+                width: 80%;
+                color: #fff;
+                font-family: Roboto,sans-serif;
+                font-size: 20px;
+                font-weight: 300;
+            }
+        }
+        .template.stage1{
+            background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url('https://i.shgcdn.com/d620dff9-95bb-4a5c-964c-3b6d07794a05/-/format/auto/-/preview/3000x3000/-/quality/lighter/');
+            background-position: center;
+            background-size: cover;
+        }
+        .template.stage2{
+            background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url('https://i.shgcdn.com/575cf84b-ad18-4e3e-bf8a-e170c0b05e1d/-/format/auto/-/preview/3000x3000/-/quality/lighter/');
+            background-position: center;
+            background-size: cover;
+
+        }
+        .template.stage3{
+            width: 300px;
+            background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url('https://i.shgcdn.com/e5f14d0f-fdb7-4ada-bf5f-f635a504f7c1/-/format/auto/-/preview/3000x3000/-/quality/lighter/');
+            background-position: center;
+            background-size: cover;
+        }
+        .template.studio1{
+            background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url('https://i.shgcdn.com/e5f14d0f-fdb7-4ada-bf5f-f635a504f7c1/-/format/auto/-/preview/3000x3000/-/quality/lighter/');
+            background-position: center;
+            background-size: cover;
+        }
+        .template.studio2{
+            background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url('https://i.shgcdn.com/575cf84b-ad18-4e3e-bf8a-e170c0b05e1d/-/format/auto/-/preview/3000x3000/-/quality/lighter/');
+            background-position: center;
+            background-size: cover;
+
+        }
+        .template.studio3{
+            width: 300px;
+            background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url('https://i.shgcdn.com/d620dff9-95bb-4a5c-964c-3b6d07794a05/-/format/auto/-/preview/3000x3000/-/quality/lighter/');
+            background-position: center;
+            background-size: cover;
+        }
+        .template.audiophile1{
+            background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url('https://i.shgcdn.com/e5f14d0f-fdb7-4ada-bf5f-f635a504f7c1/-/format/auto/-/preview/3000x3000/-/quality/lighter/');
+            background-position: center;
+            background-size: cover;
+        }
+        .template.audiophile2{
+            background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url('https://i.shgcdn.com/d620dff9-95bb-4a5c-964c-3b6d07794a05/-/format/auto/-/preview/3000x3000/-/quality/lighter/');
+            background-position: center;
+            background-size: cover;
+
+        }
+        .template.audiophile3{
+            width: 300px;
+            background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url('https://i.shgcdn.com/575cf84b-ad18-4e3e-bf8a-e170c0b05e1d/-/format/auto/-/preview/3000x3000/-/quality/lighter/');
+            background-position: center;
+            background-size: cover;
+        }
     }
     .product-collection-container{
         padding: 0 50px;
         padding-top: 120px;
         position: absolute;
         left: 500px;
+        a:hover{
+            text-decoration: none;
+        }
 
         h1{
             font-family: 'Raleway', sans-serif;

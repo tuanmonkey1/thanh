@@ -1,8 +1,11 @@
 <div class="review-contentBx">
-	<div class="image">
-		
-	</div>
-	<a href="#"><h2><%= review.title %></h2></a>
+	<%= link_to(review_path(review)) do %>
+		<div class="image">
+		</div>
+	<% end %>
+	<%= link_to(review_path(review)) do %>
+		<h2><%= review.title %></h2>
+	<% end %>
 	<span><%= l(review.created_at, locale: :en) %></span>
 	<p><%= review.descritpion %></p>
 	<% if current_user?(review.user) %>

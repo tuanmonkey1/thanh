@@ -1,0 +1,31 @@
+<% provide(:title, 'Product Collection') %>
+
+<div class="product-collection-wrapper">
+    <div class="template-collection">
+        <div class="template audiophile1">
+            <div class="templateTx"><%= link_to "stage", collections_stage_path(distribute: Product.distributes[:stage]) %></div>
+        </div>
+        <div class="template audiophile2">
+            <div class="templateTx"><%= link_to "studio", collections_studio_path(distribute: Product.distributes[:studio]) %></div>
+        </div>
+        <div class="template audiophile3">
+            <div class="templateBx">
+                <h2><%= link_to "audiophile", collections_audiophile_path(distribute: Product.distributes[:audiophile]) %></h2>
+                <p>IEMs designed for the most discerning music lovers</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="product-collection-container">
+
+        <h1>Products</h1>
+        <%= render 'product_collection' %>
+
+    </div>
+</div>
+
+ 
+
+ 
+
+

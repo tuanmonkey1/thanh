@@ -1,8 +1,5 @@
 class ProductsController < ApplicationController
 
-	def index
-		@products = Product.where("distribute = ?", params[:distribute])
-	end
 	def show
 		@product = Product.find(params[:id])
 		
@@ -22,11 +19,16 @@ class ProductsController < ApplicationController
 			render 'new'
 		end
 	end
+
+	def edit
+		@product = Product.find(params[:id])
+	end
+
 	def update
 		@product = Product.find(params[:id])
 		if @product.update(products_params)
 			flash[:success] = "Product updated"
-			redirect_to @products
+			redirect_to collections_stage_url(distribute: Product.distributes[:stage])
 		else
 			render 'edit'
 		end
@@ -34,11 +36,11 @@ class ProductsController < ApplicationController
 	def destroy
 		@product = Product.find(params[:id])
 		@product.destroy
-		redirect_to pages_iems_url
+		redirect_to collections_stage_url(distribute: Product.distributes[:stage])
 	end
 
 	private
 	def products_params
-		params.require(:product).permit(:title, :description,:content, :price, :distribute, :image)
+		params.require(:product).permit(:title, :technology, :description,:content, :price, :distribute, :image)
 	end
 end

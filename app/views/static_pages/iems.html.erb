@@ -4,16 +4,16 @@
     <div class="clip clip1">
         <h2>for <span>stage</span></h2>
         <p>Award-winning custom IEMs<br>for performing musicians</p>
-        <%= link_to "EXPLORE", products_path(distribute: Product.distributes[:stage]) %>
+        <%= link_to "EXPLORE", collections_stage_path(distribute: Product.distributes[:stage]) %>
     </div>
     <div class="clip clip2">
         <h2>for <span>studio</span></h2>
         <p>Accuracy and resolution<br>engineered for the studio</p>
-        <%= link_to "EXPLORE", products_path(distribute: Product.distributes[:studio]) %>
+        <%= link_to "EXPLORE", collections_studio_path(distribute: Product.distributes[:studio]) %>
     </div>
     <div class="clip clip3">
         <h2>for <span>audiophile</span></h2>
         <p>IEMs designed for the most<br>discerning music lovers</p>
-        <%= link_to "EXPLORE", products_path(distribute: Product.distributes[:audiophile]) %>
+        <%= link_to "EXPLORE", collections_audiophile_path(distribute: Product.distributes[:audiophile]) %>
     </div>
 </div>
