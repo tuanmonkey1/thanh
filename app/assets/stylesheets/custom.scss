@@ -122,6 +122,10 @@ header .userbar li i{
     text-decoration: none;
 }
 
+header.sticky{
+    background: #000;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.7);
+}
 
 /* Home Page */
 
@@ -211,10 +215,38 @@ header .userbar li i{
     .close-buttom{
         position: relative;
         margin-bottom: 80px;
-        cursor: pointer;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
 
         i{
             font-size: 50px;
+            cursor: pointer;
+        }
+        ul{
+            padding-top: 35px;
+            width: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            li{
+                list-style: none;
+                margin-left: 20px;
+                a{
+                    text-decoration: none;
+                    img{
+                        width: 40px;
+                        height: 40px;
+                        border-radius: 50%;
+                    }
+                    &:hover{
+                        padding-left: 0;
+                        text-decoration: none;
+                    }
+                }
+            }
         }
     }
     ul{
@@ -872,12 +904,6 @@ footer .small-footer span a{
     }
 }
 
-
-/* Users index */
-
-
-
-
 /* Review Form */
 
 .review-form-wrapper{
@@ -940,14 +966,77 @@ footer .small-footer span a{
 /* User Show */
 
 .user-show-wrapper{
-    margin-top: 100px;
-    padding-left: 200px;
-    padding-bottom: 100px;
+    padding: 0 200px;
+    padding-top: 150px;
+    width: 100%;
+    min-height: 70vh;
+    
+    h2{
+        text-align: center;
+        color: #000;
+        font-size: 35px;
+        font-family: Montserrat;
+        font-weight: 550;
+        letter-spacing: 2px;
+    }
+    h4{
+        text-align: center;
+        font-size: 18px;
+        font-family: Montserrat;
+        a{
+            color: #868686;
+        }
+    }
+    .user-info-container{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        .order-history{
+            width: 900px;
+            h3{
+                font-family: Roboto,sans-serif;
+                font-size: 24px;
+                letter-spacing: 1px;
+                margin-bottom: 20px;
+            }
+            p{
+                font-family: Roboto,sans-serif;
+                font-size: 16px;
+                letter-spacing: 1px;
+            }
+        }
+        .user-info-content{
+            width: 500px;
+            h3{
+                font-family: Roboto,sans-serif;
+                font-size: 24px;
+                letter-spacing: 1px;
+                margin-bottom: 20px;
+            }
+            p{
+                font-family: Roboto,sans-serif;
+                font-size: 16px;
+                letter-spacing: 1px;
+                line-height: 30px;
+                span{
+                    font-weight: bolder;
+                    font-size: 18px;
+                }
+            }
+            a{
+                margin-top: 70px;
+                font-family: Roboto,sans-serif;
+                font-size: 16px;
+                line-height: 30px;
+            }
+        }
+    }
 }
 .gravatar{
     border-radius: 50%;
 }
-
 
 /* Review Show */
 

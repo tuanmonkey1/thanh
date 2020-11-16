@@ -3,7 +3,7 @@
 		
 	</div>
 	<a href="#"><h2><%= review.title %></h2></a>
-	<span><%= time_ago_in_words(review.created_at) %></span>
+	<span><%= l(review.created_at, locale: :en) %></span>
 	<p><%= review.descritpion %></p>
 	<% if current_user?(review.user) %>
 		<%= link_to "delete", review , method: :delete, data: { confirm: "You sure?" } %>

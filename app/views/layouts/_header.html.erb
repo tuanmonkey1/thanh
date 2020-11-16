@@ -4,11 +4,11 @@
         <a href="http://localhost:3000"><img src="https://cdn.shopify.com/s/files/1/0411/4717/0966/files/Horizontial-Logo-White-100px_300x300.png?v=1598566575"></a>
     </div>
     <ul class="menubar">
-        <li><%= link_to "IN-EAR MONITORS", pages_iems_path %></li>
-        <li><%= link_to "TECHNOLOGY", pages_technology_path %></li>
-        <li><%= link_to "REVIEW", pages_review_path %></li>
-        <li><%= link_to "SUPPORT", pages_help_path %></li>
-        <li><%= link_to "HOW TO ORDER", pages_how_to_order_path %></li>
+        <li><%= link_to t('header.in_ear_monitors'), pages_iems_path %></li>
+        <li><%= link_to t('header.technology'), pages_technology_path %></li>
+        <li><%= link_to t('header.review'), pages_review_path %></li>
+        <li><%= link_to t('header.support'), pages_help_path %></li>
+        <li><%= link_to t('header.how_to_order'), pages_how_to_order_path %></li>
     </ul>
     <ul class="userbar">
         <% if logged_in? %>
