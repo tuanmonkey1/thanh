@@ -30,4 +30,61 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  time:
+    formats:
+      own: "%H:%M:%S, %d %B"
+      default: "%d-%m-%Y"
+      long: "%d %B, %Y"
+      short: "%d %b"
+  header:
+    in_ear_monitors: 'IN-EAR MONITORS'
+    technology: 'TECHNOLOGY'
+    review: 'REVIEW'
+    support: 'SUPPORT'
+    how_to_order: 'HOW TO ORDER'
+  hidden_menu:
+    64family: '64 FAMILY'
+    legacy_upgrade: 'LEGACY UPGRADE'
+    review: 'REVIEW'
+    contact: 'CONTACT US'
+    buy: 'WHERE TO BUY'
+    account: 'MY ACCOUNT'
+  footer:
+    products: 'PRODUCTS'
+    technology: 'TECHNOLOGY'
+    about_us: 'ABOUT US'
+    support: 'SUPPORT'
+    contact: 'CONTACT'
+  users:
+    index:
+      user: 'Users'
+      name: 'Name'
+      email: 'Email'
+      show: 'Show'
+      edit: 'Edit'
+      destroy: 'Destroy'
+      new_user: 'New User'
+      date: 'Create date'
+  form:
+    label:
+      name: 'Name'
+      title: 'Title'
+      email: 'Email'
+      description: 'Description'
+      content: 'Content'
+      select_picture: 'Select picture'
+      password: 'Password'
+      price: 'Price'
+      password_confirmation: 'Password confirmation'
+    submit:
+      submit: 'Submit'
+      login: 'Login'
+      signup: 'Signup'
+      sign_up_now: 'Sign up now!'
+      new_user: 'New user'
+      remember_me: 'Remember me on this computer'
+      create: 'Create'
+      save: 'Save change'
+      update: 'Update your profile'
+      post: 'Post'
+      new_review: 'Create New Review'

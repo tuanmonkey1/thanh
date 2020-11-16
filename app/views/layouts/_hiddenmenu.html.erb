@@ -1,12 +1,30 @@
 <div class="hidden-menu">
-    <div class="close-buttom"><i class="fas fa-times" onclick="closeHiddenMenu()"></i></div>
+    <div class="close-buttom">
+        <i class="fas fa-times" onclick="closeHiddenMenu()"></i>
+        <ul>
+            <li>
+                <%= link_to(locale:"en") do %>
+                    <img src="https://www.lineex.es/wp-content/uploads/2016/06/english-flag.png">
+                <% end %>
+            </li>
+            <li>
+                <%= link_to(locale:"vi") do %>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/21/Flag_of_Vietnam.svg/1200px-Flag_of_Vietnam.svg.png">
+                <% end %>
+            </li>
+        </ul>
+    </div>
     <ul>
-        <li><a href="">64 FAMILY</a></li>
-        <li><a href="">LEGACY UPGRADE</a></li>
-        <li><a href="">REVIEW</a></li>
-        <li><a href="">CONTACT US</a></li>
-        <li><a href="">WHERE TO BUY</a></li>
-        <li><a href="">MY ACCOUNT</a></li>
+        <li><a href=""><%= t('hidden_menu.64family') %></a></li>
+        <li><a href=""><%= t('hidden_menu.legacy_upgrade') %></a></li>
+        <li><%= link_to t('hidden_menu.review'), pages_review_url %></a></li>
+        <li><a href=""><%= t('hidden_menu.contact') %></a></li>
+        <li><a href=""><%= t('hidden_menu.buy') %></a></li>
+        <% if logged_in? %>
+            <li><%= link_to t('hidden_menu.account'), user_path(@user) %></li>
+        <% else %>
+            <li><%= link_to t('hidden_menu.account'), login_path %></li>
+        <% end %>
     </ul>
 </div>
 

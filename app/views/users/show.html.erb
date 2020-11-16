@@ -1,22 +1,19 @@
-<% provide(:title, @user.name) %>
+<% provide(:title, "Account") %>
 
 <div class="user-show-wrapper">
-  <div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-     <h1><%= gravatar_for @user %>
-     <%= @user.name %>
-     </h1>
-    </section>
-  </aside>
-  </div>
-<div class="row">
-	<aside class="col-md-4">
-		<section class="user_info">
-			<h1>
-				<%= gravatar_for @user %>
-				<%= @user.name %>
-			</h1>
-		</section>
-	</aside>
+    <h2>My Account</h2>
+    <h4><%= link_to "Log out", logout_path, method: :delete %></h4>
+    <div class="user-info-container">
+      <div class="order-history">
+        <h3>ORDER HISTORY</h3>
+        <p>You haven't placed any orders yet.</p>
+        <p>* Order History is available for orders starting July 2019. If you’d like access to order summaries for orders placed before that date, please reach out to support@64audio.com</p>
+      </div>
+      <div class="user-info-content">
+        <h3>ACCOUNT DETAILS</h3>
+        <p><span><%= t('users.index.name') %>: </span><%= @user.name %></p>
+        <p><span><%= t('users.index.email') %>: </span><%= @user.email %></p>
+        <%= link_to t('users.index.edit'), edit_user_path(@user) %>
+      </div>
+    </div>
 </div>
