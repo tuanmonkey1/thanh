@@ -1,0 +1,18 @@
+development:
+  cloud_name: dgcsxppnx
+  api_key: '475125976235474'
+  api_secret: thtWmwfEYYhsY553z7huIYBzDwU
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: dgcsxppnx
+  api_key: '475125976235474'
+  api_secret: thtWmwfEYYhsY553z7huIYBzDwU
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: dgcsxppnx
+  api_key: '475125976235474'
+  api_secret: thtWmwfEYYhsY553z7huIYBzDwU
+  enhance_image_tag: true
+  static_file_support: false

@@ -33,7 +33,7 @@ en:
   time:
     formats:
       own: "%H:%M:%S, %d %B"
-      default: "%d-%m-%Y"
+      default: "%d/%m/%Y"
       long: "%d %B, %Y"
       short: "%d %b"
   header:
@@ -76,6 +76,8 @@ en:
       password: 'Password'
       price: 'Price'
       password_confirmation: 'Password confirmation'
+      technology: 'Technology'
+      distribute: 'Distribute'
     submit:
       submit: 'Submit'
       login: 'Login'
@@ -88,3 +90,7 @@ en:
       update: 'Update your profile'
       post: 'Post'
       new_review: 'Create New Review'
+      delete: 'Delete'
+      new_product: 'New product'
+      update_product: 'Update product'
+      create_review: 'Create new review'

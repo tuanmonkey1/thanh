@@ -7,23 +7,23 @@
                 account due to 64 Audio transitioning to a new system on 1/11/2020. Your email address will
                 automatically
                 link to your previous account.</p>
-        <h1>Login</h1>
+        <h1><%= t('form.submit.login') %></h1>
         <div class="login-form">
             <%= form_for(:session, url: login_path) do |f| %>
 
-                <%= f.label :email %>
+                <%= f.label t('form.label.email') %>
                 <%= f.email_field :email, id: "email" %>
 
-                <%= f.label :password %>
+                <%= f.label t('form.label.password') %>
                 <%= f.password_field :password, id: "pwd" %>
                 
                 <%= f.label :remember_me, class: "checkbox inline" do %>
                     <%= f.check_box :remember_me %>
-                    <span>Remember me on this computer</span>
+                    <span><%= t('form.submit.remember_me') %></span>
                 <% end %>
-                <%= f.submit "Log in", class: "submit" %>
+                <%= f.submit t('form.submit.submit'), class: "submit" %>
             <% end %>
-            <p>New user? <%= link_to "Sign up now!", signup_path , id: "a-signup" %></p>
+            <p><%= t('form.submit.new_user') %>? <%= link_to t('form.submit.sign_up_now'), signup_path , id: "a-signup" %></p>
         </div>
     </div>
 </div>

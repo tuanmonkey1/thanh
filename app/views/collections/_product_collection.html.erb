@@ -1,3 +1,4 @@
+<h1><%= t('form.submit.products') %></h1>
 <div class="product-collection-content">
     <% @products.each do |product| %>
         <%= link_to(product_path(product)) do %>
@@ -11,8 +12,8 @@
                     <div class="product-collection-contentBx-descritpion">
                         <p><%= product.description %></p>
                         <ul class="product-collection-contentBx-edit">
-                            <li><%= link_to 'Edit', edit_product_path(product) %></li>
-                            <li><%= link_to 'Destroy', product, data: { confirm: 'Are you sure?' }, :method => :delete %></li>
+                            <li><%= link_to t('users.index.edit'), edit_product_path(product) %></li>
+                            <li><%= link_to t('users.index.destroy'), product, data: { confirm: 'Are you sure?' }, :method => :delete %></li>
                         </ul>
                     </div>
                 </div>

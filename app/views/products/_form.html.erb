@@ -9,25 +9,25 @@
             </ul>
         </div>
     <% end %>
-        <%= f.label :title %>
+        <%= f.label t('form.label.title') %>
         <%= f.text_field :title , id: "title" %>
 
-        <%= f.label :technology %>
+        <%= f.label t('form.label.technology') %>
         <%= f.text_field :technology , id: "title" %>
 
-        <%= f.label :description %>
+        <%= f.label t('form.label.description') %>
         <%= f.text_area :description, :rows => 5 , class: "areaS" %>
 
     
-        <%= f.label :content %>
+        <%= f.label t('form.label.content') %>
         <%= f.text_area :content, :rows => 15 , class: "areaL" %>
     
-        <%= f.label :price %>
+        <%= f.label t('form.label.price') %>
         <%= f.number_field :price , id: "price" %>
 
-        <%= f.file_field :image %><br>
+        <%= f.file_field t('form.label.sellect_picture') %><br>
         
-        <%= f.label :distribute %>
+        <%= f.label t('form.label.distribute') %>
         <%= f.select :distribute, options_for_select(Product.distributes.map { |k, v| [k, v] }) %>
 
         <%= f.submit yield(:button_text), class: "submit" %>

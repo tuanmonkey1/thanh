@@ -1,14 +1,15 @@
 <div class="review-contentBx">
 	<%= link_to(review_path(review)) do %>
 		<div class="image">
+			<%= image_tag review.image if review.image.attached? %>
 		</div>
 	<% end %>
 	<%= link_to(review_path(review)) do %>
 		<h2><%= review.title %></h2>
 	<% end %>
 	<span><%= l(review.created_at, locale: :en) %></span>
-	<p><%= review.descritpion %></p>
+	<p><%= review.description %></p>
 	<% if current_user?(review.user) %>
-		<%= link_to "delete", review , method: :delete, data: { confirm: "You sure?" } %>
+		<%= link_to t('form.submit.delete'), review , method: :delete, data: { confirm: "You sure?" } %>
 	<% end %>
 </div>

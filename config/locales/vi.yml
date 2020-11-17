@@ -39,6 +39,9 @@ vi:
       password: 'Mật khẩu'
       price: 'Giá'
       password_confirmation: 'Xác nhận mật khẩu'
+      technology: 'Công nghệ'
+      distribute: 'phân phối'
+
     submit:
       submit: 'xác nhận'
       login: 'Đăng nhập'
@@ -54,3 +57,7 @@ vi:
       delete: 'Xóa'
       new_product: 'Sản phẩm mới'
       products: 'Các sản phẩm'
+      delete: 'Xóa'
+      new_product: 'Sản phẩm mới'
+      update_product: 'Cập nhật sản phẩm'
+      create_review: 'Tạo bài đánh giá mới'

@@ -1,9 +1,9 @@
 <% provide(:title, 'New Products') %>
-<% provide(:button_text, 'Create') %>
+<% provide(:button_text, t('form.submit.create')) %>
 
 <div class="login-singup-wrapper">
     <div class="login-content">
-        <h1>New Products</h1>
+        <h1><%= t('form.submit.new_product') %></h1>
         <div class="login-form">
             <%= render 'form' %>
         </div>
