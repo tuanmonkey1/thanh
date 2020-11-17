@@ -11,7 +11,8 @@ class RequestsController < ApplicationController
 		if @request.save
 			redirect_to  root_url
 		else
-			render 'new'
+			#@product = Product.find_by id: request_params[:product_id]
+			render :new
 		end
 	end
 
@@ -19,6 +20,6 @@ class RequestsController < ApplicationController
 	private
 
 		def request_params
-			params.require(:request).permit(:name, :phone, :address, :quantity)
+			params.require(:request).permit(:name, :phone, :address, :quantity, :product_id)
 		end
 end

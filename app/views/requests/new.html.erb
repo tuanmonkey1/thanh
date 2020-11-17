@@ -3,43 +3,49 @@ s<% provide(:title, 'request') %>
 	
 	<div class="request-wrapper">
 	  <div class="request-order-content">
+	  	<% if @product.present?%>
 
-	  	<div class="request-head">
-	  		<div class="img"><%= link_to image_tag("audio1.jpg", width:"90px" ) %></div>
-	  	    <div class="product-title"><%= @product.title %></div>	
-	  	    <div class="product-price"><%= @product.price %></div>
-	  	</div>
-	    <div class="order-form">
-		    <%= form_for [@product, @request] do |f| %>
-		    <%= render 'shared/error_messages', object: @request %>
-			<%= f.label :name %>
-			<%= f.text_field :name, class: 'form-control' , id: "name" %><br>
+		  	<div class="request-head">
+		  		   <div class="logo"><img src="https://cdn.shopify.com/s/files/1/0411/4717/0966/files/Horizontial-Logo-White-100px_220x220.png?v=1598566575"></div>
+		  		<div class="text-1">Invoice Information</div>
+		  		<div class="img"><%= link_to image_tag("audio1.jpg", width:"90px" ) %></div>
+		  	    <div class="product-title"><%= @product.title %></div>	
+		  	    <div class="product-price"><%= @product.price %></div>
+		  	</div>
+		   <% end %>						 
+	        <div class="order-form">
+	    		 	
+			        <%= form_for [:product, @request] do |f| %>
+				    <%= render 'shared/error_messages', object: @request %>
+				    <div>
+				   
+					<%= f.label :name %>				    
+					<%= f.text_field :name, class: 'form-control' , id: "name" %></div><br>
 
-			<%= f.label :address %>
-			<%= f.text_field :address, class: 'form-control' , id: "address" %><br>
+					<%= f.label :address %>
+					<%= f.text_field :address, class: 'form-control' , id: "address" %><br>
 
-			<%= f.label :phone %>
-			<%= f.text_field :phone, class: 'form-control' , id: "phone" %><br>
-			
-			<div class="quantity-text">
-			  <%= f.label :quantity %>
-			  <%= f.number_field :quantity, class: 'form-control' , id: "quantity" %>
-			</div>
+					<%= f.label :phone %>
+					<%= f.text_field :phone, class: 'form-control' , id: "phone" %>
+					
+					<div class="quantity-text">
+					  <%= f.label :quantity %>
+					  <%= f.number_field :quantity, class: 'form-control' , id: "quantity" %>
 
-		
-
-		<div class="total">
-			<b>Total Money :</b>
-			<strong>1.000.000</strong>
-		</div>
-	
-        <div class="request-content-text">
-        	<a href="http://localhost:3000/pages/iems"> Back</a>       	
-        </div>
-        <div><%= f.submit "Order", id: "order" %></div>
-        <% end %>
-        </div>
-      </div>
+					</div>
+					<%= f.hidden_field :product_id, value: @product.id if @product.present? %>
+					<div class="total">
+						<b>Total Money :</b>
+						<strong>1.000.000</strong>
+					</div>
+				
+			        <div class="request-content-text">
+			        	<a href="http://localhost:3000/pages/iems"> Back</a>       	
+			        </div>
+			        <div><%= f.submit "Order", id: "order" %></div>
+        		<% end %>
+        	</div>
+      	</div>
     </div>
 
 
