@@ -1,7 +1,8 @@
 class Product < ApplicationRecord
 	has_one_attached :image
 	validates :title, presence: true, length: { maximum: 50 }
-	validates :description, presence: true, length: { maximum: 100 }
+	validates :technology, presence: true, length: { maximum: 50 }
+	validates :description, presence: true, length: { maximum: 200 }
 	validates :price, presence: true, length: { maximum: 50 }
 	validates :content, presence: true
 	validates :distribute, presence: true

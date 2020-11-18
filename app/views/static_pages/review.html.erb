@@ -2,47 +2,22 @@
 
 <% if logged_in? %>
 	<div class="review-wrapper">
-
-		<div class="slide-review-container">
-
-			<div class="slider">
-				<div class="slides">
-
-					<input type="radio" name="radio-btn" id="radio1" checked="checked">
-					<input type="radio" name="radio-btn" id="radio2">
-					<input type="radio" name="radio-btn" id="radio3">
-					<input type="radio" name="radio-btn" id="radio4">
-
-					<div class="slide first">
-						<a href="#"><img src="https://i2.wp.com/blog.64audio.com/wp-content/uploads/2020/05/64-Blog-Logo.jpg?resize=759%2C600&ssl=1"></a>
-					</div>
-					<div class="slide">
-						<a href="#"><img src="https://i0.wp.com/blog.64audio.com/wp-content/uploads/2019/07/Noir_Banner_01.jpg?resize=378%2C300&ssl=1"></a>
-					</div>
-					<div class="slide">
-						<a href="#"><img src="https://i2.wp.com/blog.64audio.com/wp-content/uploads/2017/07/girlIEMS.jpeg?resize=360%2C240&ssl=1"></a>
-					</div>
-					<div class="slide">
-						<a href="#"><img src="https://i2.wp.com/blog.64audio.com/wp-content/uploads/2017/02/NEW_BNNR_update_tia.jpg?resize=360%2C240&ssl=1"></a>
-					</div>
-
-					<div class="navigation-auto">
-						<div class="auto-btn1"></div>
-						<div class="auto-btn2"></div>
-						<div class="auto-btn3"></div>
-						<div class="auto-btn4"></div>
-					</div>
-
-				</div>
-
-				<div class="navigation-manual">
-					<label for="radio1" class="manual-btn"></label>
-					<label for="radio2" class="manual-btn"></label>
-					<label for="radio3" class="manual-btn"></label>
-					<label for="radio4" class="manual-btn"></label>
-				</div>
+		<div class="review-show-header-bg">
+			<img src="https://www.andisa.net/wp-content/uploads/2017/08/Background-header-home.jpg">
+		</div>
+		<div class="userInfo">
+			<div class="userInfo-container">
+				<%= link_to gravatar_for(@current_user, size: 60), @current_user, class: "userInfo-ava" %>
+				<span class="userInfo-name"><%= @user.name %></span>
+				<%= link_to t('form.submit.create_review'), new_review_url , class: "create-review" %>
+				<div style="clear: right;"></div>
+				<ul>
+					<li><i class="fas fa-star"></i> 2.0K</li>
+					<li><i class="fas fa-user-friends"></i> 66</li>
+					<li><i class="fas fa-people-arrows"></i> 150</li>
+					<li><i class="fas fa-pencil-alt"></i> <%= @user.reviews.count %></li>
+				</ul>
 			</div>
-
 		</div>
 		<div class="review-container">
 			<div class="review-content">
@@ -57,14 +32,3 @@
 	<div class="none-review-wrapper" style="min-height: 60vh">
 	</div>
 <% end %>
-
-<script type="text/javascript">
-	var counter = 1;
-	setInterval(function(){
-		document.getElementById('radio' + counter).checked = true;
-		counter++;
-		if (counter > 4) {
-			counter = 1;
-		}
-	}, 5000)
-</script>

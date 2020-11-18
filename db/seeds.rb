@@ -18,7 +18,7 @@ Review.create!(title: 'U18T & FOURTÉ – TIA PRODUCTS UPDATE',
 	<p>The <a href="https://www.64audio.com/tia">tia</a> compatible cable is brand new and has a fresh look on the outside with a matte black finish and has a totally redesigned inside with an oxygen-free silver-plated copper wire that has been paired specifically with the tia system.&nbsp;</p>
 	<p>Every tia product is hand-assembled by a highly skilled technician to achieve the highest standard of quality. Our team has worked tirelessly to make sure every aspect of this product is perfect and we&nbsp;are very excited to get it&nbsp;out the door.</p>
 	<p>We hope you are as excited as we are about these new tia products and we thank you for your support.&nbsp;</p>',
-	descritpion: 'We have some very exciting news to announce: our apex technology is now officially patent pending! The U18 and Fourté aluminum shells have arrive...',
+	description: 'We have some very exciting news to announce: our apex technology is now officially patent pending! The U18 and Fourté aluminum shells have arrive...',
 	user_id: 1)
 Review.create!(title: 'CORRECTING THE RECORD',
 	content: '<p>Dear valued 64 Audio™ customers,</p>
@@ -29,7 +29,7 @@ Review.create!(title: 'CORRECTING THE RECORD',
 	<p class="p1"><span class="s1">We understand that the in-ear market is a highly competitive space and some in the industry may be threatened by our quality and innovation, but we believe it is not only possible but necessary to produce high quality products while maintaining high ethical standards. &nbsp;We invite our competitors to join us in focusing their energy on their own products and customers, rather than publicly engaging in defamatory attacks to attempt to bolster sales.</span></p>
 	<p class="p1"><span class="s1">At 64 Audio we want the story of our company to be told through the integrity and passion we bring to our products and customer service. In the six and a half years we have been in business, we have built a loyal customer base that raves about our products and world-class support. &nbsp;We want to assure each of you that we are unwavering in our intention to continue to meet the demands of our discerning buyers through innovation, quality, and commitment to ethical business practices. &nbsp; &nbsp;</span></p>
 	<p class="p1"><span class="s1">If you have any questions or concerns we’re just a phone call or email away.</span></p>',
-	descritpion: "Dear valued 64 Audio™ customers, It has recently come to our attention that our previous business partner, Asius Technologies, LLC has been publicizing misinfor...",
+	description: "Dear valued 64 Audio™ customers, It has recently come to our attention that our previous business partner, Asius Technologies, LLC has been publicizing misinfor...",
 	user_id: 1)
 Review.create!(title: 'U18 TZAR AND TIA FOURTÉ SHIPPING ANNOUNCEMENT',
 	content: '<p><strong>Here They Come!</strong></p>
@@ -39,7 +39,7 @@ Review.create!(title: 'U18 TZAR AND TIA FOURTÉ SHIPPING ANNOUNCEMENT',
 	<p>Our <a href="https://www.64audio.com/product/1964-U18-Custom-In-Ear-Monitor" target="_blank" rel="noopener noreferrer">U18 Tzar</a> features the proprietary tia high driver as well as the tia single-bore design. Along with its custom counterpart, the A18, this is the first 18-driver model on the market. With its unique design and configuration, the U18 promises to provide detail like you’ve never heard before. This model has a retail price of $2999 USD and is available through our online store.</p>
 	<p>The <a href="https://www.64audio.com/product/1964-tia-Fourte-Custom-In-Ear-Monitor" target="_blank" rel="noopener noreferrer">tia Fourté</a> is the world’s first earphone to use the tia system: the tia drivers, the tia acoustic chambers, and the tia single bore. In addition to this special system, the fourté also features a passive radiator and our apex technology to greatly reduce listener fatigue. This tubeless in-ear monitor embodies a new way to deliver sound from the drivers to the listener’s ears in a more natural, unobstructed way. You can find out more on our website, where the Fourté is available for purchase for $3599 USD.</p>
 	<p>To learn more about the tia technology that makes these new models so special, please visit our tia technology page <em><strong><a href="http://www.64audio.com/technology/tia">here</a></strong></em>.</p>',
-	descritpion: 'Here They Come!Back in November 2016, we publicized the release of three new models – the A18 Tzar, U18 Tzar, and tia Fourté.The A18 Tzars have been shippin...',
+	description: 'Here They Come!Back in November 2016, we publicized the release of three new models – the A18 Tzar, U18 Tzar, and tia Fourté.The A18 Tzars have been shippin...',
 	user_id: 1)
 Review.create!(title: 'FROM 1964 EARS TO 64 AUDIO: A COMPANY TIMELINE',
 	content: '<p style="text-align: justify;">This year, we are celebrating our 7th&nbsp;anniversary! Some of you have been with us since the very start, but for&nbsp;those who are more recent additions to the 64 Audio family, we wanted to publish a company timeline to&nbsp;show how far we have come and highlight some of the exciting developments that have happened here over&nbsp;the years.</p>
@@ -55,7 +55,7 @@ Review.create!(title: 'FROM 1964 EARS TO 64 AUDIO: A COMPANY TIMELINE',
 	<h1 class="p1 time-line-head" style="text-align: left; font-size: 1.4em;">October 2011:&nbsp;Drummer Eric Moore Joins the 64 Audio Family</h1>
 	<hr>
 	<div class="row"><div class="col-md-12"><h1 class="p1 time-line-head" style="text-align: left; font-size: 1.4em;"><span class="s1">January 2012: 1964 Ears Brings Their First Major Artist On Board – The Newsboys</span></h1></div><div class="col-md-7"><a href="https://i0.wp.com/52.43.43.138/wp-content/uploads/2017/05/newsboys2012.png" class="cb-lightbox"><img loading="lazy" class=" wp-image-717" style="float: left;" src="https://i0.wp.com/52.43.43.138/wp-content/uploads/2017/05/newsboys2012.png?resize=200%2C113" alt="Newboys 2012 " width="200" height="113" srcset="https://i0.wp.com/blog.64audio.com/wp-content/uploads/2017/05/newsboys2012.png?w=800&amp;ssl=1 800w, https://i0.wp.com/blog.64audio.com/wp-content/uploads/2017/05/newsboys2012.png?resize=300%2C169&amp;ssl=1 300w, https://i0.wp.com/blog.64audio.com/wp-content/uploads/2017/05/newsboys2012.png?resize=768%2C432&amp;ssl=1 768w, https://i0.wp.com/blog.64audio.com/wp-content/uploads/2017/05/newsboys2012.png?w=400&amp;ssl=1 400w, https://i0.wp.com/blog.64audio.com/wp-content/uploads/2017/05/newsboys2012.png?w=600&amp;ssl=1 600w" sizes="(max-width: 200px) 100vw, 200px" data-pagespeed-url-hash="1096948058" onload="pagespeed.CriticalImages.checkImageForCriticality(this);"></a></div><div class="col-md-5"><p class="p1" style="margin-top: 21px;"><span class="s1">The Newsboys upgraded their in-ear monitors to the 1964 Ears Quad models.&nbsp;Vitaliy worked closely with Newsboys’ monitor engineer, Jeff Nolte, to tweak the sound of the Quads for&nbsp;more midrange, creating the Qi model. Due to its popularity, the special edition tuning became standard.</span></p></div></div>',
-	descritpion: 'This year, we are celebrating our 7th anniversary! Some of you have been with us since the very start, but for those who are more recent additions to the 64 Aud...',
+	description: 'This year, we are celebrating our 7th anniversary! Some of you have been with us since the very start, but for those who are more recent additions to the 64 Aud...',
 	user_id: 1)
 Review.create!(title: 'TRADE SHOWS: 64 AUDIO’S LIFELINE',
 	content: '<p>We often don’t get as many chances as we would like to meet our customers&nbsp;in person. Customers we like to&nbsp;call our 64 Family. We are typically up to our ears in innovating audio technology, so when we get to step outside of our lab for a trade show, we get really excited. Trade shows have been a path for us to connect with our customers, fans and all members of our growing 64 Family. They have become a big part of our schedule every year, but things weren’t always this way.</p>
@@ -67,7 +67,7 @@ Review.create!(title: 'TRADE SHOWS: 64 AUDIO’S LIFELINE',
 	<p>At RMAF, we found our niche at a show-within-a-show called CanJam. CanJam is sponsored by <a href="http://headfi.org/">HeadFi.org</a> and dedicates itself to portable and personal audio equipment. Here, we continued to build our reputation by establishing face-to-face connections with new customers while they&nbsp;demoed our IEMs. Additionally, we got to meet the people behind other companies that we had a great deal of respect for.</p>
 	<h2>NAMM</h2>
 	<p>The RMAF was just the tip of the iceberg for us and we couldn’t wait to attend more trade shows. So, in 2014, we attended our first NAMM show. NAMM, the <a href="https://www.namm.org/">National Association of Music Merchants</a>, hosts a trade show bi-annually in Anaheim California and Nashville Tennessee. According to the CEO Joe Lamondon on <a href="http://www.namm.org/">namm.org</a>, “NAMM is a global not-for-profit trade association representing 9,000 manufacturers and retailers of musical instruments and sound products.” This show is known as the “world’s largest trade-only event for music products industry.”</p>',
-	descritpion: 'We often don’t get as many chances as we would like to meet our customers in person. Customers we like to call our 64 Family. We are typically up to our ears i...',
+	description: 'We often don’t get as many chances as we would like to meet our customers in person. Customers we like to call our 64 Family. We are typically up to our ears i...',
 	user_id: 1)
 Review.create!(title: 'WHAT IS AN IN-EAR MONITOR (IEM)?',
 	content: '<p>Over the last four decades, innovations in technology have changed the way we experience music. One of the biggest changes was the introduction of in-ear monitors.&nbsp;In-ear monitors, sometimes&nbsp;known as earphones, are finding their way into the ears of musicians, sound engineers, <strong>and audiophiles alike.</strong> But many are still wondering, what is an in-ear monitor? Questions still arise as these small, but impactful, pieces of audio equipment keep surfacing on the music scene.&nbsp;</p>
@@ -77,7 +77,7 @@ Review.create!(title: 'WHAT IS AN IN-EAR MONITOR (IEM)?',
 	<p>What happens next is somewhat unclear in the history books. The inventor of IEMs and time of creation varies depending on the source consulted, but it was likely around the mid-1970s. However, IEMs didn’t really rise to popularity until the late 1980s. <strong>But it wasn’t until the&nbsp;last decade or so that they have become widely affordable, breaching the mainstream and causing an influx in demand.</strong></p>
 	<p> Now is where we should revisit what IEMs are. <strong>Folks tend to use the words earphones and in-ear monitors (IEMs) interchangeably because&nbsp;ultimately they are the same thing</strong>. This portable audio solution provides the ear with a personalized monitor mix. A complete in-ear monitoring system consists of a transmitter, a receiver and a set of IEMs.&nbsp;The transmitter sends signals&nbsp;to the receiver, which is typically a cellphone-sized pack worn by the performer. This receiver is where the IEMs plug into.&nbsp;</p>
 	<p> Think of your most standard earbud. These devices have, at most, two drivers. Higher-end IEM models, however, can house anywhere from two to 18 drivers.</p>',
-	descritpion: 'Over the last four decades, innovations in technology have changed the way we experience music. One of the biggest changes was the introduction of in-ear monit...',
+	description: 'Over the last four decades, innovations in technology have changed the way we experience music. One of the biggest changes was the introduction of in-ear monit...',
 	user_id: 1)
 Review.create!(title: 'IN-EAR MONITOR, EARPHONE, HEADPHONE, EARBUD…WHAT’S THE DIFFERENCE?',
 	content: '<p>We at 64 Audio frequently hear many different terms when customers&nbsp;refer to their personal listening equipment. Headphones, earphones, in-ear monitors, earbuds… they are all the same right? Although all are popular pieces of audio gear, they are actually very different from each other. But what exactly are the differences between each of these devices? Let’s dive in and give you a better understanding.</p>
@@ -91,7 +91,7 @@ Review.create!(title: 'IN-EAR MONITOR, EARPHONE, HEADPHONE, EARBUD…WHAT’S TH
 		<p>Whenever comparing different types of personal listening gear, an important feature is always quality. Low-grade headphones, for example, are unlikely to outperform high-grade in-ear monitors, and vice versa. With both headphones and earphones, the seal is a key factor in the quality of the sound. Even if the speakers themselves are excellent, the sound will suffer if the seal is weak. Additionally, it is up to you, the listener, to determine which is better suited for your&nbsp;usage and listening habits.</p>
 		<p>We at 64 Audio, currently specialize in <a rel="noreferrer noopener" href="https://www.64audio.com/store/a-series" target="_blank">custom in-ear monitors</a> and <a rel="noreferrer noopener" href="https://www.64audio.com/store/u-series" target="_blank">universal-fit earphones.</a>&nbsp;If you have any questions on the technical specs or features of our earphones/IEMs, don’t hesitate to give us a call at 833-64AUDIO, email us at <a rel="noreferrer noopener" href="mailto:info@64audio.com" target="_blank">info@64audio.com</a>, or check out each product individually in our <a rel="noreferrer noopener" aria-label=" (opens in a new tab)" href="https://www.64audio.com/iems" target="_blank">store</a>. We even have an awesome comparison tool to help you see the differences in models.</p>
 		<p>To be the first to know about&nbsp;our product launches and other cool audio info, follow us on <a rel="noreferrer noopener" href="https://twitter.com/64audio" target="_blank">Twitter</a>, <a rel="noreferrer noopener" href="https://www.facebook.com/64audio" target="_blank">Facebook</a>, <a rel="noreferrer noopener" href="https://www.youtube.com/1964Ears" target="_blank">YouTube</a> and <a rel="noreferrer noopener" href="https://www.instagram.com/64audio/" target="_blank">Instagram</a>.</p>',
-	descritpion: 'We at 64 Audio frequently hear many different terms when customers refer to their personal listening equipment. Headphones, earphones, in-ear monitors, earbuds...',
+	description: 'We at 64 Audio frequently hear many different terms when customers refer to their personal listening equipment. Headphones, earphones, in-ear monitors, earbuds...',
 	user_id: 1)
 Review.create!(title: '64 AUDIO WINS IMPORTANT VICTORY AT THE U.S. PATENT OFFICE',
 	content: '<p class="p1"><span class="s1"><b>VANCOUVER, WA, July 20, 2017</b>&nbsp;–&nbsp;</span><span class="s1">64 Audio (formerly 1964 Ears) is pleased to announce that on July 19, 2017, the U.S. Patent Trial &amp; Appeal Board (PTAB) ruled in favor of 64 Audio, finding all claims of <strong><a href="https://docs.google.com/viewer?url=patentimages.storage.googleapis.com/pdfs/US8897463.pdf" target="_blank" rel="noopener noreferrer"><span class="s2">U.S. Patent No. 8,897,463</span></a></strong>, held by Jerry Harvey Audio Holdings (JH Audio), unpatentable.<span class="Apple-converted-space">&nbsp; </span>A copy of the PTAB’s ruling can be found <strong><a href="https://www.64audio.com/img/r/media/sheets/IPR_Ruling.pdf" target="_blank" rel="noopener noreferrer"><span class="s2">here</span></a></strong>.</span></p>
@@ -103,7 +103,7 @@ Review.create!(title: '64 AUDIO WINS IMPORTANT VICTORY AT THE U.S. PATENT OFFICE
 	<p class="p1"><span class="s1">For more information regarding 64 Audio and their products, please visit <strong><a href="http://64audio.com/" target="_blank" rel="noopener noreferrer"><span class="s2">http://64audio.com</span></a></strong>.&nbsp;</span></p>
 	<p class="p1"><span class="s1">For press images, logos, and more<strong>&nbsp;<a href="http://64audio.com/press" target="_blank" rel="noopener noreferrer"><span class="s2">http://64audio.com/press</span></a>&nbsp;</strong></span></p>
 	<p class="p1"><span class="s1">For more information, please email:&nbsp;<strong><a href="mailto:PR@64audio.com" target="_blank" rel="noopener noreferrer"><span class="s2">PR@64audio.com</span></a></strong></span></p>',
-	descritpion: 'VANCOUVER, WA, July 20, 2017 – 64 Audio (formerly 1964 Ears) is pleased to announce that on July 19, 2017, the U.S. Patent Trial & Appeal Board (PTAB) ruled...',
+	description: 'VANCOUVER, WA, July 20, 2017 – 64 Audio (formerly 1964 Ears) is pleased to announce that on July 19, 2017, the U.S. Patent Trial & Appeal Board (PTAB) ruled...',
 	user_id: 1)
 Review.create!(title: 'TIPS & TRICKS FOR YOUR IEMS',
 	content: '<p>So, you’ve purchased a pair of in-ear monitors (or maybe you are thinking about it). They fit well, the seal is just right, you’re getting the isolation you desire, and the music clarity is out of this world.</p>
@@ -120,7 +120,7 @@ Review.create!(title: 'TIPS & TRICKS FOR YOUR IEMS',
 		<h1><strong>Maintenance is Key</strong></h1>
 		<p>High-quality equipment is an investment, and we want to make sure that your products last as long as possible. There are a lot of little things that you can do to help your IEMs last.&nbsp;</p>
 			<p>After plugging your in-ears into a headphone jack, make sure to turn the volume all the way down on your sound source. Custom in-ear monitors are much more sensitive than traditional full-sized headphones.&nbsp;Long exposure to high sound pressure levels can result in permanent hearing loss. You’ve got to protect your ears, they are the only ones you’ve got!&nbsp;</p>',
-	descritpion: "So, you've purchased a pair of in-ear monitors (or maybe you are thinking about it). They fit well, the seal is just right, you're getting the isolation you de...",
+	description: "So, you've purchased a pair of in-ear monitors (or maybe you are thinking about it). They fit well, the seal is just right, you're getting the isolation you de...",
 	user_id: 1)
 User.create!(name: "Example User",
 email: "example@railstutorial.org",
@@ -145,5 +145,85 @@ Review.create!(title: 'THE BENEFITS OF SWITCHING TO A SILENT STAGE',
 			<p>For example, in a small room with a small stage it may be awkward to the audience to have no amplified sound coming off of the stage. Whereas in a larger stage and room environment, the audience may not even notice the difference if there are no amps on stage. There are trade-offs whichever way you go.</p>
 			<p>On a smaller stage, the chance of amplified signal bleeding into microphones is greater simply because of the proximity of the different sound sources to the microphones.</p>
 			<p>Let us know in the comments if you use a silent stage.</p>',
-	descritpion: 'One of the topics we hear come up time and time again is the idea of a “silent stage.”  This idea isn’t new by any means but has shown to be more prevalen...',
+	description: 'One of the topics we hear come up time and time again is the idea of a “silent stage.”  This idea isn’t new by any means but has shown to be more prevalen...',
 	user_id: 1)
+
+
+Product.create!(
+	title: "A2e",
+	technology: "2-Driver Earphone",
+	description: "All the accuracy, balance, and comfort you expect from a professional IEM at an affordable price.",
+	content: '<p>The most advanced two-driver custom in-ear monitor on the market. The A2e is ideal for emerging artists, bands, and anyone seeking a professional in-ear monitor at an affordable price. Its dual-drivers offer a balanced sound signature with clear highs, and capable mids and lows.</p>
+	<p>New and improved for 2018, the A2e now features LID™ for consistent sound across sources.</p>',
+	distribute: 1,
+	price: "499"
+)
+Product.create!(
+	title: "A3e",
+	technology: "3-Driver Earphone",
+	description: "Great for single-instrument artists, a balanced sound signature with clear highs, capable mids and a deeper bass.",
+	content: '<p>Our versatile, three-driver custom in-ear monitor provides impressive clarity and warmth for any instrument or genre. The A3e is ideal for vocalists, drummers, or any single-instrumentalists looking for a professional IEM to use onstage. This is a great option for artists seeking a detailed soundstage, neutral tuning, and a transparent and musical sound.</p>',
+	distribute: 1,
+	price: "699"
+)
+Product.create!(
+	title: "A4t",
+	technology: "4-Driver Earphone",
+	description: "Perfect for moderate mixes, enjoy distinct mids, extended highs, and full bass.",
+	content: "<p>The perfect in-ear monitor for anyone looking for a balanced, full-spectrum sound. The A4t delivers an immersive listening experience with a dynamic mid-range and powerful bass. It's a great option for single-instrumentalists and moderate mixes.</p>
+	<p>The A4t is the entry point for our exclusive tia™ technology, which provides an amazingly lifelike clarity and musicality to the sound signature.</p>",
+	distribute: 1,
+	price: "999"
+)
+Product.create!(
+	title: "A6t",
+	technology: "2-Driver Earphone",
+	description: "A favorite for multi-instrumentalists, engineers and audiophiles for extended highs, smooth mids, defined lower-mids, and powerful lows.",
+	content: '<p>The in-ear monitor of choice for many touring musicians and discerning music lovers. The A6t offers detailed highs, smooth mids, defined lower-mids, and deep lows. Multi-instrumentalists, engineers and audiophiles can expect great extension and more headroom from this model.</p>',
+	distribute: 1,
+	price: "1299"
+)
+Product.create!(
+	title: "N8",
+	technology: "9-Driver Earphone",
+	description: "Created in collaboration with legendary bassist, Nathan East. A dynamic IEM with impressive bass response, detailed highs and ultra-smooth mids.",
+	content: "<p>The N8, or 'Nate,' is an industry-first signature in-ear monitor developed in collaboration with legendary bassist and producer, Nathan East. This hybrid in-ear monitor offers unique textures and rich, soulful sound. It's powerful lows and deep, airy sub-bass define the sound signature, making it a favorite among multi-instrumentalists, audiophiles, engineers, and, of course, bassists.</p>",
+	distribute: 2,
+	price: "1699"
+)
+Product.create!(
+	title: "A12t",
+	technology: "12-Driver Earphone",
+	description: "This custom IEM does it all - a great option for engineers, audiophiles, monitors and multi-instrumentalists.",
+	content: "<p>The ultimate in-ear monitor for professionals onstage or in the studio. The A12t does it all, delivering detailed highs, distinguished upper and lower mid-range detail, a clean bass response, and strong sub-bass. Offering reference-level detail, this IEM is among the best for multi-instrumentalists, engineers, sound monitors, and audiophiles.</p><br>
+	<p>This model is also available as a Universal IEM, the U12t.</p>",
+	distribute: 2,
+	price: "1999"
+)
+Product.create!(
+	title: "A18t",
+	technology: "18-Driver Earphone",
+	description: "This custom IEM does it all - a great option for engineers, audiophiles, monitors and multi-instrumentalists.",
+	content: "<p>Packed with an unbelievable 18 balanced armature drivers per ear, the A18t is our top-of-the-line reference in-ear monitor. This industry-first design pushes the limits of what a reference monitor can be with incredible detail, extension, and unmatched clarity across all frequencies with a powerful low-end and extended sub-bass. The A18t is preferred by critical listeners in engineering, monitoring and mixing, and audiophiles.</p><br>
+	<p>This model is also available as a Universal IEM, the U18t.</p>",
+	distribute: 2,
+	price: "2999"
+)
+Product.create!(
+	title: "Nio",
+	technology: "9-Driver Earphone",
+	description: "Universal-fit earphone for the music lover seeking detailed highs, separated and clear mids, with naturally musical low frequencies.",
+	content: "<p>Our first high driver-count hybrid, Nio is a universal-fit earphone featuring a 9mm dynamic driver and 8 balanced armature drivers. With a sound signature characterized by extended lows and a rich 3-dimensional soundstage, Nio’s smooth treble and natural warmth will provide hours of enjoyable listening for all genres of music.</p><br>
+	<p>Each ergonomic shell is machined out of a solid piece of aluminum and finished with a striking blue abalone faceplate.</p>",
+	distribute: 3,
+	price: "1699"
+)
+Product.create!(
+	title: "tia Trio",
+	technology: "3-Driver Earphone",
+	description: "Perfect for audiophiles seeking a clear, laid back, 3-dimensional sound for hours of easy listening.",
+	content: "<p>The perfect in-ear monitor for listeners looking for the sweet spot between reference-level clarity and a smooth sound signature for extended listening. The tia Trió is a great earphone for audiophiles seeking a clear, laid back, 3D sound in any genre.</p><br>
+	<p>Tia Trió features our complete, three-part tia™ system housed in an ergonomic shell, machined from a solid piece of aluminum and finished with elegant, brushed aluminum faceplates.</p>",
+	distribute: 3,
+	price: "2299"
+)

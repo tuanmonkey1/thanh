@@ -9,7 +9,29 @@
         <div class="contentBx">
             <div class="strong-word"><span>NIO</span></div>
             <p>Extraordinary Sound<br>Meets Extraordinary Color</p>
-            <a href="#" class="bt1">DISCOVER NIO</a>
-            <a href="#" class="bt2">PLAY VIDEO</a>
+            <a href="http://localhost:3000/products/8?locale=en" class="bt1">DISCOVER NIO</a>
+            <a class="bt2" onclick="videoToggle();">PLAY VIDEO</a>
         </div>
     </div>
+
+    <div class="embed-video">
+        <iframe src="https://www.youtube.com/embed/qRUbnA-k2BQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="embed-layout"></div>
+        <div class="close-embed"><i class="fas fa-times-circle" id="close-embed" onclick="videoToggle();"></i></div>
+    </div>
+
+<script type="text/javascript">
+    function videoToggle(){
+        const embedVideo = document.querySelector('.embed-video');
+        embedVideo.classList.toggle('active');
+    }
+</script>
+
+<script language="javascript" type="text/javascript" src="jquery-1.8.2.js"></script>
+<script language="javascript" type="text/javascript">
+    $(function(){
+        $('#close-embed').click(function(){      
+            $('iframe').attr('src', $('iframe').attr('src'));
+        });
+    });
+</script>
