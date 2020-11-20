@@ -78,7 +78,6 @@ ActiveRecord::Schema.define(version: 2020_11_12_032028) do
     t.integer "user_id"
     t.integer "product_id"
     t.integer "quantity"
-    t.string "name"
     t.string "phone"
     t.string "address"
     t.datetime "created_at", precision: 6, null: false

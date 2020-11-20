@@ -4,7 +4,6 @@ class CreateRequests < ActiveRecord::Migration[6.0]
       t.integer :user_id
       t.integer :product_id
       t.integer :quantity
-      t.string  :name
       t.string  :phone
       t.string  :address
 
