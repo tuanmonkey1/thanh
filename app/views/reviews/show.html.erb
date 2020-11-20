@@ -17,14 +17,15 @@
 					<li><i class="fas fa-star"></i> 2.0K</li>
 					<li><i class="fas fa-user-friends"></i> 66</li>
 					<li><i class="fas fa-pencil-alt"></i> <%= @user.reviews.count %></li>
+					<li><i class="fas fa-thumbs-up"></i> 120</li>
 				</ul>
 			</div>
 			<div class="review-show-content">
 				<div class="head-image">
-					<img src="https://i1.wp.com/blog.64audio.com/wp-content/uploads/2017/10/Chicago-Red.jpg?resize=759%2C500&ssl=1">
+					<%= image_tag @review.image if @review.image.attached? %>
 				</div>
 				<h1><%= @review.title %></h1>
-				<span><%= time_ago_in_words(@review.created_at) %></span>
+				<span><%= l(@review.created_at, locale: :en) %></span>
 				<div class="review-content">
 					<p class="hidden-text"><%= @review.content.html_safe %></p>
 				</div>
