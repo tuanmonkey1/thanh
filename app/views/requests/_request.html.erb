@@ -1,0 +1,8 @@
+<li>
+	<%= gravatar_for request, size: 50 %>
+	<%= link_to request.user_id, request %>
+	<% if current_request.admin? && !current_request?(request) %>
+      | <%= link_to "delete", request, method: :delete,
+    data: { confirm: "You sure?" } %>
+   <% end %>
+</li>

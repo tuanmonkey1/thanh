@@ -5,6 +5,9 @@ vi:
     review: 'ĐÁNH GIÁ'
     support: 'HỖ TRỢ'
     how_to_order: 'ĐẶT HÀNG'
+    invoice_Information: 'Hóa Đơn Bán Hàng'
+    back: 'Trở Về'
+    order: 'Đặt Hàng'
   hidden_menu:
     64family: 'GIA ĐÌNH 64'
     legacy_upgrade: 'NÂNG CẤP'
@@ -28,6 +31,8 @@ vi:
       destroy: 'Xóa'
       new_user: 'Thêm người dùng'
       date: 'Ngày tạo'
+      address: 'Địa Chỉ'
+      phone: 'Số Điện Thoại'
   form:
     label:
       name: 'Tên'
@@ -38,6 +43,7 @@ vi:
       select_picture: 'Chọn ảnh'
       password: 'Mật khẩu'
       price: 'Giá'
+      quantity: 'Số Lượng'
       password_confirmation: 'Xác nhận mật khẩu'
       technology: 'Công nghệ'
       distribute: 'phân phối'
@@ -61,3 +67,4 @@ vi:
       new_product: 'Sản phẩm mới'
       update_product: 'Cập nhật sản phẩm'
       create_review: 'Tạo bài đánh giá mới'
+      order: 'Đặt Hàng'

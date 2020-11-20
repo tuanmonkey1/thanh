@@ -22,6 +22,8 @@ Rails.application.routes.draw do
   resources :reviews, only: [:create, :destroy, :show, :new] do
     resources :comments, only: [:index, :create]
   end
-  resources :products
+  resources :products do
+    resources :requests
+  end
   resources :comments
 end

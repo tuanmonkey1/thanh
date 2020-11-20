@@ -42,13 +42,16 @@ en:
     review: 'REVIEW'
     support: 'SUPPORT'
     how_to_order: 'HOW TO ORDER'
+    invoice_Information: 'Invoice Information'
+    back: 'Back'
+    order: 'Order'
   hidden_menu:
     64family: '64 FAMILY'
     legacy_upgrade: 'LEGACY UPGRADE'
     review: 'REVIEW'
     contact: 'CONTACT US'
     buy: 'WHERE TO BUY'
-    account: 'MY ACCOUNT'
+    account: 'MY ACCOUNT'  
   footer:
     products: 'PRODUCTS'
     technology: 'TECHNOLOGY'
@@ -65,6 +68,8 @@ en:
       destroy: 'Destroy'
       new_user: 'New User'
       date: 'Create date'
+      address: 'Address'
+      phone:   'Phone'
   form:
     label:
       name: 'Name'
@@ -77,7 +82,8 @@ en:
       price: 'Price'
       password_confirmation: 'Password confirmation'
       technology: 'Technology'
-      distribute: 'Distribute'
+      distribute: 'Distribute'    
+      quantity: Quantity' 
     submit:
       submit: 'Submit'
       login: 'Login'
@@ -94,3 +100,4 @@ en:
       new_product: 'New product'
       update_product: 'Update product'
       create_review: 'Create new review'
+      order: 'Order'
