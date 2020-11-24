@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   resources :hashtags
   resources :reviews, only: [:create, :destroy, :show, :new] do
     resources :comments, only: [:index, :create]
+    resources :rate, only: [:index, :create]
   end
   resources :products do
     resources :requests
