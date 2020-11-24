@@ -1,0 +1,37 @@
+<%= form_for(@rate) do |f| %>
+             <div class="con">
+               <i class="fas fa-star",'1' id="s1"></i>
+               <i class="fas fa-star",'2' id="s2"></i>
+               <i class="fas fa-star",'3' id="s3"></i>
+               <i class="fas fa-star",'4' id="s4"></i>
+               <i class="fas fa-star",'5' id="s5"></i>
+             </div>
+             <script type="text/javascript">
+               $(document).ready(function(){
+                  $("#s1").click(function(){
+                    $(".fa-star").css("color","black")
+                    $("#s1").css("color","yellow")
+                  })
+                  $("#s2").click(function(){
+                    $(".fa-star").css("color","black")
+                    $("#s1,#s2").css("color","yellow")
+                  })
+                  $("#s3").click(function(){
+                    $(".fa-star").css("color","black")
+                    $("#s1,#s2,#s3").css("color","yellow")
+                  })
+                  $("#s4").click(function(){
+                    $(".fa-star").css("color","black")
+                    $("#s1,#s2,#s3,#s4").css("color","yellow")
+                  })
+                  $("#s5").click(function(){
+                    $(".fa-star").css("color","black")
+                    $(".fa-star").css("color","yellow")
+                  })
+
+               })
+             </script>
+             
+
+           <%= f.submit %>
+<% end%>

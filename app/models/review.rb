@@ -1,6 +1,7 @@
 class Review < ApplicationRecord
   belongs_to :user
   has_many :comments
+  has_many :ratings
   default_scope -> { order(created_at: :desc) }
   has_one_attached :image
   validates :user_id, presence: true

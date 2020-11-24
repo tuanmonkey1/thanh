@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< 529610a83347a60eda050cf16e69d294c2c97705
 ActiveRecord::Schema.define(version: 2020_11_23_023241) do
+=======
+ActiveRecord::Schema.define(version: 2020_11_12_032028) do
+>>>>>>> rate
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false

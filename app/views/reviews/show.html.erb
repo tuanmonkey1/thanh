@@ -35,10 +35,12 @@
 				<li><a href="#"><i id="sci2" class="fab fa-twitter"></i></a></li>
 				<li><a href="#"><i id="sci3" class="far fa-envelope"></i></a></li>
 			</ul>
+				<%= render "rate/form" %>
 			<div id="comment-wrapper">
 				<h2>Comments</h2>
 				<%= render "comments/form" %>
 				<div class="comment-container">
+
 					<%= render @comments %>
 				</div>
 			</div>
