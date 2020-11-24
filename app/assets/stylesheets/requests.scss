@@ -92,6 +92,8 @@
 				margin-top: 50px;
 				li{
 					list-style: none;
+					white-space: nowrap;
+
 					a{
 						background-color:#210B61;
 						color:white;
@@ -185,7 +187,7 @@
 					list-style: none;
 					float: left;
 					.pice{
-					color:red;					  
+										  
 					margin:30px;
 					}
 					.quantity{
