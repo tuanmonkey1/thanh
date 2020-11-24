@@ -1,0 +1,57 @@
+<% provide(:title, 'request') %>
+
+	
+	<div class="request-wrapper">
+	    <div class="request-order-content">
+	  		<% if @product.present? %>
+				<div class="request-head">
+					<div class="logo"><img src="https://cdn.shopify.com/s/files/1/0411/4717/0966/files/Horizontial-Logo-White-100px_220x220.png?v=1598566575"></div>
+					<div class="text-1"><%= t('header.invoice_Information') %></div>
+					<ul class="request-head-info">
+						<li class="image"><%= link_to image_tag("audio1.jpg", width:"90px" ) %></li>
+						<li class="product-title"><%= @product.title %></li>	
+						<li class="product-price"><%= @product.price %></li>
+					</ul>
+				</div>
+		    <% end %>						 
+	        <div class="order-form" id="request_product">
+				<%= form_for [:admin, @product, @request] do |f| %>
+					<div class="request-content">
+						<%= render 'shared/error_messages', object: @request %>
+						<%= f.hidden_field :price, value: @product.price %>
+						<%= t('form.label.name') %>				    
+
+						<%= t('users.index.address') %>	
+						<%= f.text_field :address, class: 'form-control' , id: "address" %><br>
+
+						<%= t('users.index.phone') %>	
+						<%= f.text_field :phone, class: 'form-control' , id: "phone" %>
+					</div>
+					<div class="quantity">				 
+						<div class="quantity-text"><span><%= t('form.label.quantity') %>: </span></div>
+						<div class="quantityBx"><%= f.number_field :quantity, class: 'form-control' , id: "quantity" %></div>
+					</div>
+					<%= f.hidden_field :product_id, value: @product.id if @product.present? %>
+					<div class="total">
+						<p><span>Total Money :</span>$</p>
+					</div>
+				
+			        <ul class="request-content-foot">
+						<li><a href="http://localhost:3000/pages/iems"><%= t('header.back') %></a></li>
+						<li><%= f.submit  t('form.submit.order'), id: "order" %></li>   	
+			        </ul>
+			        
+			        
+        		<% end %>
+        	</div>
+      	</div>
+    </div>
+
+<script>
+$('#request_product form [name="request[quantity]"]').change(function() {
+	var quantity = $(this).val();
+	var price = $('#request_product form [name="request[price]"]').val();
+	$('#request_product .total span').html(quantity * price);
+});
+</script>
+	

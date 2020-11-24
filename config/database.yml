@@ -8,8 +8,8 @@ default: &default
   adapter: mysql2
   encoding: utf8
   pool: 5
-  username: dat
-  password: 123456
+  username: root
+  password: 
   socket: /var/run/mysqld/mysqld.sock
 
 development:
@@ -21,7 +21,7 @@ development:
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: audio_db
+  database: audio_db_test
 
 production:
   adapter: postgresql

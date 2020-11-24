@@ -26,4 +26,7 @@ Rails.application.routes.draw do
     resources :requests
   end
   resources :comments
+  namespace :admin do
+   resources :requests, only: [:index, :destroy]
+  end
 end
