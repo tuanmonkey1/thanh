@@ -19,7 +19,7 @@
 					<li><i class="fas fa-star"></i><%= @review.rates.avg_star %></li>
 					<li><i class="fas fa-user-friends"></i><%= render 'shared/stats' %></li>
 					<li><i class="fas fa-pencil-alt"></i> <%= @user.reviews.count %></li>
-					<li><i class="fas fa-thumbs-up"></i> 120</li>
+					<li><span id="like-color"><i class="fas fa-thumbs-up"></i></span> <span id="like-number"><%= @review.likes.count %></span></li>
 				</ul>
 			</div>
 			<div class="review-show-content">
@@ -39,6 +39,9 @@
 			</ul>
 			<%= render "rate/form" %>
 				<%= render "rate/form" %>
+			<div class="like-wrapper">
+				<%= render 'like_form' %>
+			</div>
 			<div id="comment-wrapper">
 				<h2>Comments</h2>
 				<%= render "comments/form" %>

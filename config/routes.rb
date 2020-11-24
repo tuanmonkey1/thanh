@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+  mount Ckeditor::Engine => '/ckeditor'
   root 'static_pages#home'
   get 'sessions/new'
   get 'users/new'
@@ -29,6 +30,7 @@ Rails.application.routes.draw do
     collection { get :search, to: 'reviews#index' }
     resources :comments, only: [:index, :create]
     resources :rates, only: [:index, :create]
+    resources :likes
   end
   resources :products do
     resources :requests
@@ -41,6 +43,5 @@ Rails.application.routes.draw do
   namespace :admin do
    resources :requests, only: [:index, :destroy]
   end
-
   resources :rates
 end
