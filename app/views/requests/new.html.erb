@@ -19,7 +19,7 @@
 					<div class="request-content">
 						<%= render 'shared/error_messages', object: @request %>
 						<%= f.hidden_field :price, value: @product.price %>
-						<%= t('form.label.name') %>				    
+						<%= t('form.label.name') %><br>				    
 
 						<%= t('users.index.address') %>	
 						<%= f.text_field :address, class: 'form-control' , id: "address" %><br>

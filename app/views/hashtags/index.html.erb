@@ -1,22 +1,52 @@
 <% provide(:title, 'All hashtags') %>
+<html>
+
 
 <div class="hashtag-wrapper">
 	<div class="hashtag-content-text">
 		<h1>All hashtags</h1>
 	</div>
+	<div class="hashtag-login-content">
+	        <div class="login-form">
+	           <%= form_for(@hashtag) do |f| %>
+
+				<%= render 'shared/error_messages', object: @hashtag %>
+
+				<%= f.label :name %>
+				<%= f.text_field :name, class: 'form-control' , id: "name" %>
+
+				<%= f.submit "Create", data: { disable_with: false }, class: "submit" %>
+				
+			  <% end %> 
+	        </div><br>
+    	</div>
 	<div class="hashtag-content">
-		<ul class="users">
-			<% @hashtags.each do |hashtag| %>
-			<li>
-			<%= hashtag.name %>
-			| <%= link_to 'Edit', edit_hashtag_path(hashtag) %>
-			| <%= link_to 'Destroy', hashtag, method: :delete, data: { confirm: 'Are you sure?' } %>
-			</li>
-			<% end %>
-		</ul>
-		<%= will_paginate %>
-		
-		<%= link_to 'New Hashtag', new_hashtag_path %>
+		<ul class="users" id="hashtags">
+			<%= render @hashtags %>
+		</ul><br>
+			
 	</div>
+	<div class="language">
+	 
+	   <%= will_paginate %>
+	</div>	
+	
+	
 </div>
-   
+</html>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('form').submit(function(event) {
+    	event.preventDefault();
+        $.ajax({
+            type: $(this).attr('method'),
+            url: $(this).attr('action'),
+            data: $(this).serialize(),
+            dataType: 'html'
+            
+        }).done(function(response) {
+        	$('#hashtags').append(response);
+        });
+   });
+});
+</script>
