@@ -14,7 +14,7 @@
 				<div style="clear: right;"></div>
 				<a href="#comment-wrapper" id="commentNum"><i class="fas fa-comments"></i> <%= @review.comments.count %></a>
 				<ul>
-					<li><i class="fas fa-star"></i> 2.0K</li>
+					<li><i class="fas fa-star"></i><%= @review.rates.star %></li>
 					<li><i class="fas fa-user-friends"></i> 66</li>
 					<li><i class="fas fa-pencil-alt"></i> <%= @user.reviews.count %></li>
 					<li><i class="fas fa-thumbs-up"></i> 120</li>

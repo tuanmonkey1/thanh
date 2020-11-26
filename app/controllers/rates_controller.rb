@@ -4,14 +4,17 @@ class RatesController < ApplicationController
     end
 
 	def create
-		if user_signed_in?
+		if current_user
+			@review = Review.find(params[:review_id])
 			@rate = Rate.new
+
 			if @rate.save!
-				redirect_to pages_review_url
+				redirect_to @rate.review
 				# Handle a successful save.
 			else
 				render 'new'
 			end
+		end
 	end
 
 	def index
@@ -19,7 +22,7 @@ class RatesController < ApplicationController
 	end
 	private
 	def rating_params
-	  params.require(:rating).permit(:stars)
+	  params.require(:rate).permit(:star, :user_id, :review_id)
 	end
 end
 
