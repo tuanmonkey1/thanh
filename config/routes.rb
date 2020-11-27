@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   resources :reviews, only: [:create, :destroy, :show, :new, :index] do
     collection { get :search, to: 'reviews#index' }
     resources :comments, only: [:index, :create]
+    resources :rates, only: [:index, :create]
   end
   resources :products do
     resources :requests
@@ -29,4 +30,5 @@ Rails.application.routes.draw do
   namespace :admin do
    resources :requests, only: [:index, :destroy]
   end
+  resources :rates
 end

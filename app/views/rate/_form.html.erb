@@ -1,0 +1,40 @@
+<%= form_for([@review, @rate]) do |f| %>
+             <div class="con">
+               <i class="fas fa-star",'1' id="s1"></i>
+               <%= f.hidden_field :star, value: 1 %>
+               <i class="fas fa-star",'2' id="s2"></i>
+               <%= f.hidden_field :star, value: 2 %>
+               <i class="fas fa-star",'3' id="s3"></i>
+               <%= f.hidden_field :star, value: 3 %>
+               <i class="fas fa-star",'4' id="s4"></i>
+               <%= f.hidden_field :star, value: 4 %>
+               <i class="fas fa-star",'5' id="s5"></i>
+               <%= f.hidden_field :star, value: 5 %>
+             </div>
+           <%= f.submit %>
+<% end%>
+<script type="text/javascript">
+               $(document).ready(function(){
+                  $("#s1").click(function(){
+                    $(".fa-star").css("color","black")
+                    $("#s1").css("color","yellow")
+                  })
+                  $("#s2").click(function(){
+                    $(".fa-star").css("color","black")
+                    $("#s1,#s2").css("color","yellow")
+                  })
+                  $("#s3").click(function(){
+                    $(".fa-star").css("color","black")
+                    $("#s1,#s2,#s3").css("color","yellow")
+                  })
+                  $("#s4").click(function(){
+                    $(".fa-star").css("color","black")
+                    $("#s1,#s2,#s3,#s4").css("color","yellow")
+                  })
+                  $("#s5").click(function(){
+                    $(".fa-star").css("color","black")
+                    $(".fa-star").css("color","yellow")
+                  })
+
+               })
+             </script>
