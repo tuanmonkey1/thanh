@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;900&display=swap');
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import 'easy-autocomplete/dist/easy-autocomplete';
 @mixin box_sizing {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -595,6 +596,7 @@ footer .small-footer span a{
             color: #3a3a3a;
         }
     }
+
     span{
         font-family: Roboto,sans-serif;
         font-size: 18px;
@@ -603,6 +605,8 @@ footer .small-footer span a{
         margin-top: 10px;
     }
 }
+
+
 .login-form form label{
     font-family: Roboto,sans-serif;
     font-size: 18px;
@@ -843,49 +847,113 @@ footer .small-footer span a{
         margin-bottom: 30px;
 
         .userInfo-container{
-            width: 1100px;
+            width: 100%;
             height: 100%;
-            padding: 20px;
+            padding: 20px 200px;
+            padding-left: 350px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
 
-            .userInfo-ava{
-                float: left;
-                margin-right: 20px;
-            }
-            .userInfo-name{
-                color: #5488c7;
-                font-size: 22px;
-                font-family: Montserrat;
-                font-weight: 550;
-            }
-            .create-review{
-                float: right;
-                color: #fff;
-                font-size: 22px;
-                font-family: Montserrat;
-                font-weight: 400;
-                letter-spacing: 2px;
-                padding: 10px 30px;
-                border-radius: 15px;
-                background: #4682B9;
-                margin-top: 8px;
-                margin-right: 20px;
-                transition: 0.2s;
-                &:hover{
-                    text-decoration: none;
-                    background: #3366cc;
-                }
-            }
-            ul{
+            .userInfoA{
                 display: flex;
-                width: 300px;
-                justify-content: space-between;
-                align-itmes: center;
-                margin-top: -10px;
-                li{
-                    list-style: none;
+                justify-content: flex-start;
+                align-items: center;
+                .userInfo-ava{
+                    margin-right: 20px;
+                }
+                .userInfo-name{
+                    color: #5488c7;
+                    font-size: 22px;
+                    font-family: Montserrat;
+                    font-weight: 550;
+                }
+                ul{
+                    display: flex;
+                    width: 300px;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-top: 8px;
+                    li{
+                        list-style: none;
 
+                    }
                 }
             }
+            .userInfoB{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .userInfo1{
+                    .create-review{
+                        color: #fff;
+                        font-size: 22px;
+                        font-family: Montserrat;
+                        font-weight: 400;
+                        letter-spacing: 2px;
+                        padding: 10px 30px;
+                        border-radius: 15px;
+                        background: #4682B9;
+                        transition: 0.2s;
+                        &:hover{
+                            text-decoration: none;
+                            background: #1e90ff;
+                        }
+                    }
+                }
+                .userInfo2{
+                }
+                .userInfo2{
+                    margin-left: 20px;
+                    .autocomplete {
+                        /*the container must be positioned relative:*/
+                        position: relative;
+                        
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                        width: 350px;
+                        input {
+                            border: 1px solid transparent;
+                            background-color: #f1f1f1;
+                            padding: 10px;
+                            font-size: 16px;
+                        }
+                        
+                        #autocomplete-search {
+                            background-color: #f1f1f1;
+                            padding-left: 10px;
+                            padding-right: 10px;
+                            width: 221px;
+                            font-size: 16px;
+                            font-family: Montserrat;
+                            font-weight: 400;
+                        }
+                        input[type=submit] {
+                            background-color: DodgerBlue;
+                            color: #fff;
+                            width: 75px;
+                        }
+                        .easy-autocomplete-container{
+                            ul{
+                                li{
+                                    border-top: 1px solid #868686;
+                                    .eac-item{
+                                        padding: 6px 0;
+                                        a{
+                                            color: #333;
+                                            &:hover{
+                                                text-decoration: none;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
         }
     }
     .userInfo.sticky{
@@ -1148,6 +1216,7 @@ footer .small-footer span a{
                 }
 
                 .reviewUser-info-name{
+                    min-width: 300px;
                     a{
                         font-family: Roboto,sans-serif;
                         font-size: 18px;
