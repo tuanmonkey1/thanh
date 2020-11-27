@@ -6,11 +6,11 @@ class RatesController < ApplicationController
 	def create
 		if current_user
 			@review = Review.find(params[:review_id])
-			@rate = Rate.new
+			@rate = @review.rates.new rating_params
+			@rate.user = current_user
 
 			if @rate.save!
 				redirect_to @rate.review
-				# Handle a successful save.
 			else
 				render 'new'
 			end
@@ -22,7 +22,9 @@ class RatesController < ApplicationController
 	end
 	private
 	def rating_params
-	  params.require(:rate).permit(:star, :user_id, :review_id)
+	  params.require(:rate).permit(:star, :user_id, :review_id)	  	
+	  end
 	end
 end
 
+   
