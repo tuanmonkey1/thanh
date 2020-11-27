@@ -1,46 +1,12 @@
 <% provide(:title, 'All Request') %>
 
-<div class="khung">
-	<h1><%= t('form.request.all') %></h1>
-	<div class="khung-container">
-		<ul class="content">
-			<% @requests.each do |request| %>
-				<li class="content-wrapper">
-						<ul class="contentBx">
-							<li>
-							  	<a href="http://localhost:3000/products/1/requests/new?locale=en" target="_blank">
-							        <div class="img"><%= link_to image_tag("audio1.jpg", width:"90px" ) %></div>		  		
-							    </a>
-							    <%= request.user.name %>
-					    	
-			                   
-					    	</li> 					    
-					    	<li class="pice">Pice:
-					    		<span id="price"><%= request.product.price %></span>
-					    	</li>
 
-
-					    	<li class="quantity">Quantity:
-					    		<span id="quantity"><%= request.quantity %></span>
-					    	</li>
-
-					    	<li class="total">Total: 
-					    		<span id="total-money"><%= request.product.price * request.quantity%></span>
-					    	</li>
-
-					    	<li class="destroy">
-					    		<%= link_to 'Destroy', admin_request_path(request), method: :delete, data: { confirm: 'Are you sure?' } %>
-					    		
-					    	</li>
-					    	 
-					    </ul>
-				</li>
-
-			
-			<% end %>
-
-		</ul>
-		<%= will_paginate %>					
+<div class="requests-wrapper">
+	<h1>All Requests</h1>
+	<div class="requests-container">
+		<div class="requests-content">
+			<%= render @requests %>
+		</div>
 	</div>
+	<%= will_paginate %>
 </div>
-

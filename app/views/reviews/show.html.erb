@@ -2,7 +2,7 @@
 
 <div class="review-show-wrapper">
 	<div class="review-show-header-bg">
-		<img src="https://mastermindseo.org/wp-content/uploads/2015/03/header-background.png">
+		<img src="https://res.cloudinary.com/dgcsxppnx/image/upload/v1606808867/audio/header-background_jquceb.png">
 	</div>
 	<div class="review-show-container">
 		<div class="review-show-containerBx">
@@ -12,14 +12,18 @@
 					<%= link_to @review.user.name, @review.user %>
 				</span>
 				<%= render 'users/follow_form', user: @review.user if logged_in? %>
-				<span class="reviewUser-info-time">Created at <%= l(@review.created_at, locale: :en) %></span>
+				<span class="reviewUser-info-time"><%= t('blog.show.created') %> <%= l(@review.created_at, locale: :en) %></span>
 				<div style="clear: right;"></div>
-				<a href="#comment-wrapper" id="commentNum"><i class="fas fa-comments"></i> <%= @review.comments.count %></a>
+				<a href="#comment-wrapper" id="commentNum"><i class="fas fa-comments"></i>&nbsp;<%= @review.comments.count %></a>
 				<ul>
-					<li><i class="fas fa-star"></i><%= @review.rates.avg_star %></li>
-					<li><i class="fas fa-user-friends"></i><%= render 'shared/stats' %></li>
-					<li><i class="fas fa-pencil-alt"></i> <%= @user.reviews.count %></li>
-					<li><span id="like-color"><i class="fas fa-thumbs-up"></i></span> <span id="like-number"><%= @review.likes.count %></span></li>
+					<% if @review.rates.empty? %>
+						<li><i class="fas fa-star"></i>0</li>
+					<% else %>
+						<li><i class="fas fa-star"></i><%= @review.rates.avg_star %></li>
+					<% end %>
+					<li><i class="fas fa-user-friends">&nbsp;</i><span id="followers"><%= @review.user.followers.count %></span></li>
+					<li><i class="fas fa-pencil-alt">&nbsp;</i> <%= @review.user.reviews.count %></li>
+					<li><span id="like-color"><i class="fas fa-thumbs-up"></i></span>&nbsp;<span id="like-number"><%= @review.likes.count %></span></li>
 				</ul>
 			</div>
 			<div class="review-show-content">
@@ -36,17 +40,21 @@
 				<li><a href="#"><i id="sci1" class="fab fa-facebook-f"></i></a></li>
 				<li><a href="#"><i id="sci2" class="fab fa-twitter"></i></a></li>
 				<li><a href="#"><i id="sci3" class="far fa-envelope"></i></a></li>
+				<li>
+					<div class="rateBx" style="margin-right: -30px">
+						<%= render 'rate/form' %>
+					</div>
+				</li>
+				<li>
+					<div class="likeBx">
+						<%= render 'like_form' %>
+					</div>
+				</li>
 			</ul>
-			<%= render "rate/form" %>
-				<%= render "rate/form" %>
-			<div class="like-wrapper">
-				<%= render 'like_form' %>
-			</div>
 			<div id="comment-wrapper">
-				<h2>Comments</h2>
+				<h2><%= t('blog.show.comment') %> </h2>
 				<%= render "comments/form" %>
 				<div class="comment-container">
-
 					<%= render @comments %>
 				</div>
 			</div>
@@ -59,7 +67,7 @@
 			</div>
 			<div class="popular-review">
 				<div class="review-show-right-content popular-review">
-					<h2>POPULAR POSTS</h2>
+					<h2><%= t('blog.show.popular') %></h2>
 					<div class="popular-review-contentBx">
 						<div class="popular-review-contentBx-img">
 							<%= image_tag("https://res.cloudinary.com/dgcsxppnx/image/upload/v1605669346/audio/blog-1-500x250_gfdvge.jpg", :width => 100, :height => 65) %>
@@ -107,7 +115,7 @@
 					</div>
 				</div>
 				<div class="review-show-right-content follow">
-					<h2>FOLLOW US</h2>
+					<h2><%= t('blog.show.follow_us') %></h2>
 					<ul class="popular-review-sci">
 						<li><a href="#"><i class="fab fa-instagram"></i></a></li>
 						<li><a href="#"><i class="fab fa-facebook"></i></a></li>
@@ -117,13 +125,13 @@
 				</div>
 				<div class="review-show-right-content subscribe">
 					<div class="subscribe-form">
-						<h2>SUBSCRIBE</h2>
+						<h2><%= t('blog.show.subscribe') %></h2>
 						<form>
-							<label for="emailAddress" class="subscribe-form-Tx">Email Address</label>
+							<label for="emailAddress" class="subscribe-form-Tx"><%= t('blog.show.email_address') %></label>
 							<input type="text" id="emailAddress">
-							<label for="nameAddress" class="subscribe-form-Tx">Email Address</label>
+							<label for="nameAddress" class="subscribe-form-Tx"><%= t('blog.show.name') %></label>
 							<input type="text" id="nameAddress">
-							<input type="submit" value="Subscribe" id="sub-submit">
+							<input type="submit" value="<%= t('blog.show.subscribe') %>" id="sub-submit">
 						</form>
 					</div>
 				</div>
@@ -131,4 +139,3 @@
 		</div>
 	</div>
 </div>
-<!-- Day la cho de o comment -->

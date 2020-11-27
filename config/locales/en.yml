@@ -39,16 +39,19 @@ en:
   header:
     in_ear_monitors: 'IN-EAR MONITORS'
     technology: 'TECHNOLOGY'
-    review: 'REVIEW'
+    blog: 'BLOG'
     support: 'SUPPORT'
     how_to_order: 'HOW TO ORDER'
     invoice_Information: 'Invoice Information'
     back: 'Back'
     order: 'Order'
+    overview: 'OVERVIEW'
+    technology: 'TECHNOLOGY'
+    specifications: 'SPECIFICATIONS'
   hidden_menu:
     64family: '64 FAMILY'
     legacy_upgrade: 'LEGACY UPGRADE'
-    review: 'REVIEW'
+    blog: 'BLOG'
     contact: 'CONTACT US'
     buy: 'WHERE TO BUY'
     account: 'MY ACCOUNT'  
@@ -70,6 +73,126 @@ en:
       date: 'Create date'
       address: 'Address'
       phone:   'Phone'
+    follow:
+      following: 'Following'
+      followers: 'Followers'
+      follow: 'Follow'
+      unfollow: 'Unfollow'
+    show:
+      my_account: 'My Account'
+      log_out: 'Log out'
+      order_history: 'ORDER HISTORY'
+      order_yet: "You haven't placed any orders yet."
+      view: 'View'
+      account_details: 'ACCOUNT DETAILS'
+    new:
+      signup: 'Signup'
+    index:
+      all_users: 'All users'
+    edit:
+      edit_user: 'Edit user'
+      update: 'Update your profile'
+    form:
+      name: 'Name'
+      email: 'Email'
+      password: 'Password'
+      password_confirmation: 'Password confirmation'
+      create: 'Create'
+      save: 'Save change'
+  pages:
+    home:
+      home: 'Home'
+      extraordinary_sound: 'Extraordinary Sound'
+      extraordinary_color: 'Meets Extraordinary Color'
+      discover: 'DISCOVER'
+      play_video: 'PLAY VIDEO'
+    iems:
+      iems: 'IEMs'
+      for: 'for'
+      stage: 'stage'
+      studio: 'studio'
+      audiophile: 'audiophile'
+      explore: 'EXPLORE'
+      iems1_1: 'Award-winning custom IEMs'
+      iems1_2: 'for performing musicians'
+      iems2_1: 'Accuracy and resolution'
+      iems2_2: 'engineered for the studio'
+      iems3_1: 'IEMs designed for the most'
+      iems3_2: 'discerning music lovers'
+    technology:
+      technology: 'Technology'
+      technologies: 'CÔNG NGHỆ'
+      learn_more: 'LEARN MORE'
+      p0: 'Innovations that only 64 Audio offers, all designed to challenge traditional in-ear monitor designs to bring you a truly unique listening experience'
+      tubeless_transparency: 'Tubeless Transparency'
+      p1: 'Our industry-first, tubeless technology eliminates sound-altering dampers and tubes. This reduced resonance reveals a new level of resolution and transparency.'
+      fatigue_free_listening: 'Fatigue-Free Listening'
+      p2: 'This pneumatically interactive vent relieves air pressure in a sealed ear canal, alleviating listener fatigue and opening the soundstage.'
+      handcrafted_comfort: 'Handcrafted Comfort'
+      p3: 'A new way of manufacturing custom in-ear monitors preserves the details of your ear impressions for the most comfortable-fitting IEMs possible.'
+      consistent_sound: 'Consistent Sound'
+      p4: "Enjoy a steadfast sound at any venue. From studio to stage, this proprietary circuit ensures your IEM's sound signature stays the same no matter what it's plugged into."
+    help:
+      support: 'Support'
+      contact_us: 'CONTACT US'
+      how_can_we_help_you_today: 'HOW CAN WE HELP YOU TODAY?'
+      problem_with_my_IEM: 'Problem with my IEM'
+      check_on_my_order_status: 'Check on my order status'
+      need_help_with_something_else: 'Need help with something else'
+      contact_support: 'Contact Support'
+    order:
+      how_to_order: 'How To Order'
+  blog:
+    index:
+      blog: 'Blog'
+      create_review: 'Create new blog'
+      search: 'Search'
+      sign_in_to_create_blog: 'Sign in to create reviews'
+    show:
+      create: 'Create at'
+      comment: 'Comments'
+      popular: 'POPULAR POSTS'
+      follow_us: 'FOLLOW US'
+      subscribe: 'SUBSCRIBE'
+      email_address: 'Email Address'
+      name: 'name'
+    form:
+      title: 'Title'
+      description: 'Description'
+      content: 'Content'
+      select_picture: 'Select picture'
+      select_hashtag: 'Select hashtag'
+      create: 'Create'
+    new:
+      create_blog: 'Create new blog'
+  like:
+    like: 'Like'
+  request:
+    show:
+      title: 'Create request'
+      contact_info: 'Contact Information'
+      shipping_address: 'Shipping address'
+      address: 'Address'
+      phone: 'Phone number'
+      product_detail: 'Product Detail'
+      quantity: 'Quantity'
+      total: 'Total'
+      delete: 'Delete'
+    new:
+      title: 'Request'
+      contact_info: 'Contact Information'
+      shipping_address: 'Shipping address'
+      address: 'Address'
+      phone: 'Phone number'
+      return: 'Return'
+      order: 'Order'
+      quantity: 'Quantity'
+      total: 'Total'
+    index:
+      product: 'Product'
+      quantity: 'quantity'
+      total: 'Total'
+      view: 'View'
   form:
     label:
       name: 'Name'
@@ -82,8 +205,17 @@ en:
       price: 'Price'
       password_confirmation: 'Password confirmation'
       technology: 'Technology'
-      distribute: 'Distribute'    
-      quantity: Quantity'     
+      distribute: 'Distribute'
+      quantity: Quantity'
+      quantity: 'Quantity' 
+      build_time: 'Build time'
+      driver_type: 'Driver type'
+      driver_configuration: 'Driver configuration'
+      frequency_response: 'Frequency response'
+      sensitivity: 'Sensitivity'
+      impedance: 'Impedance'
+      crossover: 'Crossover'
+      isolation: 'Isolation'
     submit:
       submit: 'Submit'
       login: 'Login'
@@ -105,4 +237,3 @@ en:
       all: 'All request'
       total: 'Total'
       new: 'New Requests'
-      

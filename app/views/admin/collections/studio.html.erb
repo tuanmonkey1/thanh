@@ -3,14 +3,14 @@
 <div class="product-collection-wrapper">
     <div class="template-collection">
         <div class="template studio1">
-            <div class="templateTx"><%= link_to "stage", collections_stage_path(distribute: Product.distributes[:stage]) %></div>
+            <div class="templateTx"><%= link_to "stage", admin_collections_stage_path(distribute: Product.distributes[:stage]) %></div>
         </div>
         <div class="template studio2">
-            <div class="templateTx"><%= link_to "audiophile", collections_audiophile_path(distribute: Product.distributes[:audiophile]) %></div>
+            <div class="templateTx"><%= link_to "audiophile", admin_collections_audiophile_path(distribute: Product.distributes[:audiophile]) %></div>
         </div>
         <div class="template studio3">
             <div class="templateBx">
-                <h2><%= link_to "studio", collections_studio_path(distribute: Product.distributes[:studio]) %></h2>
+                <h2><%= link_to "studio", admin_collections_studio_path(distribute: Product.distributes[:studio]) %></h2>
                 <p>Accuracy and resolution engineered for the studio</p>
             </div>
         </div>

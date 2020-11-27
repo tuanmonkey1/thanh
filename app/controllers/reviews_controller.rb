@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
 
-	before_action :logged_in_user, only: [:create, :destroy, :new, :index]
+	before_action :logged_in_user, only: [:create, :destroy, :new]
 	before_action :correct_user, only: :destroy
 
 	def new
@@ -22,9 +22,23 @@ class ReviewsController < ApplicationController
         flash[:success] = "Review created!"
         redirect_to reviews_url
       else
-      	@feed_items = current_user.feed.paginate(page: params[:page]).per_page(10)
+      	@reviews = current_user.feed.paginate(page: params[:page]).per_page(10)
         render 'reviews'
       end
+	end
+
+	def edit
+		@review = Review.find(params[:id])
+	end
+
+	def update
+		@review = Review.find(params[:id])
+		if @review.update(review_params)
+			flash[:success] = "Product updated"
+			redirect_to reviews_path
+		else
+			render 'edit'
+		end
 	end
 
 	def destroy
@@ -46,12 +60,12 @@ class ReviewsController < ApplicationController
 	end
 
 	def index
-		@review = current_user.reviews.build
+		# @review = current_user.reviews.build
 		#if params[:auto]
 			@reviews = Review.where(title: params[:title])	
 		#else
-			@q = Review.ransack(params[:q])
-			@reviews = @q.result.paginate(page: params[:page])
+		@q = Review.ransack(params[:q])
+		@reviews = @q.result.paginate(page: params[:page])
 		#end
 		respond_to do |format|
 			format.html {}

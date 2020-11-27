@@ -1,19 +1,19 @@
-<% provide(:title, "IEMs") %>
+<% provide(:title, t('pages.iems.iems')) %>
 
 <div class="iems-wrapper">
     <div class="clip clip1">
-        <h2>for <span>stage</span></h2>
-        <p>Award-winning custom IEMs<br>for performing musicians</p>
-        <%= link_to "EXPLORE", collections_stage_path(distribute: Product.distributes[:stage]) %>
+        <h2><%= t('pages.iems.for') %> <span><%= t('pages.iems.stage') %></span></h2>
+        <p><%= t('pages.iems.iems1_1') %><br><%= t('pages.iems.iems1_2') %></p>
+        <%= link_to t('pages.iems.explore'), collections_stage_path(distribute: Product.distributes[:stage]) %>
     </div>
     <div class="clip clip2">
-        <h2>for <span>studio</span></h2>
-        <p>Accuracy and resolution<br>engineered for the studio</p>
-        <%= link_to "EXPLORE", collections_studio_path(distribute: Product.distributes[:studio]) %>
+        <h2><%= t('pages.iems.for') %> <span><%= t('pages.iems.studio') %></span></h2>
+        <p><%= t('pages.iems.iems2_1') %><br><%= t('pages.iems.iems2_2') %></p>
+        <%= link_to t('pages.iems.explore'), collections_studio_path(distribute: Product.distributes[:studio]) %>
     </div>
     <div class="clip clip3">
-        <h2>for <span>audiophile</span></h2>
-        <p>IEMs designed for the most<br>discerning music lovers</p>
-        <%= link_to "EXPLORE", collections_audiophile_path(distribute: Product.distributes[:audiophile]) %>
+        <h2><%= t('pages.iems.for') %> <span><%= t('pages.iems.audiophile') %></span></h2>
+        <p><%= t('pages.iems.iems3_1') %><br><%= t('pages.iems.iems3_2') %></p>
+        <%= link_to t('pages.iems.explore'), collections_audiophile_path(distribute: Product.distributes[:audiophile]) %>
     </div>
 </div>

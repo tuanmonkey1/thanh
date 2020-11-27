@@ -1,204 +1,329 @@
 .request-wrapper{
-	width: 100%;
-	height: 100vh;
-	padding-top: 40px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	.request-order-content{
-		width: 480px;
-		padding-bottom: 50px;
-		background-color:#F1F8E0;
-		.request-head{
-			width: 100%;
-			height: 50px;
-			.logo{
-				margin-top:-39px;
-				text-align:center;
-				background-color:#E1F5A9;
-				padding: 5px;
-				margin-bottom:20px;
-			}
-			.text-1{
-				font-size: 18px;
-				color:black;
-				text-align: center;
-				margin-bottom: 20px;
-				font-family: Montserrat,sans-serif;
-				font-weight: bold;
-				font-size: 20px;
-				letter-spacing: 1px;
-			}
-			.request-head-info{
-				width: 100%;
-				padding: 0 30px;
-				padding-right: 100px;
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-				li{
-					list-style: none;
-					font-size: 18px;
-				}
-				.product-title{
-					margin-left: -120px;
-					font-weight: bold;
-				}
-			}
-		}
-		.order-form	{
-			width: 100%;
-			padding: 0 30px;
-			position: initial;	
-			.request-content{
-				width: 100%;
-				padding-bottom: 100px;
-				padding-top: 200px;
-				font-size: 18px;	
-			}           
-			.quantity{		 
-				width: 100%;
-				padding: 0 10px;
-				padding-bottom: 20px;
-				display: flex;
-				align-items: center;
-				justify-content: space-between;
-				.quantity-text{
-					span{
-						font-size: 18px;
-						font-family: Montserrat,sans-serif;
-						font-weight: bold;
-					}
-				}
-			}
-
-			.total{
-				width: 100%;
-				padding: 0 20px;
-				p{
-					text-align: end;
-					font-size: 18px;
-					font-family: Montserrat,sans-serif;
-					span{
-						font-weight: bold;
-					}
-				}
-			}
-
-			.request-content-foot{
-				display: flex;
-				justify-content: space-between;
-				align-items: center;
-				margin-top: 50px;
-				li{
-					list-style: none;
-
-					a{
-						background-color:#210B61;
-						color:white;
-						padding:10px 30px;
-						letter-spacing: 2px;
-						font-family: Montserrat,sans-serif;
-						font-size: 18px;
-						border-radius:10px;
-						transition: 0.2s;
-
-						&:hover {
-							background-color:#58D3F7;
-							text-decoration: none;
-						}
-					}
-					#order{
-						background-color:#210B61;
-						color:white;
-						padding: 10px 30px;
-						letter-spacing: 2px;
-						font-size: 18px;
-						font-family: Montserrat,sans-serif;
-						border-radius:10px;
-						border: none;
-						transition: 0.2s;
-						&:hover {
-							background-color:#DF013A;
-							transform: scale(1.15);
-						}
-					}
-				}
-					  
-			}					  		  
-		}
-	}
+    width: 100%;
+    display: grid;
+    grid-template-columns: 55% 45%;
 }
-.khung{
-	padding-top: 100px;
+.request-left{
+    padding: 100px 100px 100px 350px;
+    background: #fff;
+    width: 100%;
+}
+.request-logo{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.request-logo img{
+    width: 200px;
+}
+.contact-info{
+    padding: 30px 0;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+.contact-info h2{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    font-weight: 500;
+    font-size: 1.7em;
+    color: #333333;
+}
+.contact-info .contact-infoBx{
+    padding: 20px 0;
+}
+.contact-info .contact-infoBx img{
+    width: 70px;
+    height: 70px;
+    border-radius: 10px;
+    float: left;
+    margin-right: 15px;
+    border: 1px solid #000000;
+}
+.contact-info .contact-infoBx p{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 10px;
+    letter-spacing: 1px;
+    color: #333333;
+    line-height: 20px;
+    margin-bottom: 3px;
+}
+.request-shipping{
+    padding: 20px 0;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+.request-shipping h2{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    font-weight: 500;
+    font-size: 1.7em;
+    color: #333333;
+    margin-bottom: 20px;
+}
+.request-shipping p{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+}
+.request-shipping p span{
+    font-weight: 700;
+}
+.request-shipping form .input-container{
+    margin: 2rem 0;
+    position: relative;
+}
+.request-shipping form .input-container input{
+    width: 100%;
+    outline: none;
+    border: 1px solid rgba(0,0,0,0.2);
+    background: none;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    font-weight: 500;
+    font-size: 1.8rem;
+    color: #333333;
+    letter-spacing: 0.5px;
+    transition: 0.3s;
+    position: relative;
+}
+.input-container label{
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    padding: 0 0.4rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    pointer-events: none;
+    z-index: 1000;
+    transition: 0.3s;
+}
+.request-shipping form .input-container span{
+    position: absolute;
+    top: 0;
+    left: 25px;
+    transform: translateY(-50%);
+    font-size: 1.8rem;
+    padding: 0 0.4rem;
+    color: transparent;
+    pointer-events: none;
+    z-index: 500;
+}
+.input-container span:before,
+.input-container span:after{
+    content: "";
+    position: absolute;
+    width: 10%;
+    opacity: 0;
+    transition: 0.3s;
+    height: 5px;
+    background-color: #fff;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.request-shipping form .input-container span:before{
+    left: 50%;
+}
+.request-shipping form .input-container span:after{
+    right: 50%;
+}
+.input-container.focus label{
+    top: 0;
+    transform: translateY(-50%);
+    left: 25px;
+    font-size: 1.8rem;
+}
+.input-container.focus span:before,
+.input-container.focus span:after{
+    width: 50%;
+    opacity: 1;
+}
+
+.request-shipping form .form-foot{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.request-shipping form .form-foot .return a{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    font-weight: 400;
+    font-size: 1.8rem;
+    cursor: pointer;
+}
+.request-shipping form .form-foot .btn{
+    padding: 0.8rem 1.5rem;
+    background: #197bbd;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    font-weight: 600;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.request-shipping form .form-foot .btn:hover{
+    background: #135e90;
+}
+.request-right{
+    position: relative;
+    background: #fafafa;
+    padding: 50px;
+    padding-top: 120px;
+    border-left: 1px solid rgba(0,0,0,0.1);
+}
+.request-rightBx{
+    padding-right: 250px;
+}
+.request-rightBx .product-info{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.request-rightBx .product-info .product-name{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.request-rightBx .product-info .product-name img{
+    width: 100px;
+    height: 100px;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 10px;
+    margin-right: 15px;
+}
+.request-rightBx .product-info .product-name span{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    font-weight: 600;
+    font-size: 2rem;
+}
+.request-rightBx .product-info .product-price span{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    font-weight: 500;
+    font-size: 2rem;
+}
+.request-rightBx .product-quantity{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.request-rightBx .product-quantity .product-quantityTx span{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    font-weight: 400;
+    font-size: 1.8rem;
+}
+.request-rightBx .product-quantity .product-quantityBx .form-control{
+	width: 100px;
+}
+.request-rightBx .total{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+.request-rightBx .total .totalTx span{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    font-weight: 400;
+    font-size: 1.8rem;
+}
+.request-rightBx .total .totalBx p{
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+    font-weight: 400;
+    font-size: 1.3rem;
+}
+.request-rightBx .total .totalBx p span{
+    font-weight: 600;
+    font-size: 1.8rem;
+}
+
+.requests-wrapper{
 	width: 100%;
-	height: 100vh;
-	background: #E6E6E6;
-		
+	min-height: 60vh;
+	margin-top: 150px;
+	text-align: center;
+
 	h1{
-		text-align: center;
-		padding-bottom: 30px;
-
+		font-weight: 600;
+		font-size: 40px;
+    	font-family: Montserrat,sans-serif;
+	    font-size: 40px;
 	}
-	.khung-container{
-
-		width: 40%;
-		margin-left:550px;
+	.requests-container{
+		width: 100%;
+		display: flex;
 		justify-content: center;
-		border: 1px solid rgba(0,0,0,0.3);
-		height:500px;
-		text-align:center;
-		background:#F2F2F2;
 
+		.requests-content{
+			width: 1000px;
+			height: 600px;
 
-	    .new-request{
-
-	      width:25%;
-	 
-	      margin-top:80px;
-	      padding:10px;
-	      
-	     
-	     }
-		
-		.content{
-		  margin: auto;
-		  margin-top: 30px;
-
-		  width: 700px;
-
-
-
-			.content-wrapper{
-
-				list-style: none;
+			.requests-contentBx{
 				width: 100%;
 				height: 100px;
-				background: #FFFFFF;
-				margin-bottom: 10px;
-				.contentBx{
-					width: 100%;
-					height: 100%;
-					padding: 20px;					
-					display: flex;
-					justify-content: space-between;
-					align-items: center;
-					list-style: none;
-					float: left;
-					.pice{
-										  
-					margin:30px;
-					}
-					.quantity{
-					  margin:30px;
-					}
-					.total{
-					  margin:30px;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+				margin: 20px;
+				background: #DDDDDD;
+				padding: 20px 30px;
 
+				.requestsBx-left{
+					height: 100%;
+
+					#requests-avar{
+						float: left;
+						margin-right: 15px;
 					}
-					.destroy{
-					margin-left:200px;									
-					}															
+					span{
+						float: left;
+						font-weight: 500;
+						font-size: 18px;
+				    	font-family: Montserrat,sans-serif;
+					}
+					ul{
+						margin-top: 30px;
+						display: flex;
+						width: 500px;
+						li{
+							list-style: none;
+							margin-right: 20px;
+							p{
+								font-weight: 700;
+								font-size: 18px;
+						    	font-family: Montserrat,sans-serif;
+
+						    	span{
+						    		font-weight: 500;
+						    	}
+							}
+						}
+					}
+				}
+				.requestsBx-right{
+					a{
+						padding: 10px 25px;
+						font-weight: 500;
+						font-size: 18px;
+				    	font-family: Montserrat,sans-serif;
+					    background: #337ab7;
+					    color: #fff;
+					    transition: 0.1s;
+					    &:hover{
+					    	text-decoration: none;
+					    	background: #23527c;
+					    }
+					}
 				}
 			}
 		}

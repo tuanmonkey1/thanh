@@ -1,9 +1,9 @@
-<%= form_for([@review, @rate]) do |f| %>
-    <% (1..5).each do |x| %>
-      <i class="fas fa-star"></i>
-      <%= f.hidden_field :star, id: "star_#{x}",value: x %>
-    <% end %>
-  </div>
-  <%= f.submit %>
+<% if logged_in? %>
+	<%= form_for([@review, @rate]) do |f| %>
+	    <% (1..5).each do |x| %>
+	      <i class="fas fa-star" id="s<%= x %>"></i>
+	      <%= f.hidden_field :star, id: "s#{x}",value: x %>
+	    <% end %>
+	  <%= f.submit %>
+	<% end%>
 <% end%>
-       

@@ -1,23 +1,57 @@
 <% provide(:title, "Account") %>
-
+<% if current_user?(@user) %>
 <div class="user-show-wrapper">
-    <h2>My Account</h2>
+    <h2><%= t('users.show.my_account') %></h2>
     <%= render 'follow_form' if logged_in? %>
-    <h4><%= link_to "Log out", logout_path, method: :delete %></h4>
+    <h4><%= link_to t('users.show.log_out'), logout_path, method: :delete %></h4>
     <div class="user-info-container">
-      <div class="order-history">
-        <h3>ORDER HISTORY</h3>
-        <p>You haven't placed any orders yet.</p>
-        <p>* Order History is available for orders starting July 2019. If you’d like access to order summaries for orders placed before that date, please reach out to support@64audio.com</p>
+      <div>
+        <div class="order-history">
+          <h3><%= t('users.show.order_history') %></h3>
+          <% if current_user.requests.empty? %>
+            <p><%= t('users.show.order_yet') %></p>
+          <% else %>
+            <div class="order-historyBx">
+              <%= render current_user.requests %>
+            </div>
+          <% end %>
+          <!-- <p>* Order History is available for orders starting July 2019. If you’d like access to order summaries for orders placed before that date, please reach out to support@64audio.com</p> -->
+        </div>
+        <div class="my-blogs">
+          <h3>My blogs:</h3>
+          <div class="my-blogsBx">
+            <%= render current_user.reviews %>
+          </div>
+        </div>
       </div>
       <div class="user-info-content">
-        <h3>ACCOUNT DETAILS</h3>
+        <h3><%= t('users.show.account_details') %></h3>
         <p><span><%= t('users.index.name') %>: </span><%= @user.name %></p>
         <p><span><%= t('users.index.email') %>: </span><%= @user.email %></p>
         <%= link_to t('users.index.edit'), edit_user_path(@user) %>
       </div>
     </div>
 </div>
-
-
-
+<% else %>
+  <div class="show-user-wrapper">
+    <div class="show-user-container">
+      <div class="user-info">
+        <%= link_to gravatar_for(@user, size: 50), @user , class: "user-info-ava" %>
+        <span class="user-info-name">
+          <%= link_to @user.name, @user %>
+        </span>
+        <ul>
+          <li><i class="fas fa-user-friends">&nbsp;</i><span id="followers"><%= @user.followers.count %></span></li>
+          <li><i class="fas fa-pencil-alt">&nbsp;</i> <%= @user.reviews.count %></li>
+        </ul>
+      </div>
+      <div class="show-user-blog">
+        <h2>Blogs:</h2>
+        <div class="show-user-blogBx">
+          <%= render @reviews %>
+        </div>
+        <%= will_paginate @reviews, params: { controller: :users, action: :show }, id: "pages-review-paginate" %>
+      </div>
+    </div>
+  </div>
+<% end %>

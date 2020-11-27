@@ -60,7 +60,5 @@ class HashtagsController < ApplicationController
   private
 	def hashtag_params
 		params.require(:hashtag).permit(:name)
-									   
-	
 	end
 end

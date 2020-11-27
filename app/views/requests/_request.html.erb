@@ -1,8 +1,16 @@
-<li>
-	<%= gravatar_for request, size: 50 %>
-	<%= link_to request.user_id, request %>
-	<% if current_request.admin? && !current_request?(request) %>
-      | <%= link_to "delete", request, method: :delete,
-    data: { confirm: "You sure?" } %>
-   <% end %>
-</li>
+
+	<div class="requests-contentBx">
+		<div class="requestsBx-left">
+			<%= image_tag request.product.image1 if request.product.image1.attached? %>
+			
+			<ul>
+				<li><p><span><%= t('request.index.product') %>:&nbsp;</span><%= request.product.title %></p></li>
+				<li><p><span><%= t('request.index.quantity') %>:&nbsp;</span><%= request.quantity %></p></li>
+				<li><p><span><%= t('request.index.total') %>:&nbsp;</span>$<%= request.product.price * request.quantity%></p></li>
+			</ul>
+			<span><p style="font-size: 16px; letter-spacing: 1px;"><%= l(request.created_at, locale: :en) %></p>
+		</div>
+		<div class="requestsBx-right">
+			<%= link_to t('request.index.view'), request_path(request) %>
+		</div>
+	</div>

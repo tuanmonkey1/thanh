@@ -24,7 +24,7 @@ class LikesController < ApplicationController
             format.html { redirect_to review_path(@review) }
             format.js
         end
-      end
+    end
 
   private
     def find_review

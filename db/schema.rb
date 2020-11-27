@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_30_091752) do
+ActiveRecord::Schema.define(version: 2020_12_03_071006) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2020_11_30_091752) do
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "ckeditor_assets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "data_file_name", null: false
@@ -77,8 +78,16 @@ ActiveRecord::Schema.define(version: 2020_11_30_091752) do
     t.text "technology"
     t.text "description"
     t.text "content"
+    t.integer "build_time"
     t.integer "distribute"
     t.decimal "price", precision: 8, scale: 2
+    t.text "driver_type"
+    t.text "driver_configuration"
+    t.text "frequency_response"
+    t.text "sensitivity"
+    t.text "impedance"
+    t.text "crossover"
+    t.text "isolation"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -86,7 +95,7 @@ ActiveRecord::Schema.define(version: 2020_11_30_091752) do
   create_table "rates", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "review_id"
     t.integer "user_id"
-    t.integer "star"
+    t.integer "star", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -104,7 +113,9 @@ ActiveRecord::Schema.define(version: 2020_11_30_091752) do
   create_table "requests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
     t.integer "product_id"
-    t.integer "product_price"
+    t.integer "quantity"
+    t.string "phone"
+    t.string "address"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -134,7 +145,7 @@ ActiveRecord::Schema.define(version: 2020_11_30_091752) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "password_digest"
     t.string "remember_digest"
-    t.boolean "admin"
+    t.boolean "admin", default: false
     t.string "provider"
     t.string "uid"
     t.string "image"

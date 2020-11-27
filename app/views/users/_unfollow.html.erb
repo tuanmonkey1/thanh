@@ -1,5 +1,5 @@
 <%= form_for(current_user.active_relationships.find_by(followed_id: @user.id), 
 	html: { method: :delete }, remote: true) do |f| %>
 	<%= f.hidden_field :review_id, value: @review.id if @review.present? %>
-	<%= f.submit "Unfollow", class: "btn" %>
+	<%= f.submit t('users.follow.unfollow'), class: "btn" %>
 <% end %>

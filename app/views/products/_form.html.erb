@@ -1,14 +1,8 @@
+<%= javascript_include_tag Ckeditor.cdn_url %>
 <%= form_for(@product) do |f| %>
-    <% if @product.errors.any? %>
-        <div id="error_explanation">
-            <h2><%= pluralize(@product.errors.count, "error") %> prohibited this products from being saved:</h2>
-            <ul>
-            <% @product.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
-            <% end %>
-            </ul>
-        </div>
-    <% end %>
+    
+    <%= render 'shared/error_messages', object: @product %>
+
         <%= f.label t('form.label.title') %>
         <%= f.text_field :title , id: "title" %>
 
@@ -20,15 +14,69 @@
 
     
         <%= f.label t('form.label.content') %>
-        <%= f.text_area :content, :rows => 15 , class: "areaL" %>
+        <%= f.text_area :content, :rows => 15 , class: "areaL ckeditor" %>
     
         <%= f.label t('form.label.price') %>
         <%= f.number_field :price , id: "price" %>
 
-        <%= f.file_field t('form.label.sellect_picture') %><br>
+        <%= f.label t('form.label.select_picture') %> 1:
+        <%= f.file_field :image1 %><br>
+
+        2:
+        <%= f.file_field :image2 %><br>
         
         <%= f.label t('form.label.distribute') %>
-        <%= f.select :distribute, options_for_select(Product.distributes.map { |k, v| [k, v] }) %>
+        <%= f.select :distribute, options_for_select(Product.distributes.map { |k, v| [k, v] }) %><br>
+
+        <%= f.label t('form.label.build_time') %>
+        <%= f.number_field :build_time , id: "price" %>
+
+        <%= f.label t('form.label.driver_type') %>
+        <%= f.text_field :driver_type , id: "title" %>
+
+        <%= f.label t('form.label.driver_configuration') %>
+        <%= f.text_field :driver_configuration , id: "title" %>
+
+        <%= f.label t('form.label.frequency_response') %>
+        <%= f.text_field :frequency_response , id: "title" %>
+
+        <%= f.label t('form.label.sensitivity') %>
+        <%= f.text_field :sensitivity , id: "title" %>
+
+        <%= f.label t('form.label.impedance') %>
+        <%= f.text_field :impedance , id: "title" %>
+
+        <%= f.label t('form.label.crossover') %>
+        <%= f.text_field :crossover , id: "title" %>
+
+        <%= f.label t('form.label.isolation') %>
+        <%= f.text_field :isolation , id: "title" %>
 
         <%= f.submit yield(:button_text), class: "submit" %>
 <% end %>
+
+<script type="text/javascript">
+  CKEDITOR.editorConfig = function( config ) {
+    config.language = 'en';
+    config.uiColor = '#ffffff';
+
+    config.filebrowserBrowseUrl = "/ckeditor/attachment_files";
+    config.filebrowserFlashBrowseUrl = "/ckeditor/attachment_files";
+    config.filebrowserFlashUploadUrl = "/ckeditor/attachment_files";
+    config.filebrowserImageBrowseLinkUrl = "/ckeditor/pictures";
+    config.filebrowserImageBrowseUrl = "/ckeditor/pictures";
+    config.filebrowserImageUploadUrl = "/ckeditor/pictures?";
+    config.filebrowserUploadUrl = "/ckeditor/attachment_files";
+    config.font_defaultLabel = 'Arial';
+    config.fontSize_defaultLabel = 30;
+    config.allowedContent = true;
+
+    config.toolbar = [
+      { name: 'document', groups: [ 'mode', 'document', 'doctools' ], items: [ 'Source'] },
+      { name: 'clipboard', groups: [ 'clipboard', 'undo' ], items: [ 'Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo' ] },
+      { name: 'links', items: [ 'Link', 'Unlink', 'Anchor' ] },
+      { name: 'insert', items: [ 'Image', 'Flash', 'Table', 'HorizontalRule', 'SpecialChar' ] },
+
+    ];
+  };
+</script>

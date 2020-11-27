@@ -15,9 +15,13 @@ class StaticPagesController < ApplicationController
   def technology  	
   end
 
-  def review
+  def blog
   end
 
   def products
+  end
+
+  def contact
+    
   end
 end

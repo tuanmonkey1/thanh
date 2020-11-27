@@ -1,40 +1,57 @@
-<% provide(:title, "Review") %>
+<% provide(:title, t('blog.index.blog')) %>
 
-<% if logged_in? %>
 	<div class="review-wrapper">
 		<div class="review-show-header-bg">
-			<img src="https://www.andisa.net/wp-content/uploads/2017/08/Background-header-home.jpg">
+			<img src="https://res.cloudinary.com/dgcsxppnx/image/upload/v1606808814/audio/Background-header-home_ng4oss.jpg">
 		</div>
-		<div class="userInfo">
-			<div class="userInfo-container">
-				<div class="userInfoA">
-					<%= link_to gravatar_for(@current_user, size: 60), @current_user, class: "userInfo-ava" %>
-					<div class="userInfo1-text">
-						<span class="userInfo-name"><%= @user.name %></span>
-						<ul>
-							<li><i class="fas fa-star"></i> 2.0K</li>
-							<li><i class="fas fa-user-friends"></i> 66</li>
-							<li><i class="fas fa-people-arrows"></i> 150</li>
-							<li><i class="fas fa-pencil-alt"></i> <%= @user.reviews.count %></li>
-						</ul>
+		<% if logged_in? %>
+			<div class="userInfo">
+				<div class="userInfo-container">
+					<div class="userInfoA">
+						<%= link_to gravatar_for(@current_user, size: 60), @current_user, class: "userInfo-ava" %>
+						<div class="userInfo1-text">
+							<span class="userInfo-name"><%= link_to @user.name, @user %></span>
+							<ul>
+								<li><i class="fas fa-user-friends"></i>&nbsp;<%= @user.following.count %></li>
+								<li><i class="fas fa-people-arrows"></i>&nbsp;<%= @user.followers.count %></li>
+								<li><i class="fas fa-pencil-alt"></i> <%= @user.reviews.count %></li>
+							</ul>
+						</div>
 					</div>
-				</div>
-				<div class="userInfoB">
-					<div class="userInfo1">
-						<%= link_to t('form.submit.create_review'), new_review_url , class: "create-review" %>
-					</div>
-					<div class="userInfo2">
-						<%= search_form_for @q, local: true, method: :get, html: {class: "form-inline"} do |form| %>
-							<div class="autocomplete" id="autocomplete">				
-								<%= form.search_field :title_cont, placeholder: "Search...", data: { behavior: "autocomplete" }, class: "form-control" , id: "autocomplete-search" %>
-								<%= form.submit "Search" %>						
-							</div>
-						<% end %>
+					<div class="userInfoB">
+						<div class="userInfo1">
+							<%= link_to t('blog.index.create_review'), new_review_url , class: "create-review" %>
+						</div>
+						<div class="userInfo2">
+							<%= search_form_for @q, local: true, method: :get, html: {class: "form-inline"} do |form| %>
+								<div class="autocomplete" id="autocomplete">				
+									<%= form.search_field :title_cont, placeholder: "Search...", data: { behavior: "autocomplete" }, class: "form-control" , id: "autocomplete-search" %>
+									<%= form.submit t('blog.index.search') %>						
+								</div>
+							<% end %>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		
+		<% else %>
+			<div class="userInfo">
+				<div class="userInfo-container">
+					<div class="userInfoA">
+						<%= link_to "Sign in to create reviews", login_url , id: "signinfor" %>
+					</div>
+					<div class="userInfoB">
+						<div class="userInfo2">
+							<%= search_form_for @q, local: true, method: :get, html: {class: "form-inline"} do |form| %>
+								<div class="autocomplete" id="autocomplete">				
+									<%= form.search_field :title_cont, placeholder: "Search...", data: { behavior: "autocomplete" }, class: "form-control" , id: "autocomplete-search" %>
+									<%= form.submit t('blog.index.search') %>						
+								</div>
+							<% end %>
+						</div>
+					</div>
+				</div>
+			</div>
+		<% end %>
 		<div class="review-container">
 			<div class="review-content">
 				<%= render @reviews %>
@@ -44,10 +61,6 @@
 			<%= will_paginate @reviews, params: { controller: :reviews, action: :index }, id: "pages-review-paginate" %>
 		</div>
 	</div>
-<% else %>
-	<div class="none-review-wrapper" style="min-height: 60vh">
-	</div>
-<% end %>
 
 <script type="text/javascript">
 	window.addEventListener('scroll', function(){

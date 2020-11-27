@@ -1,27 +1,30 @@
 <div class="product-show-wrapper">
 	<div class="second-header">
 		<ul class="second-header-menu">
-			<li><a href="#overview">OVERVIEW</a></li>
-			<li><a href="#technology">TECHNOLOGY</a></li>
-			<li><a href="#specifications">SPECIFICATIONS</a></li>
-			<li><a href="#in-the-box">IN THE BOX</a></li>
+			<li><a href="#overview"><%= t('header.overview') %></a></li>
+			<li><a href="#technology"><%= t('header.technology') %></a></li>
+			<li><a href="#specifications"><%= t('header.specifications') %></a></li>
 		</ul>
 	</div>
 	<div class="product-show-container">
-		<section class="product-show-overview" id="overview">
+		<section class="product-show-overview-<%= @product.distribute %>" id="overview">
 			<div class="product-show-contentBx">
 				<h2><%= @product.title %></h2>
 				<h3><i class="fas fa-dollar-sign"></i> <%= @product.price %></h3>
 				<p><%= @product.content.html_safe %></p><br>
-				<p id="estimaed-time"><i class="far fa-clock"></i> Estimated build time: 4 Weeks</p>
-				<a href="#">ORDER</a>
+				<p id="estimaed-time"><i class="far fa-clock"></i> Estimated build time: <%= @product.build_time %> Weeks</p>
+				<% if logged_in? %>
+					<%= link_to "Order", new_product_request_path(@product) %>
+				<% else %>
+					<span id="sign_order">Order</span>
+				<% end %>
 			</div>
-			<img src="https://i.shgcdn.com/19c2a752-26c4-4a18-9b04-751cf1d2d66b/-/format/auto/-/preview/3000x3000/-/quality/lighter/">
+			<%= image_tag @product.image2 if @product.image2.attached? %>
 		</section>
-		<section class="product-show-technology" id="technology">
-			<h2>TECHNOLOGY</h2>
+		<section class="product-show-technology-<%= @product.distribute %>" id="technology">
+			<h2><%= t('header.technology') %></h2>
 			<p><a href="#">Exclusive technologies that challenge traditional in-ear monitor designs to give you the absolute best listening experience<br>learn more about all of our technologies ></a></p>
-			<h3>A2e features the following unique technology:</h3>
+			<h3><%= @product.title %> features the following unique technology:</h3>
 			<div class="tech-row">
 				<div class="tech-rowBx">
 					<div class="tech-content"><img src="https://i.shgcdn.com/c334217a-17b3-473c-bda9-4617914cebad/-/format/auto/-/preview/3000x3000/-/quality/lighter/">
@@ -40,59 +43,51 @@
 				</div>
 			</div>
 		</section>
-		<section class="product-show-specifications" id="specifications">
+		<section class="product-show-specifications-<%= @product.distribute %>" id="specifications">
 			<div class="specifications-content">
 				<div class="specifications-contentBx">
-					<h2>SPECIFICATIONS</h2>
+					<h2><%= t('header.specifications') %></h2>
 					<div class="specifications-contentTx">
 						<div class="specifications-contentTxW">Driver Type/Count</div>
-						<div class="specifications-contentTxL">Two precision balanced armature drivers</div>
+						<div class="specifications-contentTxL"><%= @product.driver_type %></div>
 					</div>
 					<div class="specifications-contentTx">
 						<div class="specifications-contentTxW">Driver Configuration</div>
-						<div class="specifications-contentTxL">1 high, 1 mid/low</div>
+						<div class="specifications-contentTxL"><%= @product.driver_configuration %></div>
 					</div>
 					<div class="specifications-contentTx">
 						<div class="specifications-contentTxW">Frequency Response</div>
-						<div class="specifications-contentTxL">20Hz – 18kHz</div>
+						<div class="specifications-contentTxL"><%= @product.frequency_response %></div>
 					</div>
 					<div class="specifications-contentTx">
 						<div class="specifications-contentTxW">Sensitivity</div>
-						<div class="specifications-contentTxL">114 dB/mW</div>
+						<div class="specifications-contentTxL"><%= @product.sensitivity %></div>
 					</div>
 					<div class="specifications-contentTx">
 						<div class="specifications-contentTxW">Impedance</div>
-						<div class="specifications-contentTxL">30Ω @ 1kHz</div>
+						<div class="specifications-contentTxL"><%= @product.impedance %></div>
 					</div>
 					<div class="specifications-contentTx">
 						<div class="specifications-contentTxW">Crossover</div>
-						<div class="specifications-contentTxL">Integrated 2-way passive Crossover</div>
+						<div class="specifications-contentTxL"><%= @product.crossover %></div>
 					</div>
 					<div class="specifications-contentTx">
 						<div class="specifications-contentTxW">Isolation</div>
-						<div class="specifications-contentTxL">-20dB with m20 apex module</div>
+						<div class="specifications-contentTxL"><%= @product.isolation %></div>
 					</div>
-				</div>
-			</div>
-		</section>
-		<section class="product-show-in-the-box" id="in-the-box">
-			<img src="https://i.shgcdn.com/2bb2e15d-d1d6-4473-8936-98967c9f026e/-/format/auto/-/preview/3000x3000/-/quality/lighter/">
-			<div class="in-the-box-contentBx">
-				<h2>IN THE BOX</h2>
-				<div class="in-the-box-text">
-					<p>A2e Custom In-Ear Monitors</p>
-					<p>64 Audio Personalized Protective Case</p>
-					<p>Dehumidifier</p>
-					<p>Cleaning Tool</p>
-					<p>Shirt Clip</p>
-					<p>48" or 64" Detachable Professional Cable</p>
-					<p>m20 apex Modules</p>
-					<p>Round Sticker</p>
-					<p>Product Manual</p>
 				</div>
 			</div>
 		</section>
 	</div>
 </div>
 
-
+<script type="text/javascript">
+	$('#sign_order').click(function(){
+		var answer = window.confirm("You need to log in to order.");
+		var url = window.location.href;
+		var searchParams = url.substr(31, 1);
+		if (answer) {
+			window.location.replace('http://localhost:3000/login');
+		}
+	});
+</script>

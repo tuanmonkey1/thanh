@@ -6,7 +6,7 @@
     <ul class="menubar">
         <li><%= link_to t('header.in_ear_monitors'), pages_iems_path %></li>
         <li><%= link_to t('header.technology'), pages_technology_path %></li>
-        <li><%= link_to t('header.review'), reviews_path %></li>
+        <li><%= link_to t('header.blog'), reviews_path %></li>
         <li><%= link_to t('header.support'), pages_help_path %></li>
         <li><%= link_to t('header.how_to_order'), pages_how_to_order_path %></li>
     </ul>
@@ -16,7 +16,7 @@
         <% else %>
             <li><a href="http://localhost:3000/login"><i class="far fa-user"></i></a></li>
         <% end %> 
-        <li><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+        
         <li><i class="fas fa-bars" onclick="openHiddenMenu()"></i></li>
     </ul>   
 </header>

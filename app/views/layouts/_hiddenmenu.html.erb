@@ -15,11 +15,8 @@
         </ul>
     </div>
     <ul>
-        <li><a href=""><%= t('hidden_menu.64family') %></a></li>
-        <li><a href=""><%= t('hidden_menu.legacy_upgrade') %></a></li>
-        <li><%= link_to t('hidden_menu.review'), reviews_url %></a></li>
-        <li><a href=""><%= t('hidden_menu.contact') %></a></li>
-        <li><a href=""><%= t('hidden_menu.buy') %></a></li>
+        <li><%= link_to t('hidden_menu.blog'), reviews_url %></a></li>
+        <li><%= link_to t('hidden_menu.contact'), pages_contact_path %></li>
         <% if logged_in? %>
             <li><%= link_to t('hidden_menu.account'), current_user %></li>
         <% else %>

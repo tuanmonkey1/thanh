@@ -1,8 +1,14 @@
-<li>
-	<%= gravatar_for request, size: 50 %>
-	<%= link_to request.user_id, request %>
-	<% if current_request.admin? && !current_request?(request) %>
-      | <%= link_to "delete", request, method: :delete,
-    data: { confirm: "You sure?" } %>
-   <% end %>
-</li>
+	<div class="requests-contentBx">
+		<div class="requestsBx-left">
+			<%= link_to gravatar_for(request.user, size: 60), request.user , id: "requests-avar" %>
+			<span><b><%= request.user.name %></b>	&nbsp;	&nbsp;</span><span style="font-size: 16px; letter-spacing: 1px;"><%= l(request.created_at, locale: :en) %></span>
+			<ul>
+				<li><p><span>Product:&nbsp;</span><%= request.product.title %></p></li>
+				<li><p><span>Quantity:&nbsp;</span><%= request.quantity %></p></li>
+				<li><p><span>Total:&nbsp;</span><%= request.product.price * request.quantity%></p></li>
+			</ul>
+		</div>
+		<div class="requestsBx-right">
+			<%= link_to "View", admin_request_url(request) %>
+		</div>
+	</div>

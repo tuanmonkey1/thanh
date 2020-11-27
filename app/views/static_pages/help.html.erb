@@ -1,26 +1,26 @@
-<%= provide(:title, "Support") %>
+<%= provide(:title, t('pages.help.support')) %>
 
 <div class="help-heading">
-	<a href="#"><span>?</span> CONTACT US</a>
+	<a href="#"><span>?</span> <%= t('pages.help.contact_us') %></a>
 </div>
 <div class="help-container">
-	<h2>HOW CAN WE HELP YOU TODAY?</h2>
+	<h2><%= t('pages.help.how_can_we_help_you_today') %></h2>
 	<div class="help-content">
 		<div class="help-contentBx">
 			<i class="far fa-times-circle"></i>
-			<p>Problem with my IEM</p>
+			<p><%= t('pages.help.problem_with_my_IEM') %></p>
 		</div>
 		<div class="help-contentBx">
 			<i class="fas fa-history"></i>
-			<p>Check on my order status</p>
+			<p><%= t('pages.help.check_on_my_order_status') %></p>
 		</div>
 		<div class="help-contentBx">
 			<i class="fab fa-searchengin"></i>
-			<p>Need help with something else</p>
+			<p><%= t('pages.help.need_help_with_something_else') %></p>
 		</div>
 		<div class="help-contentBx">
 			<i class="fas fa-user"></i>
-			<p>Contact Support</p>
+			<p><%= t('pages.help.contact_support') %></p>
 		</div>
 	</div>
 </div>

@@ -1,58 +1,54 @@
-<% provide(:title, t('request.show.title')) %>
-
 <div class="request-wrapper">
         <div class="request-left">
             <div class="request-logo">
                 <img src="https://cdn.shopify.com/s/files/1/0411/4717/0966/files/Horizontial-Logo-Black-100px.png?5756">
             </div>
             <div class="contact-info">
-                <h2><%= t('request.show.contact_info') %></h2>
+                <h2>Contact Information</h2>
                 <div class="contact-infoBx">
                     <%= link_to gravatar_for(current_user, size: 60), current_user %>
-                    <p><%= @request.user.name %></p>
-                    <p><%= @request.user.email %></p>
+                    <p><%= @admin_request.user.name %></p>
+                    <p><%= @admin_request.user.email %></p>
                 </div>
             </div>
             <div class="request-shipping">
-                <h2><%= t('request.show.shipping_address') %></h2>
-                <p><span><%= t('request.show.address') %>:&nbsp;&nbsp;</span><%= @request.address %></p>
-                <p><span><%= t('request.show.phone') %>:&nbsp;&nbsp;</span><%= @request.phone %></p>
+                <h2>Shipping address</h2>
+                <p><span>Adress:&nbsp;&nbsp;</span><%= @admin_request.address %></p>
+                <p><span>Phone number:&nbsp;&nbsp;</span><%= @admin_request.phone %></p>
             </div>
         </div>
         <div class="request-right">
             <div class="request-rightBx">
                 <div class="product-info">
                     <div class="product-name">
-                        <%= image_tag @request.product.image1 if @request.product.image1.attached? %>
+                        <%= image_tag @admin_request.product.image1 if @admin_request.product.image1.attached? %>
                         <div>
-	                        <span><%= @request.product.title %></span><br>
-	                        <p><%= link_to t('request.show.product_detail'), @request.product %></p>
+	                        <span><%= @admin_request.product.title %></span><br>
+	                        <p><%= link_to "Product Detail", @admin_request.product %></p>
                         </div>
                     </div>
                     <div class="product-price">
-                        <span>$<%= @request.product.price %></span>
+                        <span>$<%= @admin_request.product.price %></span>
                     </div>
                 </div>
 
                 <div class="product-quantity">
                     <div class="product-quantityTx">
-                        <span><%= t('request.show.quantity') %>: </span>
+                        <span><%= t('form.label.quantity') %>: </span>
                     </div>
                     <div class="product-quantityBx">
-                        <span><%= @request.quantity %></span>
+                        <span><%= @admin_request.quantity %></span>
                     </div>
                 </div>
                 <div class="total">
                     <div class="totalTx">
-                        <span><%= t('request.show.total') %></span>
+                        <span>Total</span>
                     </div>
                     <div class="totalBx">
-                        <p>USD&nbsp;<span><%= @request.product.price * @request.quantity %></span></p>
+                        <p>USD&nbsp;<span><%= @admin_request.product.price * @admin_request.quantity %></span></p>
                     </div>
                 </div>
-                <% if current_user?(@request.user) %>
-                    <%= link_to t('request.show.delete'), @request , method: :delete, data: { confirm: "You sure?" } %>
-                <% end %>
+                <%= link_to t('form.submit.delete'), @request , method: :delete, data: { confirm: "You sure?" } %>
             </div>
         </div>
     </div>

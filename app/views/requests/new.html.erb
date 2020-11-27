@@ -1,57 +1,115 @@
 <% provide(:title, 'request') %>
 
-	
 	<div class="request-wrapper">
-	    <div class="request-order-content">
-	  		<% if @product.present? %>
-				<div class="request-head">
-					<div class="logo"><img src="https://cdn.shopify.com/s/files/1/0411/4717/0966/files/Horizontial-Logo-White-100px_220x220.png?v=1598566575"></div>
-					<div class="text-1"><%= t('header.invoice_Information') %></div>
-					<ul class="request-head-info">
-						<li class="image"><%= link_to image_tag("audio1.jpg", width:"90px" ) %></li>
-						<li class="product-title"><%= @product.title %></li>	
-						<li class="product-price"><%= @product.price %></li>
-					</ul>
-				</div>
-		    <% end %>						 
-	        <div class="order-form" id="request_product">
-				<%= form_for [@product, @request] do |f| %>
-					<div class="request-content">
-						<%= render 'shared/error_messages', object: @request %>
-						<%= f.hidden_field :price, value: @product.price %>
-						<%= t('form.label.name') %><br>				    
-
-						<%= t('users.index.address') %>	
-						<%= f.text_field :address, class: 'form-control' , id: "address" %><br>
-
-						<%= t('users.index.phone') %>	
-						<%= f.text_field :phone, class: 'form-control' , id: "phone" %>
-					</div>
-					<div class="quantity">				 
-						<div class="quantity-text"><span><%= t('form.label.quantity') %>: </span></div>
-						<div class="quantityBx"><%= f.number_field :quantity, class: 'form-control' , id: "quantity" %></div>
-					</div>
-					<%= f.hidden_field :product_id, value: @product.id if @product.present? %>
-					<div class="total">
-						<p><span>Total Money :</span>$</p>
-					</div>
-				
-			        <ul class="request-content-foot">
-						<li><a href="http://localhost:3000/pages/iems"><%= t('header.back') %></a></li>
-						<li><%= f.submit  t('form.submit.order'), id: "order" %></li>   	
-			        </ul>
-			        
-			        
-        		<% end %>
-        	</div>
-      	</div>
+        <div class="request-left">
+            <div class="request-logo">
+                <img src="https://cdn.shopify.com/s/files/1/0411/4717/0966/files/Horizontial-Logo-Black-100px.png?5756">
+            </div>
+            <div class="contact-info">
+                <h2><%= t('request.new.contact_info') %></h2>
+                <div class="contact-infoBx">
+                    <%= link_to gravatar_for(current_user, size: 60), current_user %>
+                    <p><%= @current_user.name %></p>
+                    <p><%= @current_user.email %></p>
+                </div>
+            </div>
+            <div class="request-shipping">
+                <h2><%= t('request.new.shipping_address') %></h2>
+                <%= form_for [@product, @request] do |f| %>
+                <%= render 'shared/error_messages', object: @request %>
+                    <div class="input-container" id="input-container2">
+                        <label for=""><%= t('request.new.address') %></label>
+                        <%= f.text_field :address, class: "input" , id: "address" ,onfocus: "focusFunc1()", onblur:"blurFunc1()" %>
+                        <span><%= t('request.new.address') %></span>
+                    </div>
+                    <div class="input-container" id="input-container4">
+                        <label for=""><%= t('request.new.phone') %></label>
+                        <!-- <input type="number" name="phone" class="input" id="phone" onfocus="focusFunc4()" onblur="blurFunc4()">
+ -->                        <%= f.text_field :phone, class: "input" , id: "phone" ,onfocus: "focusFunc2()", onblur:"blurFunc2()" %>
+                        <span><%= t('request.new.phone') %></span>
+                    </div>
+                    <div class="form-foot">
+                        <div class="return">
+	                        <%= link_to(@back_url) do %>
+	                        	<i class="fas fa-chevron-left"></i> <%= t('request.new.return') %>
+	                        <% end %>
+                        </div>
+                        <%= f.submit t('request.new.order'), id: "order", class: "btn" %>
+                    </div>
+                
+            </div>
+        </div>
+        <div class="request-right">
+            <div class="request-rightBx">
+                <div class="product-info">
+                    <div class="product-name">
+                        <%= image_tag @product.image1 if @product.image1.attached? %>
+                        <span><%= @product.title %></span>
+                    </div>
+                    <div class="product-price">
+                        <span>$<%= @product.price %></span>
+                    </div>
+                </div>
+                <div class="product-quantity">
+                    <div class="product-quantityTx">
+                        <span><%= t('request.new.quantity') %>: </span>
+                    </div>
+                    <div class="product-quantityBx">
+                        <!-- <input type="number" id="quantity" name="quantity" min="1" max="5">-->
+                        <%= f.hidden_field :price, value: @product.price, id: "price" %>                    
+                        <%= f.hidden_field :product_id, value: @product.id if @product.present? %>
+                        <%= f.number_field :quantity, min: 1, class: 'form-control' , id: "quantity" %>
+                    </div>
+                </div>
+                <div class="total">
+                    <div class="totalTx">
+                        <span><%= t('request.new.total') %></span>
+                    </div>
+                    <div class="totalBx">
+                        <p>USD&nbsp;<span></span></p>
+                    </div>
+                </div>
+                <% end %>
+            </div>
+        </div>
     </div>
 
-<script>
-$('#request_product form [name="request[quantity]"]').change(function() {
+
+<script type="text/javascript">
+$('#quantity').change(function() {
 	var quantity = $(this).val();
-	var price = $('#request_product form [name="request[price]"]').val();
-	$('#request_product .total span').html(quantity * price);
+	var price = $('#price').val();
+	$('.total .totalBx span').html("$" + quantity * price);
 });
+
+function focusFunc1() {
+    var address = document.querySelector('#address');
+    let parent1 = address.parentNode;
+    parent1.classList.add("focus");
+}
+function blurFunc1() {
+    var address = document.querySelector('#address');
+    let parent1 = address.parentNode;
+    if (address.value == "") {
+        parent1.classList.remove("focus");
+    }
+}
+function focusFunc2() {
+    var phone = document.querySelector('#phone');
+    let parent2 = phone.parentNode;
+    parent2.classList.add("focus");
+}
+function blurFunc2() {
+    var phone = document.querySelector('#phone');
+    let parent2 = phone.parentNode;
+    if (phone.value == "") {
+        parent2.classList.remove("focus");
+    }
+}
+
+$('#address').bind('focus', focusFunc1());
+$('#address').bind('blur', blurFunc1());
+$('#phone').bind('focus', focusFunc2());
+$('#phone').bind('blur', blurFunc2());
+
 </script>
-	

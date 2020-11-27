@@ -1,16 +1,17 @@
-<% provide(:title, "Home") %>
+<% provide(:title, t('pages.home.home')) %>
     <video class="home-video" autoplay muted loop>
         <source src="https://cdn.shopify.com/s/files/1/0411/4717/0966/files/nio-launch-vid.mp4?v=1594150651" type="video/mp4">
     </video>
-    <div class="home-video-layout"></div>
 
     <div class="home-wrapper">
 
         <div class="contentBx">
-            <div class="strong-word"><span>NIO</span></div>
-            <p>Extraordinary Sound<br>Meets Extraordinary Color</p>
-            <a href="http://localhost:3000/products/8?locale=en" class="bt1">DISCOVER NIO</a>
-            <a class="bt2" onclick="videoToggle();">PLAY VIDEO</a>
+            <div class="strong-word"><span><%= Product.latest.title %></span></div>
+            <p><%= t('pages.home.extraordinary_sound') %><br><%= t('pages.home.extraordinary_color') %></p>
+            <%= link_to(Product.latest) do %>
+                <%= t('pages.home.discover') %> <%= Product.latest.title %>
+            <% end %>
+            <a class="bt2" onclick="videoToggle();"><%= t('pages.home.play_video') %></a>
         </div>
     </div>
 
