@@ -46,8 +46,7 @@ vi:
       quantity: 'Số Lượng'
       password_confirmation: 'Xác nhận mật khẩu'
       technology: 'Công nghệ'
-      distribute: 'phân phối'
-
+      distribute: 'phân phối'   
     submit:
       submit: 'xác nhận'
       login: 'Đăng nhập'
@@ -67,4 +66,8 @@ vi:
       new_product: 'Sản phẩm mới'
       update_product: 'Cập nhật sản phẩm'
       create_review: 'Tạo bài đánh giá mới'
-      order: 'Đặt Hàng'
+      order: 'Đặt Hàng'   
+    request:
+      all: 'Tất cả yêu cầu'
+      total: 'Tổng'
+      new: 'Yêu cầu mới'

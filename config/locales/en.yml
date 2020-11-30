@@ -83,7 +83,7 @@ en:
       password_confirmation: 'Password confirmation'
       technology: 'Technology'
       distribute: 'Distribute'    
-      quantity: Quantity' 
+      quantity: Quantity'     
     submit:
       submit: 'Submit'
       login: 'Login'
@@ -100,4 +100,9 @@ en:
       new_product: 'New product'
       update_product: 'Update product'
       create_review: 'Create new review'
-      order: 'Order'
+      order: 'Order'    
+    request:
+      all: 'All request'
+      total: 'Total'
+      new: 'New Requests'
+      

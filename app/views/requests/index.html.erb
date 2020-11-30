@@ -1,7 +1,7 @@
 <% provide(:title, 'All Request') %>
 
 <div class="khung">
-	<h1>All Requests</h1>
+	<h1><%= t('form.request.all') %></h1>
 	<div class="khung-container">
 		<ul class="content">
 			<% @requests.each do |request| %>
@@ -15,21 +15,22 @@
 					    	
 			                   
 					    	</li> 					    
-					    	<li class="pice">Pice:
+					    	<li class="pice"><%= t('form.label.price') %>:
 					    		<span id="price"><%= request.product.price %></span>
 					    	</li>
 
 
-					    	<li class="quantity">Quantity:
+					    	<li class="quantity"><%= t('form.label.quantity') %>:
+
 					    		<span id="quantity"><%= request.quantity %></span>
 					    	</li>
 
-					    	<li class="total">Total: 
+					    	<li class="total"><%= t('form.request.total') %>: 
 					    		<span id="total-money"><%= request.product.price * request.quantity%></span>
 					    	</li>
 
 					    	<li class="destroy">
-					    		<%= link_to 'Destroy', product_request_path(request.product, request), method: :delete, data: { confirm: 'Are you sure?' } %>
+					    		<%= link_to t('form.submit.delete'), product_request_path(request.product, request), method: :delete, data: { confirm: 'Are you sure?' } %>
 					    		
 					    	</li>
 					    	 
@@ -41,7 +42,7 @@
 
 		</ul>
 			
-		<div class="new-request"><%= link_to 'New Request', new_product_request_path(Product.find(1)) %></div>
+		<div class="new-request"><%= link_to t('form.request.new'), new_product_request_path(Product.find(1)) %></div>
 		<%= will_paginate %>
 
 	</div>

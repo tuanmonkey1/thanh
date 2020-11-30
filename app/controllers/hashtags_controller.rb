@@ -3,7 +3,6 @@ class HashtagsController < ApplicationController
 
   def show
   	@hashtag = Hashtag.find(params[:id])
-    @hashtags = @hashtags.paginate(page: params[:page])
 
   end
   def index
