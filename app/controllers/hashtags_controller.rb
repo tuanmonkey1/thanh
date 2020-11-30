@@ -3,10 +3,19 @@ class HashtagsController < ApplicationController
 
   def show
   	@hashtag = Hashtag.find(params[:id])
+    @hashtags = @hashtags.paginate(page: params[:page])
+
   end
   def index
     @hashtag = Hashtag.new
   	@hashtags = Hashtag.paginate(page: params[:page], per_page: 3)
+    @q = Hashtag.ransack(params[:q])
+    @hashtags = @q.result.paginate(page: params[:page])
+    #end
+    respond_to do |format|
+      format.html {}
+      format.json
+    end
   end
 
   def new

@@ -13,6 +13,14 @@
     <%= f.label t('form.label.select_picture') %>
 	  <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png" , class: "img-buttom" %>
     
+
+    <div class="autocomplete" id="autocomplete">        
+      <%= search_field_tag :name_cont, nil, data: { behavior: "autocomplete" }, class: "form-control" , id: "autocomplete-search" %>
+      <%= f.button "Add" %>    
+      <ul id="hashtags"></ul>       
+    </div>
+
+
   </div>
   <%= f.submit t('form.submit.submit'), class: "submit" %>
   
@@ -25,4 +33,20 @@
     alert("Maximum file size is 5MB. Please choose a smaller file.");
     }
   });
+
+  var options = {
+    url: function(phrase) {
+        return "/hashtags?q[name_cont]=" + phrase;
+    },
+    getValue: "name",
+    list: {
+      onClickEvent: function() {
+        var value = $("#autocomplete input").getSelectedItemData().id;
+        alert(value);
+        //$("#hashtags").append('<li><input type="hidden" name=""></li>');
+      }
+    }
+  };
+
+  $("#autocomplete input").easyAutocomplete(options); 
 </script>

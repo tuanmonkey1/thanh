@@ -27,8 +27,8 @@
 			
 	</div>
 	<div class="language">
-	 
 	   <%= will_paginate %>
+	 
 	</div>	
 	
 	
@@ -49,4 +49,18 @@ $(document).ready(function() {
         });
    });
 });
+
+var options = {
+    	url: function(phrase) {
+      		return "/reviews.json?q[title_cont]=" + phrase;
+    	},
+		getValue: "title",
+		template: {
+			type: "links",
+			fields: {
+				link: "url"
+			}
+		},
+  	};
+
 </script>
