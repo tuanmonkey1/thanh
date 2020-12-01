@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 gem 'rails', '6.0.3'
 gem 'puma', '3.12.1'
 gem 'bcrypt', '3.1.7'
+gem "devise"
+gem "omniauth"
+gem "omniauth-facebook"
 gem "paperclip", "5.1"
 gem 'faker', '2.1.2'
 gem 'will_paginate', '3.1.8'
@@ -49,3 +52,4 @@ gem "rails-i18n"
 gem 'ransack'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
+

@@ -21,7 +21,7 @@
         <li><a href=""><%= t('hidden_menu.contact') %></a></li>
         <li><a href=""><%= t('hidden_menu.buy') %></a></li>
         <% if logged_in? %>
-            <li><%= link_to t('hidden_menu.account'), user_path(@user) %></li>
+            <li><%= link_to t('hidden_menu.account'), current_user %></li>
         <% else %>
             <li><%= link_to t('hidden_menu.account'), login_path %></li>
         <% end %>

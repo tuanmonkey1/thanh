@@ -8,14 +8,16 @@
 		<div class="review-show-containerBx">
 			<div class="reviewUser-info">
 				<%= link_to gravatar_for(@review.user, size: 50), @review.user , class: "reviewUser-info-ava" %>
-				<span class="reviewUser-info-name"><%= link_to @review.user.name, @review.user %></span>
-				<a href="#" id="followBx">Follow</a>
+				<span class="reviewUser-info-name">
+					<%= link_to @review.user.name, @review.user %>
+				</span>
+				<%= render 'users/follow_form' if logged_in? %>
 				<span class="reviewUser-info-time">Created at <%= l(@review.created_at, locale: :en) %></span>
 				<div style="clear: right;"></div>
 				<a href="#comment-wrapper" id="commentNum"><i class="fas fa-comments"></i> <%= @review.comments.count %></a>
 				<ul>
-					<li><i class="fas fa-star"></i> 2.0K</li>
-					<li><i class="fas fa-user-friends"></i> 66</li>
+					<li><i class="fas fa-star"></i><%= @review.rates.avg_star %></li>
+					<li><i class="fas fa-user-friends"></i><%= render 'shared/stats' %></li>
 					<li><i class="fas fa-pencil-alt"></i> <%= @user.reviews.count %></li>
 					<li><i class="fas fa-thumbs-up"></i> 120</li>
 				</ul>
@@ -35,6 +37,7 @@
 				<li><a href="#"><i id="sci2" class="fab fa-twitter"></i></a></li>
 				<li><a href="#"><i id="sci3" class="far fa-envelope"></i></a></li>
 			</ul>
+			<%= render "rate/form" %>
 			<div id="comment-wrapper">
 				<h2>Comments</h2>
 				<%= render "comments/form" %>
