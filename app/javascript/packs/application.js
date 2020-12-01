@@ -43,6 +43,7 @@ $(document).ready(function(){
     $(".fa-star").css("color","yellow")
   })
 
+<<<<<<< 7d9ad57503be82781bace828db9f4e91d915ebb8
 })
 (function($) {
   $.ajaxSettings.accepts.html = $.ajaxSettings.accepts.script;
@@ -60,3 +61,6 @@ $(document).ready(function(){
   });
 })(jQuery);
 
+=======
+})
+>>>>>>> follow

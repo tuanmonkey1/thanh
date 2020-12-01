@@ -32,19 +32,15 @@ Rails.application.routes.draw do
     resources :requests
   end
   resources :comments
-<<<<<<< HEAD
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   match 'auth/failure', to: redirect('/'), via: [:get, :post]
   match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
 end
-=======
+
   namespace :admin do
    resources :requests, only: [:index, :destroy]
   end
-<<<<<<< HEAD
-end
->>>>>>> 8eef58e... request admin
-=======
+
+
   resources :rates
 end
->>>>>>> 460d88f... rate
