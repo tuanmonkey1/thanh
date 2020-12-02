@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
 
-	#before_action :logged_in_user, only: [:create, :destroy, :new, :index]
+	before_action :logged_in_user, only: [:create, :destroy, :new, :index]
 	before_action :correct_user, only: :destroy
 
 	def new
@@ -49,7 +49,7 @@ class ReviewsController < ApplicationController
 	def index
 		@review = current_user.reviews.build
 		#if params[:auto]
-			#@reviews = Review.where(title: params[:title])	
+			@reviews = Review.where(title: params[:title])	
 		#else
 			@q = Review.ransack(params[:q])
 			@reviews = @q.result.paginate(page: params[:page])
@@ -63,7 +63,7 @@ class ReviewsController < ApplicationController
 	private
 
 	  def review_params
-		params.require(:review).permit(:title,:description, :content, :image)
+		params.require(:review).permit(:title,:description, :content, :image, hashtag_ids: [])
       end
 
       def correct_user

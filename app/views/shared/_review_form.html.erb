@@ -10,20 +10,19 @@
     <%= f.label t('form.label.content') %>
     <%= f.text_area :content, placeholder: "Compose content..." , id: "content" %>
 
-    <%= f.label t('form.label.select_picture') %>
-	  <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png" , class: "img-buttom" %>
+    <%= f.label t('form.label.select_picture') %><br>
+	  <%= f.file_field :image, accept: "image/jpeg,image/gif,image/png" , class: "img-buttom" %><br>
     
 
     <div class="autocomplete" id="autocomplete">        
-      <%= search_field_tag :name_cont, nil, data: { behavior: "autocomplete" }, class: "form-control" , id: "autocomplete-search" %>
-      <%= f.button "Add" %>    
-      <ul id="hashtags"></ul>       
+      <%= search_field_tag :name_cont,   nil, data: { behavior: "autocomplete" }, class: "form-control" ,placeholder: "All hashtags...", id: "autocomplete-search" %><br>
     </div>
-
+    <ul id="hashtags"></ul>   
 
   </div>
-  <%= f.submit t('form.submit.submit'), class: "submit" %>
   
+  <%= f.submit t('form.submit.submit'), class: "submit" %>
+
 <% end %>
 
 <script type="text/javascript">
@@ -42,11 +41,23 @@
     list: {
       onClickEvent: function() {
         var value = $("#autocomplete input").getSelectedItemData().id;
-        alert(value);
-        //$("#hashtags").append('<li><input type="hidden" name=""></li>');
+        var name = $("#autocomplete input").getSelectedItemData().name;
+        //alert(value);
+        var exist = false;
+        $('#hashtags li').each(function() {
+          var v = $(this).find('[name="review[hashtag_ids][]"]').val();
+          if(value == v) {
+            exist = true;
+          }
+        });
+        if(exist == false) {
+          $("#hashtags").append('<li><input type="hidden" name="review[hashtag_ids][]" value="' + value + '">' + name + '</li>');
+        }
+
       }
     }
   };
 
   $("#autocomplete input").easyAutocomplete(options); 
+
 </script>
