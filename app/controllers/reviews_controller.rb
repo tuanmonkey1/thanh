@@ -28,6 +28,7 @@ class ReviewsController < ApplicationController
 
 	def show
 	  @review = Review.find(params[:id])
+	  @user = @review.user
 	  @comments = @review.comments
 	  @comment = Comment.new
 	  @rate = Rate.new
