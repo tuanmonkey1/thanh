@@ -36,6 +36,11 @@ class ReviewsController < ApplicationController
 	
 	def rate
     	@review = Review.find(params[:id])
+	 def rate
+    @review = Review.find(params[:id])
+	
+	def rate
+    	@review = Review.find(params[:id])
 	end
 
 	def index

@@ -5,6 +5,7 @@ class HashtagsController < ApplicationController
   	@hashtag = Hashtag.find(params[:id])
   end
   def index
+    @hashtag = Hashtag.new
   	@hashtags = Hashtag.paginate(page: params[:page], per_page: 3)
   end
 
@@ -15,8 +16,10 @@ class HashtagsController < ApplicationController
   def create
   	@hashtag = Hashtag.new(hashtag_params)
 		if @hashtag.save
-			redirect_to hashtags_url
 			# Handle a successful save.
+      respond_to do |format|
+        format.html {render partial: 'hashtag', locals: {hashtag: @hashtag} }
+      end
 		else
 			render 'new'
 		end
@@ -39,7 +42,11 @@ class HashtagsController < ApplicationController
   def destroy
     Hashtag.find(params[:id]).destroy
     flash[:success] = "Hashtag deleted"
-    redirect_to hashtags_url
+    # 
+    respond_to do |format|
+        format.html {redirect_to hashtags_url}
+        format.json {render json: {result: 'OK', id: params[:id]} }
+      end
   end
 
   private

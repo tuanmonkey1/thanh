@@ -18,6 +18,8 @@
 				<ul>
 					<li><i class="fas fa-star"></i><%= @review.rates.avg_star %></li>
 					<li><i class="fas fa-user-friends"></i><%= render 'shared/stats' %></li>
+					<li><i class="fas fa-star"></i><%= @review.rates.star %></li>
+					<li><i class="fas fa-user-friends"></i> 66</li>
 					<li><i class="fas fa-pencil-alt"></i> <%= @user.reviews.count %></li>
 					<li><i class="fas fa-thumbs-up"></i> 120</li>
 				</ul>
@@ -42,6 +44,7 @@
 				<h2>Comments</h2>
 				<%= render "comments/form" %>
 				<div class="comment-container">
+
 					<%= render @comments %>
 				</div>
 			</div>

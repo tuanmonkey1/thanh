@@ -15,11 +15,11 @@
 				</div>
 		    <% end %>						 
 	        <div class="order-form" id="request_product">
-				<%= form_for [@product, @request] do |f| %>
+				<%= form_for [:admin, @product, @request] do |f| %>
 					<div class="request-content">
 						<%= render 'shared/error_messages', object: @request %>
 						<%= f.hidden_field :price, value: @product.price %>
-						<%= t('form.label.name') %><br>				    
+						<%= t('form.label.name') %>				    
 
 						<%= t('users.index.address') %>	
 						<%= f.text_field :address, class: 'form-control' , id: "address" %><br>

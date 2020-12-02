@@ -1,0 +1,14 @@
+.con{
+	height: 60px;
+	width: 330px;
+	
+	margin: auto;
+	left: 0px;
+	right: 0px;
+	top: 0px;
+	bottom: 0px;
+
+}
+.fa-star{
+	font-size: 30px;
+}
