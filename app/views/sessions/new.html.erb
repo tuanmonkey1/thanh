@@ -22,8 +22,39 @@
                     <span><%= t('form.submit.remember_me') %></span>
                 <% end %>
                 <%= f.submit t('form.submit.submit'), class: "submit" %>
+
+                <fb:login-button onlogin="checkLoginState();"></fb:login-button>
             <% end %>
             <p><%= t('form.submit.new_user') %>? <%= link_to t('form.submit.sign_up_now'), signup_path , id: "a-signup" %></p>
         </div>
     </div>
 </div>
+
+<script>
+
+  function checkLoginState() {
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
+  }
+
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '3811267928906604',
+      cookie     : true,  // bật cookie để máy chủ có thể truy cập application của bạn
+      xfbml      : true,  // Kiểm tra các plugin của ứng dụng
+      version    : 'v3.0' // sử dụng api phiên bản 3.0
+    });
+  };
+
+  (function(d, s, id) {
+    // Khởi tạo biến js và fjs
+    var js, fjs = d.getElementsByTagName(s)[0]; // fjs được lấy từ document với tag name script vị trí 0
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "https://connect.facebook.net/en_US/sdk.js"; // liên kêt tới sdk của facebook
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+
+  
+</script>

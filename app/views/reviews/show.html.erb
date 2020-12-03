@@ -11,15 +11,13 @@
 				<span class="reviewUser-info-name">
 					<%= link_to @review.user.name, @review.user %>
 				</span>
-				<%= render 'users/follow_form' if logged_in? %>
+				<%= render 'users/follow_form', user: @review.user if logged_in? %>
 				<span class="reviewUser-info-time">Created at <%= l(@review.created_at, locale: :en) %></span>
 				<div style="clear: right;"></div>
 				<a href="#comment-wrapper" id="commentNum"><i class="fas fa-comments"></i> <%= @review.comments.count %></a>
 				<ul>
 					<li><i class="fas fa-star"></i><%= @review.rates.avg_star %></li>
 					<li><i class="fas fa-user-friends"></i><%= render 'shared/stats' %></li>
-					<li><i class="fas fa-star"></i><%= @review.rates.star %></li>
-					<li><i class="fas fa-user-friends"></i> 66</li>
 					<li><i class="fas fa-pencil-alt"></i> <%= @user.reviews.count %></li>
 					<li><i class="fas fa-thumbs-up"></i> 120</li>
 				</ul>

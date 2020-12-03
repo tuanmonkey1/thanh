@@ -42,7 +42,7 @@ $(document).ready(function(){
     $(".fa-star").css("color","black")
     $(".fa-star").css("color","yellow")
   })
-})
+});
 (function($) {
   $.ajaxSettings.accepts.html = $.ajaxSettings.accepts.script;
   

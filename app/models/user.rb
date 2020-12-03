@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+	has_many :authorizations
+	validates :name, :email, :presence => true
 	has_many :rates
 	has_many :reviews, dependent: :destroy
 	has_many :requests, dependent: :destroy
@@ -63,4 +65,11 @@ class User < ApplicationRecord
 	def following?(other_user)
 		following.include?(other_user)
 	end
+
+	def add_provider(auth_hash)
+  		# Check if the provider already exists, so we don't add it twice
+  		unless authorizations.find_by_provider_and_uid(auth_hash["provider"], auth_hash["uid"])
+    	Authorization.create :user => self, :provider => auth_hash["provider"], :uid => auth_hash["uid"]
+  	end
+end
 end
