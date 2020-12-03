@@ -15,16 +15,13 @@ class RatesController < ApplicationController
 				render 'new'
 			end
 		end
-	end
-
 	def index
 		@rate = Rate.all
 	end
+	
 	private
+	
 	def rating_params
 	  params.require(:rate).permit(:star, :user_id, :review_id)	  	
-	  end
 	end
 end
-
-   

@@ -16,7 +16,12 @@ Rails.application.routes.draw do
   get '/signup', to: 'users#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
-  resources :users	
+  resources :users	do
+    member do
+      get :following, :followers
+      resources :relationships, only: [:create, :destroy]
+    end
+  end
   resources :hashtags
   resources :reviews, only: [:create, :destroy, :show, :new, :index] do
     collection { get :search, to: 'reviews#index' }
@@ -27,6 +32,15 @@ Rails.application.routes.draw do
     resources :requests
   end
   resources :comments
+  match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
+  match 'auth/failure', to: redirect('/'), via: [:get, :post]
+  match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
+end
+
+  namespace :admin do
+   resources :requests, only: [:index, :destroy]
+  end
+
   namespace :admin do
    resources :requests, only: [:index, :destroy]
   end
