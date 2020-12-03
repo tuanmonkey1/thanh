@@ -908,6 +908,7 @@ footer .small-footer span a{
                     .autocomplete {
                         /*the container must be positioned relative:*/
                         position: relative;
+
                         
                     display: flex;
                     justify-content: center;
@@ -928,6 +929,7 @@ footer .small-footer span a{
                             font-size: 16px;
                             font-family: Montserrat;
                             font-weight: 400;
+                            color: red;
                         }
                         input[type=submit] {
                             background-color: DodgerBlue;

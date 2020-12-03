@@ -2,6 +2,8 @@ class Review < ApplicationRecord
   belongs_to :user
   has_many :comments
   has_many :rates
+  has_many :review_hashtags
+  has_many :hashtags, through: :review_hashtags
   default_scope -> { order(created_at: :desc) }
   has_one_attached :image
   validates :user_id, presence: true

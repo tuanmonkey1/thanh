@@ -12,12 +12,12 @@
 
 				<%= render 'shared/error_messages', object: @hashtag %>
 
-				<%= f.label :name %>
+				<%= f.label t('form.label.name')%>
 				<%= f.text_field :name, class: 'form-control' , id: "name" %>
 
-				<%= f.submit "Create", data: { disable_with: false }, class: "submit" %>
+				<%= f.submit t('form.submit.create'), data: { disable_with: false }, class: "submit" %>
 				
-			  <% end %> 
+			  <% end %>
 	        </div><br>
     	</div>
 	<div class="hashtag-content">
@@ -27,8 +27,8 @@
 			
 	</div>
 	<div class="language">
+	   
 	 
-	   <%= will_paginate %>
 	</div>	
 	
 	
@@ -49,4 +49,18 @@ $(document).ready(function() {
         });
    });
 });
+
+var options = {
+    	url: function(phrase) {
+      		return "/reviews.json?q[title_cont]=" + phrase;
+    	},
+		getValue: "title",
+		template: {
+			type: "links",
+			fields: {
+				link: "url"
+			}
+		},
+  	};
+
 </script>

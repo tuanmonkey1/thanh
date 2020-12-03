@@ -1,6 +1,6 @@
 <li id="hashtag-<%=hashtag.id%>">
   <span><%= hashtag.name %></span>
-  <%= link_to 'Destroy', hashtag, method: :delete, data: { confirm: 'Are you sure?' } , id: "hashtag-a-#{hashtag.id}" %>
+  <%= link_to t('form.submit.delete'), hashtag, method: :delete, data: { confirm: 'Are you sure?' } , id: "hashtag-a-#{hashtag.id}" %>
 </li>
 
 <script type="text/javascript">
