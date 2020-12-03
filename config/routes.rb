@@ -41,6 +41,8 @@ end
    resources :requests, only: [:index, :destroy]
   end
 
-
+  namespace :admin do
+   resources :requests, only: [:index, :destroy]
+  end
   resources :rates
 end
