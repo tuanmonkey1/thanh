@@ -9,7 +9,8 @@
 # migrations use external dependencies or application code.
 #
 # It's strongly recommended that you check this file into your version control system.
-ActiveRecord::Schema.define(version: 2020_11_30_091752) do
+
+ActiveRecord::Schema.define(version: 2020_12_03_071006) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -81,6 +82,16 @@ ActiveRecord::Schema.define(version: 2020_11_30_091752) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "relationships", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "follower_id"
+    t.integer "followed_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["followed_id"], name: "index_relationships_on_followed_id"
+    t.index ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
+    t.index ["follower_id"], name: "index_relationships_on_follower_id"
+  end
+
   create_table "requests", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "user_id"
     t.integer "product_id"
@@ -116,10 +127,10 @@ ActiveRecord::Schema.define(version: 2020_11_30_091752) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "password_digest"
     t.string "remember_digest"
+    t.boolean "admin"
     t.string "provider"
     t.string "uid"
     t.string "image"
-    t.boolean "admin"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
