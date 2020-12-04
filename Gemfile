@@ -6,6 +6,7 @@ gem 'bcrypt', '3.1.7'
 gem "devise"
 gem "omniauth"
 gem "omniauth-facebook"
+
 gem "paperclip", "5.1"
 gem 'faker', '2.1.2'
 gem 'will_paginate', '3.1.8'

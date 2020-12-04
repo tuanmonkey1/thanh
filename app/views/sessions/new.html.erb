@@ -22,8 +22,70 @@
                     <span><%= t('form.submit.remember_me') %></span>
                 <% end %>
                 <%= f.submit t('form.submit.submit'), class: "submit" %>
+
+                <fb:login-button onlogin="checkLoginState();"></fb:login-button>
             <% end %>
             <p><%= t('form.submit.new_user') %>? <%= link_to t('form.submit.sign_up_now'), signup_path , id: "a-signup" %></p>
         </div>
     </div>
 </div>
+
+<script>
+
+  function checkLoginState() {
+    FB.getLoginStatus(function(response) {
+      statusChangeCallback(response);
+    });
+  }
+
+  function statusChangeCallback(response) {
+    if (response.status === 'connected') {
+        loginSucess(response);
+      //testAPI(response);
+    } else {
+      // Nếu chưa đăng nhập thì sẽ mời người dùng đăng nhập
+      // Bạn có thể làm điều khác không bắt buộc
+      document.getElementById('status').innerHTML = 'Please log into this app';
+    }
+  }
+
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : 831334561022613,//'3811267928906604',
+      cookie     : true,  // bật cookie để máy chủ có thể truy cập application của bạn
+      xfbml      : true,  // Kiểm tra các plugin của ứng dụng
+      version    : 'v9.0' // sử dụng api phiên bản 3.0
+    });
+  };
+
+  (function(d, s, id) {
+    // Khởi tạo biến js và fjs
+    var js, fjs = d.getElementsByTagName(s)[0]; // fjs được lấy từ document với tag name script vị trí 0
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "https://connect.facebook.net/en_US/sdk.js"; // liên kêt tới sdk của facebook
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+  
+
+  function loginSucess(response) {
+    FB.api('me?fields=id,name,first_name,last_name', function (response) {
+    // debugger
+        console.log(response.id);
+        var name = response.name;
+        var id = response.id;
+        $.ajax({
+          url: '/sessions',
+          type: 'POST',
+          data: {
+            provider: 'facebook',
+            name: name,
+            user_id: id,
+          },
+          success: function () {
+            window.location.href = 'http://localhost:3000';
+          }
+        });
+    });
+  }
+</script>

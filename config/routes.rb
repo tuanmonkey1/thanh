@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   root 'static_pages#home'
   get 'sessions/new'
   get 'users/new'
@@ -12,10 +13,11 @@ Rails.application.routes.draw do
   get 'collections/stage', to: 'collections#stage'
   get 'collections/studio', to: 'collections#studio'
   get 'collections/audiophile', to: 'collections#audiophile'
-  get '/login', to: 'sessions#new'
+  get   '/login', :to => 'sessions#new', :as => :login
   get '/signup', to: 'users#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
+  resources :sessions
   resources :users	do
     member do
       get :following, :followers
@@ -35,14 +37,10 @@ Rails.application.routes.draw do
   match 'auth/:provider/callback', to: 'sessions#create', via: [:get, :post]
   match 'auth/failure', to: redirect('/'), via: [:get, :post]
   match 'signout', to: 'sessions#destroy', as: 'signout', via: [:get, :post]
-end
 
   namespace :admin do
    resources :requests, only: [:index, :destroy]
   end
 
-  namespace :admin do
-   resources :requests, only: [:index, :destroy]
-  end
   resources :rates
 end
